@@ -8,12 +8,12 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
-    HomeComponent,
-    MenuComponent,
-    FooterComponent
-  ],
+      HomeComponent,
+      MenuComponent,
+      FooterComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule
