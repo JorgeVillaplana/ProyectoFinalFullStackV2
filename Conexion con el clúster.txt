@@ -1,0 +1,18 @@
+freetourcluster-shard-00-01.mkygh.mongodb.net
+
+para el Robo3T
+
+freetourcluster.mkygh.mongodb.net
+
+
+credenciales: 
+	User: admin
+	password: *************
+
+
+Base de datos y colecciones:
+
+	freetour
+		users
+		tours
+		posts
