@@ -1,0 +1,33 @@
+<<<<<<< Updated upstream
+=======
+.nav-bar {
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 15vh;
+    padding: 20px 0px;
+    background-color: black;
+    .logo {
+        float: left;
+        margin-left: 2%;
+        height: 100%;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    .nav-link {
+        font-size: 20px;
+        padding: 30px 30px;
+        color: rgb(255, 255, 255);
+        &:hover {
+            color: rgba(251, 255, 0, 0.750);
+        }
+        &.active {
+            font-weight: 700;
+            color: rgb(250, 255, 0);
+        }
+    }
+}
+>>>>>>> Stashed changes

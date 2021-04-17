@@ -6,14 +6,27 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { ToursComponent } from './tours/tours.component';
+import { BlogComponent } from './blog/blog.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< Updated upstream
     HomeComponent,
     MenuComponent,
     FooterComponent
   ],
+=======
+      HomeComponent,
+      MenuComponent,
+      FooterComponent,
+      ToursComponent,
+      BlogComponent,
+      ContactComponent
+   ],
+>>>>>>> Stashed changes
   imports: [
     BrowserModule,
     AppRoutingModule
