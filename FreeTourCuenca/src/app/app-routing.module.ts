@@ -6,14 +6,10 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-<<<<<<< Updated upstream
-  {path: "", component: HomeComponent, pathMatch: "full" }
-=======
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "tours", component: ToursComponent },
   { path: "blog", component: BlogComponent },
   { path: "contact", component: ContactComponent }
->>>>>>> Stashed changes
 ];
 
 @NgModule({

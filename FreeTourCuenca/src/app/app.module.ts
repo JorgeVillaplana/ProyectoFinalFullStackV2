@@ -13,12 +13,6 @@ import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< Updated upstream
-    HomeComponent,
-    MenuComponent,
-    FooterComponent
-  ],
-=======
       HomeComponent,
       MenuComponent,
       FooterComponent,
@@ -26,7 +20,6 @@ import { ContactComponent } from './contact/contact.component';
       BlogComponent,
       ContactComponent
    ],
->>>>>>> Stashed changes
   imports: [
     BrowserModule,
     AppRoutingModule
