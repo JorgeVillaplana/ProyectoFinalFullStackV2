@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FreeTourCuenca';
+
+  constructor(private router: Router, private activeRoute: ActivatedRoute) { }
+
+  showMenuAndFooter() {
+    if(this.router.url === "/login" || this.router.url === "/register" || this.router.url === "/dashboard"){
+      return false
+    }else return true
+  }
 }

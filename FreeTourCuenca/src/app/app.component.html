@@ -1,5 +1,5 @@
-<app-menu></app-menu>
+<app-menu *ngIf="showMenuAndFooter()"></app-menu>
 <div id="main" class="container-fluid">
     <router-outlet></router-outlet>
 </div>
-<app-footer></app-footer>
+<app-footer *ngIf="showMenuAndFooter()"></app-footer>
