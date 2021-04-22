@@ -6,6 +6,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: "blog", component: BlogComponent },
   { path: "contact", component: ContactComponent },
   { path: "login", component:LoginComponent },
-  { path: "dashboard", component:DashboardComponent }
+  { path: "dashboard", component:DashboardComponent },
+  { path: "booking", component:BookingComponent }
 ];
 
 @NgModule({

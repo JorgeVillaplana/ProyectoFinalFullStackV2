@@ -12,6 +12,8 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LegalComponent } from './legal/legal.component';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       BlogComponent,
       ContactComponent,
       LoginComponent,
-      DashboardComponent
+      DashboardComponent,
+      LegalComponent,
+      BookingComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
