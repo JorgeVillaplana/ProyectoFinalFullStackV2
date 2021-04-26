@@ -14,27 +14,29 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LegalComponent } from './legal/legal.component';
 import { BookingComponent } from './booking/booking.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-      HomeComponent,
-      MenuComponent,
-      FooterComponent,
-      ToursComponent,
-      BlogComponent,
-      ContactComponent,
-      LoginComponent,
-      DashboardComponent,
-      LegalComponent,
-      BookingComponent,
-   ],
+    HomeComponent,
+    MenuComponent,
+    FooterComponent,
+    ToursComponent,
+    BlogComponent,
+    ContactComponent,
+    LoginComponent,
+    DashboardComponent,
+    LegalComponent,
+    BookingComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
