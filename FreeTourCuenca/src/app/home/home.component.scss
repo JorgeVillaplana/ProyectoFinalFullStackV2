@@ -10,6 +10,12 @@
             padding: 45px;
             border: none;
             border-radius: 5%;
+            margin-left: 150px;
+            transition-duration: 0.3s;
+            box-shadow: 3px 3px #888888;
+        }
+        button:hover {
+          background-color: rgb(226, 226, 108);
         }
     }
     .right-item {

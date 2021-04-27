@@ -19,24 +19,24 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
-      HomeComponent,
-      MenuComponent,
-      FooterComponent,
-      ToursComponent,
-      BlogComponent,
-      ContactComponent,
-      LoginComponent,
-      DashboardComponent,
-      LegalComponent,
-      BookingComponent
-   ],
+    HomeComponent,
+    MenuComponent,
+    FooterComponent,
+    ToursComponent,
+    BlogComponent,
+    ContactComponent,
+    LoginComponent,
+    DashboardComponent,
+    LegalComponent,
+    BookingComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
