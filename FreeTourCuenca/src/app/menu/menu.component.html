@@ -1,61 +1,52 @@
 <div class="container nav-bar">
-    <div class="row social-media-bar">
-        <div class="col-10 media-bar-left">
-            <a href="mailto:????@??.com">noname@somemail.com</a>
-        </div>
-        <div class="col-2 media-bar-right">
-            <div class="icon-bar row">
-                <div class="col">
-                    <a href="#" class="facebook" target="_blank" matTooltip="Facebook">
-                        <fa-icon [icon]="faFacebookSquare"></fa-icon>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
-                        <fa-icon [icon]="faTwitterSquare"></fa-icon>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="instagram" target="_blank" matTooltip="Instagram">
-                        <fa-icon [icon]="faInstagram"></fa-icon>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
-                        <fa-icon [icon]="faYoutube"></fa-icon>
-                    </a>
-                </div>
-            </div>
+  <div class="row social-media-bar">
+    <div class="col-10 media-bar-left">
+      <a href="mailto:????@??.com" id="correo">✉️ noname@somemail.com</a>
+    </div>
+    <div class="col-2 media-bar-right">
+      <div class="icon-bar row">
+        <div class="col">
+          <a href="#" class="facebook" target="_blank" matTooltip="Facebook">
+            <fa-icon [icon]="faFacebookSquare"></fa-icon>
+          </a>
         </div>
         <div class="col">
-            <a href="#" class="instagram" target="_blank" matTooltip="Instagram">
-                <fa-icon [icon]="faInstagram"></fa-icon>
-            </a>
+          <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
+            <fa-icon [icon]="faTwitterSquare"></fa-icon>
+          </a>
         </div>
         <div class="col">
-            <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
-                <fa-icon [icon]="faYoutube"></fa-icon>
-            </a>
+          <a href="#" class="instagram" target="_blank" matTooltip="Instagram">
+            <fa-icon [icon]="faInstagram"></fa-icon>
+          </a>
         </div>
+        <div class="col">
+          <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
+            <fa-icon [icon]="faYoutube"></fa-icon>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="logo">
-        <img src="../../assets/images/temp.gif" alt="Logo freetour">
-    </div>
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-current="page">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/search']" routerLinkActive="active">ENG</a>
-        </li>
-    </ul>
+  </div>
+  <div class="logo">
+    <img src="../../assets/images/temp.gif" alt="Logo freetour">
+  </div>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        aria-current="page">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/search']" routerLinkActive="active">ENG</a>
+    </li>
+  </ul>
 </div>
