@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuAsideComponent } from './menu-aside.component';
+import { CookiesComponent } from './cookies.component';
 
-describe('MenuAsideComponent', () => {
-  let component: MenuAsideComponent;
-  let fixture: ComponentFixture<MenuAsideComponent>;
+describe('CookiesComponent', () => {
+  let component: CookiesComponent;
+  let fixture: ComponentFixture<CookiesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuAsideComponent ]
+      declarations: [ CookiesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuAsideComponent);
+    fixture = TestBed.createComponent(CookiesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

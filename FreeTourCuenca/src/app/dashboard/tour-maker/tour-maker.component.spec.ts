@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuAsideComponent } from './menu-aside.component';
+import { TourMakerComponent } from './tour-maker.component';
 
-describe('MenuAsideComponent', () => {
-  let component: MenuAsideComponent;
-  let fixture: ComponentFixture<MenuAsideComponent>;
+describe('TourMakerComponent', () => {
+  let component: TourMakerComponent;
+  let fixture: ComponentFixture<TourMakerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuAsideComponent ]
+      declarations: [ TourMakerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuAsideComponent);
+    fixture = TestBed.createComponent(TourMakerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

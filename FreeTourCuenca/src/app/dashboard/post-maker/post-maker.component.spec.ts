@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuAsideComponent } from './menu-aside.component';
+import { PostMakerComponent } from './post-maker.component';
 
-describe('MenuAsideComponent', () => {
-  let component: MenuAsideComponent;
-  let fixture: ComponentFixture<MenuAsideComponent>;
+describe('PostMakerComponent', () => {
+  let component: PostMakerComponent;
+  let fixture: ComponentFixture<PostMakerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuAsideComponent ]
+      declarations: [ PostMakerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuAsideComponent);
+    fixture = TestBed.createComponent(PostMakerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

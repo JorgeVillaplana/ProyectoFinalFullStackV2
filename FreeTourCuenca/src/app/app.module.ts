@@ -15,6 +15,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LegalComponent } from './legal/legal.component';
 import { BookingComponent } from './booking/booking.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { CookiesComponent } from './cookies/cookies.component';
+import { MenuAsideComponent } from './dashboard/menu-aside/menu-aside.component';
+import { PostMakerComponent } from './dashboard/post-maker/post-maker.component';
+import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     DashboardComponent,
     LegalComponent,
     BookingComponent,
+    PrivacyPolicyComponent,
+    CookiesComponent,
+    MenuAsideComponent,
+    PostMakerComponent,
+    TourMakerComponent,
   ],
   imports: [
     BrowserModule,
