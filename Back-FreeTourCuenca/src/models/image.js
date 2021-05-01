@@ -2,10 +2,9 @@ const mongoose = require("mongoose");
 const SchemaMongo = mongoose.Schema;
 
 const Schema = new SchemaMongo({
-    mail: { type: String, unique: true },
-    password: String,
+    route: String,
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("user", Schema);
+module.exports = mongoose.model("image", Schema);
