@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const SchemaMongo = mongoose.Schema
 
 const Schema = new SchemaMongo({
-    code: { type: String, unique: true },
+    code: String,
     text: String,
     language: String,
     savedAt: { type: Date, default: Date.now },

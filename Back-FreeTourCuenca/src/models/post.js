@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
+const Image = require('image')
 const SchemaMongo = mongoose.Schema
 
 const Schema = new SchemaMongo({
-    title: { type: String, unique: true },
+    code: String,
+    title: String,
     text: String,
-    image: String,
+    image: Image,
     category: String,
     language: { type: String, default: "es" },
     savedAt: { type: Date, default: Date.now },
