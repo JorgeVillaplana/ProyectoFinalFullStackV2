@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
-const Image = require("image")
+const Image = require("./image")
 const SchemaMongo = mongoose.Schema;
 
 const Schema = new SchemaMongo({
     code: String,
     title: String,
     description: String,
-    image: Image,
+    image: String, //Cambiar para que coja el tipo Image
     map: String,
     language: String,
     category: String,

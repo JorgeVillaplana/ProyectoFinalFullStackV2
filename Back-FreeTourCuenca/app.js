@@ -25,7 +25,7 @@ connection.then(() => {
         console.log("Server initialized")
     })
 }).catch(function(err) {
-    console.log(`$(err) Error attempting to connect to database`)
+    console.log(err + 'Error attempting to connect to database')
 })
 
 app.use(routes)

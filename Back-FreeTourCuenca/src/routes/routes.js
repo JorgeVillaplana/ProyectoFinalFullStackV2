@@ -6,6 +6,37 @@ const textController = require("../controllers/text")
 const tourController = require("../controllers/tour")
 const userController = require("../controllers/user")
 
+router.get("/images", imageController.getImages)
+router.post("/save-image", imageController.saveImage)
+router.get("/image/:id", imageController.getImage)
+router.put("/image/:id", imageController.updateImage)
+router.delete("/image/:id", imageController.deleteImage)
 
+router.get("/posts", postController.getPosts)
+router.post("/save-post", postController.savePost)
+router.get("/post/:id", postController.getPost)
+router.get("/postc/:code", postController.getPostByCode)
+router.put("/post/:id", postController.updatePost)
+router.delete("/post/:id", postController.deletePost)
+
+router.get("/texts", textController.getTexts)
+router.post("/save-text", textController.saveText)
+router.get("/text/:id", textController.getText)
+router.get("/textc/:code", textController.getTextByCode)
+router.put("/text/:id", textController.updateText)
+router.delete("/text/:id", textController.deleteText)
+
+router.get("/users", userController.getUsers)
+router.post("/save-user", userController.saveUser)
+router.get("/user/:id", userController.getUser)
+router.put("/user/:id", userController.updateUser)
+router.delete("/user/:id", userController.deleteUser)
+
+router.get("/tours", tourController.getTours)
+router.post("/save-tour", tourController.saveTour)
+router.get("/tour/:id", tourController.getTour)
+router.get("/tourc/:code", tourController.getTourByCode)
+router.put("/tour/:id", tourController.updateTour)
+router.delete("/tour/:id", tourController.deleteTour)
 
 module.exports = router

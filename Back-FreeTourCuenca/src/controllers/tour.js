@@ -101,5 +101,4 @@ controller.deleteTour = async(req, res) => {
     }
 }
 
-
 module.exports = controller

@@ -100,5 +100,4 @@ controller.deletePost = async(req, res) => {
     }
 }
 
-
 module.exports = controller

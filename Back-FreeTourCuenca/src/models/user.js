@@ -5,6 +5,7 @@ const Schema = new SchemaMongo({
     mail: { type: String, unique: true },
     name: String,
     password: String,
+    role: String,
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

@@ -73,5 +73,4 @@ controller.deleteImage = async(req, res) => {
     }
 }
 
-
 module.exports = controller

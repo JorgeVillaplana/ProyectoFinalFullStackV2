@@ -6,14 +6,15 @@ controller.saveUser = async(req, res) => {
     const mail = req.body.mail
     const name = req.body.name
     const password = req.body.password
+    const role = req.body.role
 
-    if (!mail || !name || !password) {
+    if (!mail || !name || !password || !role) {
         res.status(400).send()
         return
     }
 
     try {
-        const user = new User({ mail: mail, name: name, password: password })
+        const user = new User({ mail: mail, name: name, password: password, role: role })
         user.save()
         res.send()
     } catch (error) {
@@ -48,13 +49,14 @@ controller.updateUser = async(req, res) => {
     const mail = req.body.mail
     const name = req.body.name
     const password = req.body.password
+    const role = req.body.role
 
     if (!route) {
         res.status(400).send()
     }
 
     try {
-        await User.findByIdAndUpdate(req.params.id, { mail: mail, name: name, password: password, updatedAt: Date.now() })
+        await User.findByIdAndUpdate(req.params.id, { mail: mail, name: name, password: password, role: role, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
