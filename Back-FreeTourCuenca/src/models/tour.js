@@ -6,6 +6,9 @@ const Schema = new SchemaMongo({
     code: String,
     title: String,
     description: String,
+    timeInit: Number,
+    duration: Number,
+    seats: Number,
     image: String, //Cambiar para que coja el tipo Image
     map: String,
     language: String,
