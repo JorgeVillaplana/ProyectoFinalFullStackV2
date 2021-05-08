@@ -1,1 +1,22 @@
-<p>dashboard works!</p>
+<div class="container">
+  <nav class="navbar navbar-expand-xl navbar-light" style="background-color: #0b5081;">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/dashboard']">DASHBOARD</a>
+      <div class="row">
+        <div class="col-2">
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Usuario
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <app-menu-aside></app-menu-aside>
+</div>
+<router-outlet></router-outlet>

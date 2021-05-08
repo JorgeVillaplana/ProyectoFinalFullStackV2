@@ -9,7 +9,10 @@ export class MenuAsideComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
+
+
 
 }
