@@ -21,6 +21,7 @@ import { CookiesComponent } from './cookies/cookies.component';
 import { MenuAsideComponent } from './dashboard/menu-aside/menu-aside.component';
 import { PostMakerComponent } from './dashboard/post-maker/post-maker.component';
 import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component'
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
