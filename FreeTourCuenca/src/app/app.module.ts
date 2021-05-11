@@ -22,6 +22,7 @@ import { MenuAsideComponent } from './dashboard/menu-aside/menu-aside.component'
 import { PostMakerComponent } from './dashboard/post-maker/post-maker.component';
 import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component';
 import {MatIconModule} from '@angular/material/icon';
+import { TranslateComponent } from './dashboard/translate/translate.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatIconModule} from '@angular/material/icon';
     MenuAsideComponent,
     PostMakerComponent,
     TourMakerComponent,
+    TranslateComponent,
   ],
   imports: [
     BrowserModule,
