@@ -1,12 +1,12 @@
+@import "../../styles";
 .nav-bar {
   max-width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  white-space: nowrap;
   height: 20vh;
   padding-bottom: 10px;
-  background-color: black;
+  background-color: $color-support-one;
   z-index: 9999;
   #correo {
     color: rgb(206, 241, 255);
@@ -14,14 +14,12 @@
     font-size: 16px;
   }
   #correo:hover {
-    color: rgba(251, 255, 0, 0.75);
+    color: $color-corporative;
     text-decoration: none;
   }
   /*CSS para los iconos de las redes sociales */
   /* Style the icon bar links */
   .icon-bar {
-    white-space: nowrap;
-
     a {
       margin-top: 10px;
       display: block;
@@ -31,10 +29,6 @@
       font-size: 20px;
     }
     /* Style the social media icons with color, if you want */
-    &:hover {
-      background-color: #000;
-    }
-
     .facebook {
       /*background: #3B5998;
             color: white;*/
@@ -43,7 +37,6 @@
     .facebook:hover {
       color: rgba(75, 100, 155, 0.75);
     }
-
     .twitter {
       /*background: #55ACEE;
             color: white;*/
@@ -52,7 +45,6 @@
     .twitter:hover {
       color: rgba(85, 172, 238, 0.75);
     }
-
     .instagram {
       color: rgb(255, 199, 250);
     }
@@ -68,12 +60,6 @@
       color: rgba(187, 0, 0, 0.75);
     }
   }
-
-  .navbar {
-    float: right;
-    white-space: nowrap;
-  }
-
   .logo {
     float: left;
     margin-left: 2%;
@@ -93,53 +79,7 @@
     }
     &.active {
       font-weight: 800;
-      color: rgb(250, 255, 0);
-    }
-  }
-
-  .hamburger {
-    display: none;
-    color: white;
-    margin-top: 2em;
-    margin-right: 4em;
-  }
-
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: yellow;
-  }
-
-  @media only screen and (max-width: 768px) {
-    #mainnav {
-      position: fixed;
-      left: -100%;
-      top: 5rem;
-      flex-direction: column;
-      background-color: #fff;
-      width: 100%;
-      border-radius: 10px;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 10px 27px rgba(255, 255, 255, 0.05);
-    }
-
-    #mainnav.active {
-      left: 0;
-    }
-
-    .nav-item {
-      margin: 2.5rem 0;
-    }
-
-    .hamburger {
-      color: yellow;
-      display: block;
-      cursor: pointer;
+      color: $color-corporative;
     }
   }
 }
