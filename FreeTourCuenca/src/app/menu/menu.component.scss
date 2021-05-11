@@ -3,6 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  white-space: nowrap;
   height: 20vh;
   padding-bottom: 10px;
   background-color: black;
@@ -19,6 +20,8 @@
   /*CSS para los iconos de las redes sociales */
   /* Style the icon bar links */
   .icon-bar {
+    white-space: nowrap;
+
     a {
       margin-top: 10px;
       display: block;
@@ -66,6 +69,11 @@
     }
   }
 
+  .navbar {
+    float: right;
+    white-space: nowrap;
+  }
+
   .logo {
     float: left;
     margin-left: 2%;
@@ -86,6 +94,52 @@
     &.active {
       font-weight: 800;
       color: rgb(250, 255, 0);
+    }
+  }
+
+  .hamburger {
+    display: none;
+    color: white;
+    margin-top: 2em;
+    margin-right: 4em;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: yellow;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #mainnav {
+      position: fixed;
+      left: -100%;
+      top: 5rem;
+      flex-direction: column;
+      background-color: #fff;
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(255, 255, 255, 0.05);
+    }
+
+    #mainnav.active {
+      left: 0;
+    }
+
+    .nav-item {
+      margin: 2.5rem 0;
+    }
+
+    .hamburger {
+      color: yellow;
+      display: block;
+      cursor: pointer;
     }
   }
 }
