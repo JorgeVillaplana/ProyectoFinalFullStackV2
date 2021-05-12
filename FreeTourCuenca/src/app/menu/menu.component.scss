@@ -1,134 +1,145 @@
-@import '../../styles';
+@import "../../styles";
 .nav-bar {
-    max-width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  height: 20vh;
+  padding-bottom: 10px;
+  background-color: $color-support-one;
+  z-index: 9999;
+  #correo {
+    color: rgb(206, 241, 255);
+    text-decoration: none;
+    font-size: 16px;
+    :hover {
+      color: $color-corporative;
+      text-decoration: none;
+    }
+  }
+  /*CSS para los iconos de las redes sociales */
+  /* Style the icon bar links */
+  .navbar-social {
     white-space: nowrap;
-    height: 20vh;
-    padding-bottom: 10px;
-    background-color: $color-support-one;
-    z-index: 9999;
-    #correo {
-        color: rgb(206, 241, 255);
-        text-decoration: none;
-        font-size: 16px;
-         :hover {
-            color: $color-corporative;
-            text-decoration: none;
-        }
+    margin-top: 20px;
+    margin-right: 5em;
+    float: right;
+
+    a {
+      margin-left: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      color: rgb(255, 255, 255);
+      font-size: 20px;
     }
-    /*CSS para los iconos de las redes sociales */
-    /* Style the icon bar links */
-    .icon-bar {
-        white-space: nowrap;
-        a {
-            margin-top: 10px;
-            display: block;
-            text-align: center;
-            transition: all 0.3s ease;
-            color: rgb(255, 255, 255);
-            font-size: 20px;
-        }
-        /* Style the social media icons with color, if you want */
-        &:hover {
-            background-color: #000;
-        }
-        .facebook {
-            /*background: #3B5998;
+    /* Style the social media icons with color, if you want */
+    &:hover {
+      background-color: #000;
+    }
+    .facebook {
+      /*background: #3B5998;
             color: white;*/
-            color: #4b649b;
-        }
-        .facebook:hover {
-            color: rgba(75, 100, 155, 0.75);
-        }
-        .twitter {
-            /*background: #55ACEE;
+      color: #4b649b;
+    }
+    .facebook:hover {
+      color: rgba(75, 100, 155, 0.75);
+    }
+    .twitter {
+      /*background: #55ACEE;
             color: white;*/
-            color: #55acee;
-        }
-        .twitter:hover {
-            color: rgba(85, 172, 238, 0.75);
-        }
-        .instagram {
-            color: rgb(255, 199, 250);
-        }
-        .instagram:hover {
-            color: rgba(255, 109, 243, 0.75);
-        }
-        .youtube {
-            /*background: #bb0000;
+      color: #55acee;
+    }
+    .twitter:hover {
+      color: rgba(85, 172, 238, 0.75);
+    }
+    .instagram {
+      color: rgb(255, 199, 250);
+    }
+    .instagram:hover {
+      color: rgba(255, 109, 243, 0.75);
+    }
+    .youtube {
+      /*background: #bb0000;
             color: white;*/
-            color: #bb0000;
-        }
-        .youtube:hover {
-            color: rgba(187, 0, 0, 0.75);
-        }
+      color: #bb0000;
     }
-    .navbar {
-        float: right;
-        white-space: nowrap;
+    .youtube:hover {
+      color: rgba(187, 0, 0, 0.75);
     }
-    .logo {
-        float: left;
-        margin-left: 2%;
-        height: 60%;
-        img {
-            height: 80%;
-            width: auto;
-        }
+  }
+
+  .navbar {
+    float: right;
+    white-space: nowrap;
+    margin-right: 2em;
+
+    #engl {
+      max-height: 27px;
+      max-width: 27px;
     }
-    .nav-link {
-        font-size: 22px;
-        padding: 30px 30px;
-        color: rgb(255, 255, 255);
-        &:hover {
-            color: rgba(251, 255, 0, 0.75);
-            font-weight: bolder;
-        }
-        &.active {
-            font-weight: 800;
-            color: rgb(250, 255, 0);
-        }
+  }
+  .logo {
+    float: left;
+    margin-left: 2%;
+    height: 60%;
+    img {
+      height: 80%;
+      width: auto;
+    }
+  }
+
+  .nav-link {
+    font-size: 22px;
+    padding: 30px 30px;
+    color: rgb(255, 255, 255);
+    &:hover {
+      color: rgba(251, 255, 0, 0.75);
+      font-weight: bolder;
+    }
+    &.active {
+      font-weight: 800;
+      color: rgb(250, 255, 0);
+    }
+  }
+  .hamburger {
+    display: none;
+    color: white;
+    margin-top: 2em;
+    margin-right: 4em;
+  }
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: yellow;
+  }
+  @media only screen and (max-width: 768px) {
+    #mainnav {
+      position: fixed;
+      left: -100%;
+      top: 5rem;
+      flex-direction: column;
+      background-color: #fff;
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(255, 255, 255, 0.05);
+    }
+    #mainnav.active {
+      left: 0;
+    }
+    .nav-item {
+      margin: 2.5rem 0;
     }
     .hamburger {
-        display: none;
-        color: white;
-        margin-top: 2em;
-        margin-right: 4em;
+      color: yellow;
+      display: block;
+      cursor: pointer;
     }
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: yellow;
-    }
-    @media only screen and (max-width: 768px) {
-        #mainnav {
-            position: fixed;
-            left: -100%;
-            top: 5rem;
-            flex-direction: column;
-            background-color: #fff;
-            width: 100%;
-            border-radius: 10px;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 10px 27px rgba(255, 255, 255, 0.05);
-        }
-        #mainnav.active {
-            left: 0;
-        }
-        .nav-item {
-            margin: 2.5rem 0;
-        }
-        .hamburger {
-            color: yellow;
-            display: block;
-            cursor: pointer;
-        }
-    }
+  }
 }

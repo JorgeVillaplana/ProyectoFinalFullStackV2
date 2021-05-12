@@ -4,27 +4,27 @@
       <a href="mailto:????@??.com" id="correo">✉️ noname@somemail.com</a>
     </div>
     <div class="col-2 media-bar-right">
-      <div class="icon-bar row">
-        <div class="col">
-          <a href="#" class="facebook" target="_blank" matTooltip="Facebook">
-            <fa-icon [icon]="faFacebookSquare"></fa-icon>
-          </a>
-        </div>
-        <div class="col">
-          <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
-            <fa-icon [icon]="faTwitterSquare"></fa-icon>
-          </a>
-        </div>
-        <div class="col">
-          <a href="#" class="instagram" target="_blank" matTooltip="Instagram">
-            <fa-icon [icon]="faInstagram"></fa-icon>
-          </a>
-        </div>
-        <div class="col">
-          <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
-            <fa-icon [icon]="faYoutube"></fa-icon>
-          </a>
-        </div>
+      <div class="navbar-social">
+
+        <a href="#" class="facebook" target="_blank" matTooltip="Facebook">
+          <fa-icon [icon]="faFacebookSquare" alt="Facebook"></fa-icon>
+        </a>
+
+
+        <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
+          <fa-icon [icon]="faTwitterSquare" alt="Twitter"></fa-icon>
+        </a>
+
+
+        <a href="#" class="instagram" target="_blank" matTooltip="Instagram">
+          <fa-icon [icon]="faInstagram" alt="Instagram"></fa-icon>
+        </a>
+
+
+        <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
+          <fa-icon [icon]="faYoutube" alt="YouTube"></fa-icon>
+        </a>
+
       </div>
     </div>
   </div>
@@ -48,7 +48,8 @@
         <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/search']" routerLinkActive="active">ENG</a>
+        <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active"><img src="../../assets/images/english.svg"
+            id="engl"></a>
       </li>
     </ul>
     <div class="hamburger">

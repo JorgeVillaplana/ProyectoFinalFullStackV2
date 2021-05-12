@@ -1,0 +1,35 @@
+MENU
+inicio - home
+rutas - tours
+blog =
+contacto - contact us
+eng - esp
+
+
+LANDING
+Explora Toledo - Podemos poner "Discover Toledo" o dejarlo tal cual
+reserva ya - book now
+
+What is a FREE TOUR?
+Free Tours are guided visits conducted by a local guide, which do not have a fixed price in advance. At the end of the route you can, depending on how you enjoyed it, pay the guide what you wish. No commitments. (O lo que quiera poner aquí)
+
+
+
+RUTAS - TOURS
+tour name
+schedule / duration (según a lo que se refiera)
+capacity = X people
+
+CONTACTO
+CONTACT US o GET IN TOUCH
+name
+email
+phone
+message
+(send)
+
+FOOTER
+legal notice
+privacy policy
+cookies policy
+terms of use
