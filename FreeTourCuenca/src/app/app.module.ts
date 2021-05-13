@@ -23,9 +23,10 @@ import { PostMakerComponent } from './dashboard/post-maker/post-maker.component'
 import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component';
 import { TranslateComponent } from './dashboard/translate/translate.component';
 import {MatIconModule} from '@angular/material/icon';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     MenuComponent,
@@ -43,7 +44,8 @@ import {MatIconModule} from '@angular/material/icon';
     PostMakerComponent,
     TourMakerComponent,
     TranslateComponent,
-  ],
+      NotfoundComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

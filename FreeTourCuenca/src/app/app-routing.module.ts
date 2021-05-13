@@ -10,6 +10,7 @@ import { BookingComponent } from './booking/booking.component';
 import { PostMakerComponent } from './dashboard/post-maker/post-maker.component';
 import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component';
 import { TranslateComponent } from './dashboard/translate/translate.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
@@ -23,7 +24,9 @@ const routes: Routes = [
     { path: "tourMaker", component:TourMakerComponent },
     { path: "translate", component:TranslateComponent }
   ] },
-  { path: "booking", component:BookingComponent }
+  { path: "booking", component:BookingComponent },
+  { path: "404", component: NotfoundComponent },
+  { path: "**", redirectTo: "/404" },
 ];
 
 @NgModule({
