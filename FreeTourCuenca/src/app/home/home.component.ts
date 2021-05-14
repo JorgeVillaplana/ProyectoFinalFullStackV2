@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToBooking(){
-    this.router.navigate(['/booking']);
+    this.router.navigate(['/tours']);
   }
 
 }
