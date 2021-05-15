@@ -65,7 +65,7 @@ controller.getTourByCode = async(req, res) => {
 }
 
 controller.updateTour = async(req, res) => {
-    const code = req.body.code
+    const code = req.body.code //Cambiar para que sea aleatorio "Math.random().toString(36).slice(2)"
     const title = req.body.title
     const description = req.body.description
     const image = req.body.image

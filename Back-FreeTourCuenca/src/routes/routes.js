@@ -39,4 +39,10 @@ router.get("/tourc/:code", tourController.getTourByCode)
 router.put("/tour/:id", tourController.updateTour)
 router.delete("/tour/:id", tourController.deleteTour)
 
+router.get("/guides", userController.getUsers)
+router.post("/save-guide", userController.saveUser)
+router.get("/guide/:id", userController.getUser)
+router.put("/guide/:id", userController.updateUser)
+router.delete("/guide/:id", userController.deleteUser)
+
 module.exports = router

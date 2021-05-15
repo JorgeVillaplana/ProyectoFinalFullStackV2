@@ -30,10 +30,10 @@ controller.getImages = async(req, res) => {
 }
 
 controller.getImage = async(req, res) => {
-
     const id = req.params.id
+
     try {
-        const image = await image.findById(id)
+        const image = await Image.findById(id)
         res.json(image)
     } catch (err) {
         console.log(err)
@@ -58,7 +58,7 @@ controller.updateImage = async(req, res) => {
 }
 
 controller.deleteImage = async(req, res) => {
-    let id = req.params.id
+    const id = req.params.id
 
     if (!id) {
         res.status(400).send()

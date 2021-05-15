@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
-const Image = require('./image')
 const SchemaMongo = mongoose.Schema
 
 const Schema = new SchemaMongo({
-    code: String,
+    code: { type: String, default: Math.random().toString(36).slice(2) },
     title: String,
     text: String,
-    image: String, //Cambiar para que coja el tipo Image
+    image: { type: Schema.Types.ObjectId, ref: "image" },
     category: String,
     language: { type: String, default: "es" },
+    important: { type: Bollean, default: false },
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

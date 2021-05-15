@@ -1,18 +1,19 @@
 const mongoose = require("mongoose");
-const Image = require("./image")
 const SchemaMongo = mongoose.Schema;
 
 const Schema = new SchemaMongo({
-    code: String,
+    code: { type: String, default: Math.random().toString(36).slice(2) },
     title: String,
     description: String,
     timeInit: Number,
     duration: Number,
     seats: Number,
-    image: String, //Cambiar para que coja el tipo Image
+    image: { type: Schema.Types.ObjectId, ref: "image" },
+    guide: { type: Schema.Types.ObjectId, ref: "guide" },
     map: String,
     language: String,
     category: String,
+    special: [],
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

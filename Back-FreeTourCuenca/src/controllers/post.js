@@ -10,15 +10,16 @@ controller.savePost = async(req, res) => {
     const image = req.body.image
     const category = req.body.category
     const language = req.body.language
+    const important = req.body.important
 
 
-    if (!code || !title || !text || !image || !category || !language) {
+    if (!code || !title || !text || !image || !category || !language || !important) {
         res.status(400).send()
         return
     }
 
     try {
-        const post = new Post({ code: code, title: title, text: text, category: category, language: language })
+        const post = new Post({ code: code, title: title, text: text, category: category, language: language, important: important })
         post.save()
         res.send()
     } catch (error) {
@@ -65,19 +66,20 @@ controller.getPostByCode = async(req, res) => {
 }
 
 controller.updatePost = async(req, res) => {
-    const code = req.body.code
+    const code = req.body.code //Cambiar para que sea aleatorio "Math.random().toString(36).slice(2)"
     const title = req.body.title
     const text = req.body.text
     const image = req.body.image
     const category = req.body.category
     const language = req.body.language
+    const important = req.body.important
 
     if (!route) {
         res.status(400).send()
     }
 
     try {
-        await Post.findByIdAndUpdate(req.params.id, { code: code, title: title, text: text, category: category, language: language, updatedAt: Date.now() })
+        await Post.findByIdAndUpdate(req.params.id, { code: code, title: title, text: text, image: image, category: category, language: language, important: important, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
