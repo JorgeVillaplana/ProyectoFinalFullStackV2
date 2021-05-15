@@ -65,6 +65,12 @@
     .youtube:hover {
       color: rgba(187, 0, 0, 0.75);
     }
+    .tripadvisor {
+      color: #33e0a1;
+    }
+    .tripadvisor:hover {
+      color: rgba(51, 224, 161, 0.75);
+    }
   }
 
   .navbar {
@@ -84,9 +90,14 @@
     float: left;
     margin-left: 2%;
     height: 60%;
+
     img {
       height: 100%;
       width: auto;
+      border-radius: 2%;
+    }
+    img:hover {
+      filter: drop-shadow(1px 1px 2px rgb(255, 230, 2));
     }
   }
 

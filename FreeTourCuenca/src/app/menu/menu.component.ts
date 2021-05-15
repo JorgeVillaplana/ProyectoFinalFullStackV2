@@ -4,6 +4,8 @@ import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faTripadvisor } from '@fortawesome/free-brands-svg-icons';
+
 
 
 @Component({
@@ -19,6 +21,7 @@ export class MenuComponent implements OnInit {
   faTwitterSquare = faTwitterSquare;
   faInstagram = faInstagram;
   faYoutube = faYoutube;
+  faTripadvisor = faTripadvisor;
 
   ngOnInit(): void {
   }
