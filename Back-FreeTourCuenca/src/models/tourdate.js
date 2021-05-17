@@ -3,9 +3,8 @@ const mongoose = require("mongoose");
 const SchemaMongo = mongoose.Schema;
 
 const Schema = new SchemaMongo({
-    tour: { type: Schema.Types.ObjectId, ref: "tour" },
-    date: Number, //Cambiar por fecha
-    timeInit: Number, //Cambiar por hora de inicio, o hacer conversión en el controller
+    date: Date, //Cambiar por fecha
+    //timeInit: Number, Cambiar por hora de inicio, o hacer conversión en el controller
     remainingSeats: Number
 })
 

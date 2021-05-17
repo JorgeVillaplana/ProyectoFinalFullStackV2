@@ -1,20 +1,17 @@
 const controller = {}
 const Guide = require('../models/guide')
+const validator = require('../validators/guide')
 
 controller.saveGuide = async(req, res) => {
-    const name = req.body.name
-    const surname = req.body.name
-    const dni = req.body.dni
-    const phone = req.body.phone
-    const email = req.body.email
+    const valid = validator.validate(req.body)
 
 
-    if (!name || !surname || !dni || !phone || !email) {
+    if (!valid) {
         res.status(400).send()
     }
 
     try {
-        const guide = new Guide({ name: name, surname: surname, dni: dni, phone: phone, email: email })
+        const guide = new Guide({ name: req.body.name, surname: req.body.surname, dni: req.body.dni, phone: req.body.phone, email: req.body.email })
         guide.save()
         res.send()
     } catch (err) {
@@ -45,27 +42,23 @@ controller.getGuide = async(req, res) => {
     }
 }
 
-controller.updateImage = async(req, res) => {
-    const name = req.body.name
-    const surname = req.body.name
-    const dni = req.body.dni
-    const phone = req.body.phone
-    const email = req.body.email
+controller.updateGuide = async(req, res) => {
+    const valid = validator.validate(req.body)
 
 
-    if (!name || !surname || !dni || !phone || !email) {
+    if (!valid) {
         res.status(400).send()
     }
 
     try {
-        await Image.findByIdAndUpdate(req.params.id, { name: name, surname: surname, dni: dni, email: email, phone: phone, updatedAt: Date.now() })
+        await Guide.findByIdAndUpdate(req.params.id, { name: req.body.name, surname: req.body.surname, dni: req.body.dni, email: req.body.email, phone: req.body.phone, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
     }
 }
 
-controller.deleteImage = async(req, res) => {
+controller.deleteGuide = async(req, res) => {
     const id = req.params.id
 
     if (!id) {
@@ -73,7 +66,7 @@ controller.deleteImage = async(req, res) => {
     }
 
     try {
-        await Image.findByIdAndDelete(id)
+        await Guide.findByIdAndDelete(id)
         res.status(204).send()
     } catch (err) {
         console.log(err)

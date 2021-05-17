@@ -1,17 +1,17 @@
 const controller = {}
 const Image = require('../models/image')
+const validator = require('../validators/image')
 
 controller.saveImage = async(req, res) => {
+    const valid = validator.validate(req.body)
 
-    const route = req.body.route
 
-    if (!route) {
+    if (!valid) {
         res.status(400).send()
-        return
     }
 
     try {
-        const image = new Image({ route: route })
+        const image = new Image({ route: req.body.route })
         image.save()
         res.send()
     } catch (error) {
@@ -43,14 +43,15 @@ controller.getImage = async(req, res) => {
 }
 
 controller.updateImage = async(req, res) => {
-    const route = req.body.route
+    const valid = validator.validate(req.body)
 
-    if (!route) {
+
+    if (!valid) {
         res.status(400).send()
     }
 
     try {
-        await Image.findByIdAndUpdate(req.params.id, { route: route, updatedAt: Date.now() })
+        await Image.findByIdAndUpdate(req.params.id, { route: req.body.route, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)

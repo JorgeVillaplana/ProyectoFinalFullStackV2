@@ -6,7 +6,7 @@ const schema = joi.object({
     description: joi.string().required(),
     duration: joi.number().required(), //Cambiar para que sea una cantidad de tiempo
     seats: joi.number().required(),
-    image: joi.string(), //Cambiar para que sea el id de una imagen
+    image: joi.string().required(), //Cambiar para que sea el id de una imagen
     guide: joi.string().required(), //Cambiar para que sea el id de un guía
     map: joi.string(),
     language: joi.string().min(2).max(3).required()

@@ -8,6 +8,7 @@ const Schema = new SchemaMongo({
     image: { type: Schema.Types.ObjectId, ref: "image" },
     language: { type: String, default: "es" },
     important: { type: Boolean, default: false },
+    categories: { type: Schema.Types.ObjectId, ref: "post.categories" },
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

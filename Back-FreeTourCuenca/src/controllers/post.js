@@ -1,21 +1,13 @@
 const controller = {}
 const Post = require('../models/post')
-const Image = require('../models/image')
+
 
 controller.savePost = async(req, res) => {
-
-    const code = req.body.code
-    const title = req.body.title
-    const text = req.body.text
-    const image = req.body.image
-    const category = req.body.category
-    const language = req.body.language
-    const important = req.body.important
+    const valid = validator.validate(req.body)
 
 
-    if (!code || !title || !text || !image || !category || !language || !important) {
+    if (!valid) {
         res.status(400).send()
-        return
     }
 
     try {
