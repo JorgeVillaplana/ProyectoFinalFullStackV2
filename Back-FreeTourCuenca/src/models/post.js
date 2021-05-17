@@ -6,9 +6,8 @@ const Schema = new SchemaMongo({
     title: String,
     text: String,
     image: { type: Schema.Types.ObjectId, ref: "image" },
-    category: String,
     language: { type: String, default: "es" },
-    important: { type: Bollean, default: false },
+    important: { type: Boolean, default: false },
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

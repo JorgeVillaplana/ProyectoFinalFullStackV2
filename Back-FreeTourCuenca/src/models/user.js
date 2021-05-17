@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const SchemaMongo = mongoose.Schema;
 
 const Schema = new SchemaMongo({
-    mail: { type: String, unique: true },
+    email: { type: String, unique: true },
     name: String,
     password: String,
     role: String,
