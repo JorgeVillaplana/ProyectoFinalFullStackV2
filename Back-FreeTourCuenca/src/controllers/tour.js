@@ -1,24 +1,16 @@
 const controller = {}
 const Tour = require('../models/tour')
-const Image = require('../models/image')
+const validator = ('../validators/tour.js')
 
 controller.saveTour = async(req, res) => {
+    const valid = validator.validate(req.body)
 
-    const code = req.body.code
-    const title = req.body.title
-    const description = req.body.description
-    const image = req.body.image
-    const map = req.body.map
-    const language = req.body.language
-    const category = req.body.category
-
-    if (!code || !title || !description || !image || !map || !language || !category) {
+    if (!valid) {
         res.status(400).send()
-        return
     }
 
     try {
-        const tour = new Tour({ code: code, title: title, desciption: description, image: image, map: map, language: language, category: category })
+        const tour = new Tour({ code: req.body.code, title: req.body.title, categories: req.body.categories, desciption: req.body.description, duration: req.body.duration, seats: req.body.seats, image: req.body.image, guide: req.body.guide, map: req.body.map, language: req.body.language, tourdates: req.body.tourdates })
         tour.save()
         res.send()
     } catch (error) {
@@ -65,20 +57,14 @@ controller.getTourByCode = async(req, res) => {
 }
 
 controller.updateTour = async(req, res) => {
-    const code = req.body.code //Cambiar para que sea aleatorio "Math.random().toString(36).slice(2)"
-    const title = req.body.title
-    const description = req.body.description
-    const image = req.body.image
-    const map = req.body.map
-    const language = req.body.language
-    const category = req.body.category
+    const valid = validator.validate(req.body)
 
-    if (!route) {
+    if (!valid) {
         res.status(400).send()
     }
 
     try {
-        await Tour.findByIdAndUpdate(req.params.id, { code: code, title: title, desciption: description, image: image, map: map, language: language, category: category, updatedAt: Date.now() })
+        await Tour.findByIdAndUpdate(req.params.id, { code: req.body.code, title: req.body.title, categories: req.body.categories, desciption: req.body.description, duration: req.body.duration, seats: req.body.seats, image: req.body.image, guide: req.body.guide, map: req.body.map, language: req.body.language, tourdates: req.body.tourdates, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)

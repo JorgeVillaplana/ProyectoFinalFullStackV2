@@ -1,19 +1,16 @@
 const controller = {}
 const Text = require('../models/text')
+const validator = require('../validators/text')
 
 controller.saveText = async(req, res) => {
+    const valid = validator.validate(req.body)
 
-    const code = req.body.code
-    const text = req.body.text
-    const language = req.body.language
-
-    if (!code || !text || !language) {
+    if (!valid) {
         res.status(400).send()
-        return
     }
 
     try {
-        const text = new Text({ code: code, text: text, language: language })
+        const text = new Text({ code: req.body.code, text: req.body.text, language: req.body.language })
         text.save()
         res.send()
     } catch (error) {
@@ -59,16 +56,14 @@ controller.getTextByCode = async(req, res) => {
 }
 
 controller.updateText = async(req, res) => {
-    const code = req.body.code
-    const text = req.body.text
-    const language = req.body.language
+    const valid = validator.validate(req.body)
 
-    if (!route) {
+    if (!valid) {
         res.status(400).send()
     }
 
     try {
-        await Text.findByIdAndUpdate(req.params.id, { code: code, text: text, language: language, updatedAt: Date.now() })
+        await Text.findByIdAndUpdate(req.params.id, { code: req.body.code, text: req.body.text, language: req.body.language, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
