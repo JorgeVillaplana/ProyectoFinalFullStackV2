@@ -19,9 +19,7 @@ const schema = joi.object({
 function validate(body) {
     return schema.validate({
         name: body.name,
-        surname: body.surname,
         role: body.role,
-        phone: body.phone,
         email: body.email,
         password: body.password,
     }, { abortEarly: false });

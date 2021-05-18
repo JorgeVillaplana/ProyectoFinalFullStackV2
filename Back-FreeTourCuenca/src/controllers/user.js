@@ -1,20 +1,16 @@
 const controller = {}
 const User = require('../models/user')
+const validator = require('../validators/userSignup')
 
 controller.saveUser = async(req, res) => {
+    const valid = validator.validate(req.body)
 
-    const mail = req.body.mail
-    const name = req.body.name
-    const password = req.body.password
-    const role = req.body.role
-
-    if (!mail || !name || !password || !role) {
+    if (!valid) {
         res.status(400).send()
-        return
     }
 
     try {
-        const user = new User({ mail: mail, name: name, password: password, role: role })
+        const user = new User({ mail: req.body.mail, name: req.body.name, password: req.body.password, role: req.body.role })
         user.save()
         res.send()
     } catch (error) {
@@ -46,17 +42,14 @@ controller.getUser = async(req, res) => {
 }
 
 controller.updateUser = async(req, res) => {
-    const mail = req.body.mail
-    const name = req.body.name
-    const password = req.body.password
-    const role = req.body.role
+    const valid = validator.validate(req.body)
 
-    if (!route) {
+    if (!valid) {
         res.status(400).send()
     }
 
     try {
-        await User.findByIdAndUpdate(req.params.id, { mail: mail, name: name, password: password, role: role, updatedAt: Date.now() })
+        await User.findByIdAndUpdate(req.params.id, { mail: req.body.mail, name: req.body.name, password: req.body.password, role: req.body.role, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
