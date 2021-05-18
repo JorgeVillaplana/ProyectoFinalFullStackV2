@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private router: Router, private activeRoute: ActivatedRoute) { }
 
   showMenuAndFooter() {
-    if(this.router.url === "/login" || this.router.url === "/register" || this.router.url === "/dashboard"){
+    if(this.router.url === "/login" || this.router.url === "/register" || this.router.url.includes("/dashboard")){
       return false
     }else return true
   }

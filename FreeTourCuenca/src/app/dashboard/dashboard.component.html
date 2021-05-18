@@ -33,7 +33,7 @@
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="#">
-            <p>AJUSTES</p>
+            <p>USUARIOS</p>
           </a>
         </li>
       </ul>
@@ -81,11 +81,14 @@
     </nav>
     <!-- FIN Navbar -->
 
-    <div class="content">
+    <router-outlet></router-outlet>
+
+    <div class="content" *ngIf="hideContent()">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4">
             <div class="card card-chart">
+
               <div class="card-header card-header-success">
                 <div class="ct-chart" id="dailySalesChart"></div>
               </div>
