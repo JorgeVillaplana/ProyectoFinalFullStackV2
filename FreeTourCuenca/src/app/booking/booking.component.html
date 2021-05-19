@@ -1,37 +1,81 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <form id="booking-form">
-                <label for="booking-form">Reserve ahora su ruta</label>
-                <div class="row">
-                    <div class="col">
-                        <div class="tour-selector">
-                            Aquí va un selector de rutas
-                            <!--<mat-form-field appearance="fill">
+  <div class="row">
+    <div class="col-12">
+      <form id="booking-form">
+        <label for="booking-form">Reserve ahora su ruta</label>
+        <div class="row">
+          <div class="col">
+            <div class="tour-selector">
+              Aquí va un selector de rutas
+              <!--<mat-form-field appearance="fill">
                                 <mat-label></mat-label>
                                 <mat-select [formControl]="" placeholder="">
                                     <mat-option>---</mat-option>
                                     <mat-option *ngFor="" value=""></mat-option>
                                 </mat-select>
                             </mat-form-field>-->
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="tour-preview">
-                            <div class="card">
-                                Aquí va una previsualización de la ruta
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="booking-button">
-                            <button type="submit" class="btn btn-primary">Reserva</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="tour-preview">
+              <div class="card">
+                Aquí va una previsualización de la ruta
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <div class="booking-button">
+              <button type="submit" class="btn btn-primary">Reserva</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+
+      <form [formGroup]="mForm">
+
+        <div class="mb-3">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre y apellido</label>
+            <input type="text" class="form-control" id="formControlInput1" formControlName="name"
+              placeholder="Nombre y apellido">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email</label>
+            <input type="text" class="form-control" id="formControlInput2" formControlName="email"
+              placeholder="Email para recibir la confirmación de la reserva">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Nº de asistentes</label>
+            <input type="number" class="form-control" id="formControlInput3" formControlName="seats" min="1" max="9"
+              placeholder="¿Cuántas personas vendréis al tour? (máx. 9 personas)">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Fecha</label><br>
+            <input type="date" class="form-control" id="formControlInput4" formControlName="date" name="StartDate"
+              min="today" placeholder="Fecha de la visita">
+            <!--Ajustar fecha mínima a hoy-->
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Hora</label><br>
+            <!--Mostrar horas x fecha-->
+            <select name="time">
+              <option value="1">17:00</option>
+              <option value="2">18:00</option>
+              <option value="3">19:00</option>
+            </select>
+          </div>
+          <button type="submit" (click)="saveTickets()" class="btn btn-primary mb-3">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
