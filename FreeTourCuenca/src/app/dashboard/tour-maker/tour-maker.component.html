@@ -1,40 +1,43 @@
 <div class="tour-maker">
-    <form action="" method="post" id="tourMakerForm">
-        <div class="code">
-            <label for="code" class="col-form-label">Código de funcionalidad</label>
-            <input type="text" class="form-control" name="code" id="code">
-        </div>
-        <div class="language">
-            <label for="language" class="col-form-label">¿En qué idioma lo quieres publicar?</label>
-            <div id="language" *ngFor="let language of languages">
-                <input type="radio" id={{language?.code}} name="language" value={{language?._id}}>
-                <label for={{language?.code}}>{{language.name}}</label>
+    <form [formGroup]="mForm" id="tourMakerForm">
+        <div class="mb-3">
+            <div class="code form-group">
+                <label for="code" class="col-form-label">Código de funcionalidad</label>
+                <input type="text" class="form-control" name="code" id="code">
             </div>
-        </div>
-        <div class="title">
-            <label for="title" class="col-form-label">Título de la ruta</label>
-            <input type="text" class="form-control" name="title" id="title">
-        </div>
-        <div class="category">
-            <label for="category" class="col-form-label">Categoría (Opcional)</label>
-            <input type="text" class="form-control" name="category" id="category">
-        </div>
-        <div class="description">
-            <div class="wysiwyg">
-                <div [froalaEditor]>Descripción del Tour</div>
+            <div class="language form-group">
+                <label for="language" class="col-form-label">¿En qué idioma lo quieres publicar?</label>
+                <div id="language" *ngFor="let language of languages">
+                    <input type="radio" id={{language?.code}} name="language" value={{language?._id}}>
+                    <label for={{language?.code}}>{{language.name}}</label>
+                </div>
             </div>
-        </div>
-        <div class="duration">
-            <label for="duration" class="col-form-label">Duración en Minutos</label>
-            <input type="number" class="form-control" name="duration" id="duration">
-        </div>
-        <div class="seats">
-            <label for="seats" class="col-form-label">Reservas posibles</label>
-            <input type="number" class="form-control" name="seats" id="seats">
-        </div>
-        <div class="map">
-            <label for="map" class="col-form-label">Mapa con punto de inicio</label>
-            <input type="text" class="form-control" name="map" id="map">
+            <div class="title form-group">
+                <label for="title" class="col-form-label">Título de la ruta</label>
+                <input type="text" class="form-control" name="title" id="title">
+            </div>
+            <div class="category form-group">
+                <label for="category" class="col-form-label">Categoría (Opcional)</label>
+                <input type="text" class="form-control" name="category" id="category">
+            </div>
+            <div class="description form-group">
+                <div class="wysiwyg">
+                    <div [froalaEditor]>Descripción del Tour</div>
+                </div>
+            </div>
+            <div class="duration form-group">
+                <label for="duration" class="col-form-label">Duración en Minutos</label>
+                <input type="number" class="form-control" name="duration" id="duration">
+            </div>
+            <div class="seats form-group">
+                <label for="seats" class="col-form-label">Reservas posibles</label>
+                <input type="number" class="form-control" name="seats" id="seats">
+            </div>
+            <div class="map form-group">
+                <label for="map" class="col-form-label">Mapa con punto de inicio</label>
+                <input type="text" class="form-control" name="map" id="map">
+            </div>
+            <button type="submit" (click)="postTour()" class="btn btn-primary mb-3">Crear</button>
         </div>
     </form>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tour-maker',
@@ -7,8 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TourMakerComponent implements OnInit {
 
-  constructor() { }
+  mForm: FormGroup
 
+  constructor(private fb: FormBuilder,
+    private router: Router) {
+      this.mForm = this.fb.group({
+        name: ["", Validators.required],
+        email: ["", Validators.required],
+        seats: ["", Validators.required],
+        date: ["", Validators.required],
+        time: ["", Validators.required],
+      })
+    }
   languages = [{
     _id: 'kjhgv',
     code: 'en',
@@ -18,4 +30,11 @@ export class TourMakerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get f(): any {
+    return this.mForm.controls
+  }
+
+  postTour(){
+
+  }
 }
