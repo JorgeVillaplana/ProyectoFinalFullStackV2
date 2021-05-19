@@ -11,7 +11,7 @@ const Schema = new SchemaMongo({
     image: { type: Schema.Types.ObjectId, ref: "images" },
     guide: { type: Schema.Types.ObjectId, ref: "guides" },
     map: String,
-    language: String,
+    language: { type: Schema.Types.ObjectId, ref: "language" },
     tourdates: { type: Schema.Types.ObjectId, ref: "tourdates" },
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }

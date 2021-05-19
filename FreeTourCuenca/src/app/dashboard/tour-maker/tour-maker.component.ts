@@ -9,6 +9,12 @@ export class TourMakerComponent implements OnInit {
 
   constructor() { }
 
+  languages = [{
+    _id: 'kjhgv',
+    code: 'en',
+    name: 'English',
+  }]
+
   ngOnInit(): void {
   }
 

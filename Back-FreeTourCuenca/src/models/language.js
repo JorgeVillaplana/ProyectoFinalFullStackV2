@@ -3,10 +3,10 @@ const SchemaMongo = mongoose.Schema
 
 const Schema = new SchemaMongo({
     code: String,
-    text: String,
-    language: { type: Schema.Types.ObjectId, ref: "language" },
+    name: String,
+    svg: String,
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("text", Schema)
+module.exports = mongoose.model("language", Schema)
