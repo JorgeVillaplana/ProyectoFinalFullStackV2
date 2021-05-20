@@ -24,6 +24,8 @@ export class MenuComponent implements OnInit {
   faTripadvisor = faTripadvisor;
 
   ngOnInit(): void {
+
   }
+
 
 }

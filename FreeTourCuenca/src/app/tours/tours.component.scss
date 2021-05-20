@@ -1,32 +1,36 @@
+@import "../../styles";
 .card {
-  border-radius: 15px;
-  border-style: double;
-  background: rgb(227, 239, 255);
-  padding: 30px;
-  margin: 50px;
-  width: 90%;
+    border-radius: 15px;
+    border-style: double;
+    background: rgb(227, 239, 255);
+    padding: 30px;
+    margin: 50px;
+    width: 90%;
+    .card-img-top {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    #tour2 {
+        margin-top: 2em;
+        text-align: justify;
+    }
+    h1 {
+        white-space: nowrap;
+    }
+    p {
+        font-size: 16px;
+    }
+    #btn2 {
+        font-weight: 700;
+        // COLOCAR BIEN
+    }
+    .btn-warning:hover {
+        box-shadow: 1px 1px grey;
+    }
+}
 
-  .card-img-top {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  #tour2 {
-    margin-top: 2em;
-    text-align: justify;
-  }
-  h1 {
-    white-space: nowrap;
-  }
-  p {
-    font-size: 16px;
-  }
-  #btn2 {
-    font-weight: 700;
-    // COLOCAR BIEN
-  }
-
-  .btn-warning:hover {
-    box-shadow: 1px 1px grey;
-  }
+aside ul li a .nav-link,
+.deg-color:hover {
+    color: $color-corporative;
 }
