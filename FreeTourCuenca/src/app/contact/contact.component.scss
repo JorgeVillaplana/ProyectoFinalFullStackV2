@@ -1,6 +1,13 @@
 #main-contact-form {
+  background-color: rgb(224, 224, 224);
+  border-radius: 15px;
   padding: 30px;
-  width: 60%;
+  width: 50%;
+  margin-top: 15%;
+
+  .fs-3 {
+    text-align: center;
+  }
 }
 
 label {
@@ -9,5 +16,12 @@ label {
 
 p,
 .col-form-label {
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.btn {
+  font-weight: 700;
+}
+.btn-warning:hover {
+  box-shadow: 1px 1px grey;
 }
