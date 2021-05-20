@@ -7,6 +7,7 @@ const tourController = require("../controllers/tour")
 const guideController = require("../controllers/guide")
 const userController = require("../controllers/user")
 const languageController = require("../controllers/language")
+const faqController = require("../controllers/faq")
 
 router.get("/images", imageController.getImages)
 router.post("/save-image", imageController.saveImage)
@@ -52,5 +53,12 @@ router.post("/save-language", languageController.saveLanguage)
 router.get("/language/:id", languageController.getLanguage)
 router.put("/language/:id", languageController.updateLanguage)
 router.delete("/language/:id", languageController.deleteLanguage)
+
+router.get("/faqs", faqController.getFaqs)
+router.post("/save-faq", faqController.saveFaq)
+router.get("/faq/:id", faqController.getFaq)
+router.get("/faqc/:code", faqController.getFaqByCode)
+router.put("/faq/:id", faqController.updateFaq)
+router.delete("/faq/:id", faqController.deleteFaq)
 
 module.exports = router
