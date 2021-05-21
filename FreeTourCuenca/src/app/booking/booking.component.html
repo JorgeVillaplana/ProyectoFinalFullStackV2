@@ -1,50 +1,55 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <form id="booking-form">
-        <label for="booking-form">Reserve ahora su ruta</label>
-        <div class="row">
-          <div class="col">
-            <div class="tour-selector">
-              Aquí va un selector de rutas
-              <!--<mat-form-field appearance="fill">
-                                <mat-label></mat-label>
-                                <mat-select [formControl]="" placeholder="">
-                                    <mat-option>---</mat-option>
-                                    <mat-option *ngFor="" value=""></mat-option>
-                                </mat-select>
-                            </mat-form-field>-->
-            </div>
-          </div>
-          <div class="col">
-            <div class="tour-preview">
-              <div class="card">
-                Aquí va una previsualización de la ruta
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="booking-button">
-              <button type="submit" class="btn btn-primary">Reserva</button>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-
 <div class="container">
   <div class="row">
-    <div class="col-6">
-
+    <div class="col">
+      <div class="tour-preview">
+        <div class="card">
+          <h3>DETALLES DE LA RUTA</h3>
+          <p class="thick">Descripción de la ruta:</p>
+          <p>Texto de explicación de la ruta. Qué se recorre y qué lugar se visitan. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p class="thick">Duración:</p>
+          <p class="thick">Fecha y horarios:</p>
+          <p class="thick">Información de interés:</p>
+          <ul>
+            <li>Accesible en silla de ruedas ♿</li>
+            <li>Recorrido suave / cuestas / distancia recorrida</li>
+            <li>Es obligatorio el uso de mascarilla y mantener las distancias</li>
+          </ul>
+          <p class="thick">Inicio de la ruta / Punto de encuentro:</p>
+          <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="290" height="210" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=plaza%20zocodover&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+              <style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                  height: 210px;
+                  width: 290px;
+                }
+              </style>
+              <a href="https://www.embedgooglemap.net"></a>
+              <style>
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  height: 210px;
+                  width: 290px;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
       <form [formGroup]="mForm">
-
         <div class="mb-3">
           <div class="form-group">
+            <h2 class="thick">Reserva tu visita</h2>
             <label for="exampleFormControlInput1">Nombre y apellido</label>
             <input type="text" class="form-control" id="formControlInput1" formControlName="name"
               placeholder="Nombre y apellido">
@@ -60,7 +65,7 @@
               placeholder="¿Cuántas personas vendréis al tour? (máx. 9 personas)">
           </div>
           <div class="form-group">
-            <label for="exampleFormControlFile1">Fecha</label><br>
+            <label for="exampleFormControlFile1">Fecha de la visita</label><br>
             <input type="date" class="form-control" id="formControlInput4" formControlName="date" name="StartDate"
               min="today" placeholder="Fecha de la visita">
             <!--Ajustar fecha mínima a hoy-->
@@ -74,7 +79,9 @@
               <option value="3">19:00</option>
             </select>
           </div>
-          <button type="submit" (click)="saveTickets()" class="btn btn-primary mb-3">Enviar</button>
+          <div class="col text-center">
+            <button type="submit" (click)="saveTickets()" class="btn btn-warning btn-lg mb-3">Reservar</button>
+          </div>
         </div>
       </form>
     </div>
