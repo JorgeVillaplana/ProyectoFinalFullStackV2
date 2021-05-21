@@ -1,41 +1,45 @@
 #faq {
-    margin-bottom: -30vh;
-    overflow-x: hidden;
+  margin-bottom: -30vh;
+  overflow-x: hidden;
 }
 
 .h-100 {
-    min-height: 80vh;
+  min-height: 80vh;
 }
 
 .faq {
-    background-color: rgb(26, 26, 26, 0.85);
-    color: white;
-    .question {
-        p {
-            font-size: 1.4em;
-            font-weight: bold;
-        }
-        .answer {
-            font-size: 1.3em;
-        }
+  background-color: rgb(26, 26, 26, 0.85);
+  padding: 30px;
+  color: white;
+  .question {
+    p {
+      font-size: 1.4em;
+      font-weight: bold;
     }
+    .answer {
+      font-size: 1.3em;
+    }
+  }
 }
 
 .left-image {
-    margin-left: -15px;
-    margin-right: -12px;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.90)), url("../../assets/images/FaqLeft.jfif");
-    background-repeat: no-repeat;
-    background-size: 200% 100%;
-    background-position: left center;
+  margin-left: -15px;
+  margin-right: -12px;
+  margin-top: -1px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url("../../assets/images/FaqLeft.jfif");
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
 }
 
 .right-image {
-    margin-left: -12px;
-    width: 18%;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.90)), url("../../assets/images/faqRight.jfif");
-    background-repeat: no-repeat;
-    background-size: 200% 100%;
-    background-position: left center;
-    transform: scaleX(-1);
+  margin-left: -12px;
+  width: 18%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url("../../assets/images/faqRight.jfif");
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+  transform: scaleX(-1);
 }
