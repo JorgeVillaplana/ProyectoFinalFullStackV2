@@ -43,3 +43,10 @@
   background-position: left center;
   transform: scaleX(-1);
 }
+
+@media (max-width: 770px) {
+  .right-image,
+  .left-image {
+    display: none;
+  }
+}
