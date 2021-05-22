@@ -129,12 +129,13 @@
   .bar {
     display: block;
     width: 25px;
-    height: 3px;
+    height: 5px;
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: yellow;
   }
+
   @media only screen and (max-width: 768px) {
     #mainnav {
       position: fixed;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faDog, faWheelchair } from '@fortawesome/free-solid-svg-icons';
 import { Tour } from './../models/tour.model';
 import { ToursService } from './../services/tours.service';
 
@@ -10,6 +11,9 @@ import { ToursService } from './../services/tours.service';
 export class ToursComponent implements OnInit {
 
   constructor(private toursService: ToursService) { }
+
+  faWheelchair = faWheelchair
+  faDog = faDog
 
   tours: Array<Tour> = [];
 

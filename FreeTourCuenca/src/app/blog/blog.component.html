@@ -25,8 +25,20 @@
             <img src="../../assets/images/89321602-7140-4b06-b09d-6318140681a7.jfif" alt="" class="card-img-top" />
             <div class="card-body">
               <h3 class="card-title">Post title</h3>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content. [Añadir "Seguir leyendo...]</p>
+              <p class="card-text" [ngClass]="{'limitTextHeight': isReadMore}">Some quick example text to build on the
+                card title and make up the bulk of the
+                card's content. Sed non ipsum eu eros aliquet consectetur. Suspendisse tincidunt erat tempor finibus
+                feugiat. Sed et placerat ante, a hendrerit dolor. Morbi felis lorem, sollicitudin sed sapien facilisis,
+                tincidunt vehicula neque. Maecenas dapibus massa eu eros pretium bibendum. Integer leo orci,
+                pellentesque in laoreet sit amet, tincidunt et ipsum. Donec pretium faucibus convallis. Sed tempor
+                porttitor orci eget porttitor. Suspendisse ac lacus elementum, vehicula purus vel, gravida ante. Sed
+                placerat posuere nisi, eget rhoncus felis eleifend in. Etiam blandit pellentesque dui non tempus. Nulla
+                facilisis odio nec nisi suscipit, ut facilisis risus malesuada. Praesent a pretium odio. Suspendisse ex
+                justo, ornare eu molestie ut, hendrerit id elit. Pellentesque at tellus tellus. Cras justo justo,
+                finibus nec justo nec, tempus fringilla lacus.</p>
+              <button type="button" class="btn btn-outline-dark" (click)="showText()">
+                {{ isReadMore ? 'Leer más': 'Leer menos' }}
+              </button>
             </div>
             <div class="card-footer row deg-color outstanding">
               <div class="col">

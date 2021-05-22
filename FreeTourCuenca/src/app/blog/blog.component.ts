@@ -9,6 +9,12 @@ export class BlogComponent implements OnInit {
 
   constructor() { }
 
+  isReadMore = true
+
+  showText() {
+     this.isReadMore = !this.isReadMore
+  }
+
   ngOnInit(): void {
   }
 
