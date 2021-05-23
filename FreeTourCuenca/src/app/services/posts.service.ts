@@ -16,7 +16,7 @@ export class PostsService {
     const params = {}
     return this.httpClient
       .get(
-        `$(environment.apiUrl)/posts`,
+        `${environment.apiUrl}/posts`,
          { params: params}
       )
       .pipe(
@@ -29,7 +29,7 @@ export class PostsService {
   getPost(id: string | null): Observable<any> {
     return this.httpClient
     .get(
-      `$(environment.apiUrl)/post/$(id)`
+      `${environment.apiUrl}/post/${id}`
     ).pipe(
       catchError ( error => {
         return error;
@@ -40,7 +40,7 @@ export class PostsService {
   getPostByCode(code: string | null): Observable<any> {
     return this.httpClient
     .get(
-      `$(environment.apiUrl)/postc/$(code)`
+      `${environment.apiUrl}/postc/${code}`
     ).pipe(
       catchError ( error => {
         return error;
@@ -51,7 +51,7 @@ export class PostsService {
   savePost(post: Post): Observable<any> {
     return this.httpClient
     .post(
-      `$(environment.apiUrl)/save-post/`,
+      `${environment.apiUrl}/save-post/`,
       post
     ).pipe(
       catchError ( error => {
@@ -63,7 +63,7 @@ export class PostsService {
   updatePost( post: Post ): Observable<any> {
     return this.httpClient
     .put(
-      `$(environment.apiUrl)/post/$(post._id)`,
+      `${environment.apiUrl}/post/${post._id}`,
       post
     ).pipe(
       catchError ( error => {
@@ -75,7 +75,7 @@ export class PostsService {
   deletePost(id: string | null): Observable<any> {
     return this.httpClient
     .delete(
-      `$(environment.apiUrl)/post/$(id)`
+      `${environment.apiUrl}/post/${id}`
     ).pipe(
       catchError ( error => {
         return error;

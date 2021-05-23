@@ -26,6 +26,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { FaqComponent } from './faq/faq.component';
+import { GuidesComponent } from './dashboard/guides/guides.component';
+import { UsersComponent } from './dashboard/users/users.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { FaqComponent } from './faq/faq.component';
     TourMakerComponent,
     TranslateComponent,
       NotfoundComponent,
-      FaqComponent
+      FaqComponent,
+      GuidesComponent,
+      UsersComponent
    ],
   imports: [
     BrowserModule,

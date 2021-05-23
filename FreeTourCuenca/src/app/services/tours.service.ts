@@ -17,7 +17,7 @@ export class ToursService {
     const params = {}
     return this.httpClient
       .get(
-        `$(environment.apiUrl)/tours`,
+        `${environment.apiUrl}/tours`,
          { params: params}
       )
       .pipe(
@@ -30,7 +30,7 @@ export class ToursService {
   getTour(id: string | null): Observable<any> {
     return this.httpClient
     .get(
-      `$(environment.apiUrl)/tour/$(id)`
+      `${environment.apiUrl}/tour/${id}`
     ).pipe(
       catchError ( error => {
         return error;
@@ -41,7 +41,7 @@ export class ToursService {
   getTourByCode(code: string | null): Observable<any> {
     return this.httpClient
     .get(
-      `$(environment.apiUrl)/tourc/$(code)`
+      `${environment.apiUrl}/tourc/${code}`
     ).pipe(
       catchError ( error => {
         return error;
@@ -52,19 +52,18 @@ export class ToursService {
   saveTour(tour: Tour): Observable<any> {
     return this.httpClient
     .post(
-      `$(environment.apiUrl)/save-tour/`,
+      `${environment.apiUrl}/save-tour/`,
       tour
     ).pipe(
       catchError ( error => {
         return error;
-      })
-    )
+      })    )
   }
 
   updateTour( tour: Tour ): Observable<any> {
     return this.httpClient
     .put(
-      `$(environment.apiUrl)/tour/$(tour._id)`,
+      `${environment.apiUrl}/tour/${tour._id}`,
       tour
     ).pipe(
       catchError ( error => {
@@ -76,7 +75,7 @@ export class ToursService {
   deleteTour(id: string | null): Observable<any> {
     return this.httpClient
     .delete(
-      `$(environment.apiUrl)/tour/$(id)`
+      `${environment.apiUrl}/tour/${id}`
     ).pipe(
       catchError ( error => {
         return error;

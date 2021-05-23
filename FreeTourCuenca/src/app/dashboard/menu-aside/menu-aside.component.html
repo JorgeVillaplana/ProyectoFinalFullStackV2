@@ -1,0 +1,40 @@
+<div class="sidebar" data-color="azure" data-background-color="white">
+    <!--Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"-->
+    <div class="logo"><a class="simple-text logo-normal">
+  DASHBOARD
+</a></div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="nav-item active  ">
+                <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <p>PANEL</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/dashboard/post-maker']" routerLinkActive="active">
+                    <p>PUBLICACIONES</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/dashboard/tour-maker']" routerLinkActive="active">
+                    <p>TOURS</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/dashboard/translate']" routerLinkActive="active">
+                    <p>TEXTOS E IDIOMAS</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/dashboard/guides']" routerLinkActive="active">
+                    <p>GUÍAS</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/dashboard/users']" routerLinkActive="active">
+                    <p>USUARIOS</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

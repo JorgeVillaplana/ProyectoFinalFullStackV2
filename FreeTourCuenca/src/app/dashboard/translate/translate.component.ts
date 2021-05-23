@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-translate',
@@ -7,7 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TranslateComponent implements OnInit {
 
-  constructor() { }
+  languageForm: FormGroup;
+  textForm: FormGroup
+
+  constructor(private fb: FormBuilder,
+    private router: Router) {
+      this.languageForm = this.fb.group({
+        name: ["", Validators.required],
+        code: ["", Validators.required]
+      })
+
+      this.textForm = this.fb.group({
+        code: ["", Validators.required],
+        text: ["", Validators.required],
+        language: ["", Validators.required]
+      })
+    }
 
   ngOnInit() {
   }

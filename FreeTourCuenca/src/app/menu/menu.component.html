@@ -1,70 +1,67 @@
 <div class="container nav-bar">
-  <div class="row social-media-bar">
-    <div class="col-6 media-bar-left justify-content-center align-middle">
-      <a href="mailto:????@??.com" [routerLink]="['/contact']" id="correo">✉️ info@exploratoledo.es</a>
+    <div class="row social-media-bar">
+        <div class="col-6 media-bar-left justify-content-center align-middle">
+            <a [routerLink]="['/contact']" id="correo">✉️ info@exploratoledo.es</a>
+        </div>
+        <div class="col-6 media-bar-right">
+            <div class="navbar-social d-none d-md-block">
+
+                <a href="https://www.facebook.com/exploratoledo/" class="facebook" target="_blank" matTooltip="Facebook">
+                    <fa-icon [icon]="faFacebookSquare" alt="Facebook"></fa-icon>
+                </a>
+
+                <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
+                    <fa-icon [icon]="faTwitterSquare" alt="Twitter"></fa-icon>
+                </a>
+
+                <a href="https://www.instagram.com/exploratoledo/" class="instagram" target="_blank" matTooltip="Instagram">
+                    <fa-icon [icon]="faInstagram" alt="Instagram"></fa-icon>
+                </a>
+
+
+                <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
+                    <fa-icon [icon]="faYoutube" alt="YouTube"></fa-icon>
+                </a>
+
+                <a href="https://www.tripadvisor.es/Attraction_Review-g187489-d23371505-Reviews-Explora_Toledo-Toledo_Province_of_Toledo_Castile_La_Mancha.html" class="tripadvisor" target="_blank" matTooltip="TripAdvisor">
+                    <fa-icon [icon]="faTripadvisor" alt="TripAdvisor"></fa-icon>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="col-6 media-bar-right">
-      <div class="navbar-social d-none d-md-block">
 
-        <a href="https://www.facebook.com/exploratoledo/" class="facebook" target="_blank" matTooltip="Facebook">
-          <fa-icon [icon]="faFacebookSquare" alt="Facebook"></fa-icon>
+    <div class="logo">
+        <a [routerLink]="['/']">
+            <img src="../../assets/images/prruebalogo3.png" alt="Logo freetour">
         </a>
-
-        <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
-          <fa-icon [icon]="faTwitterSquare" alt="Twitter"></fa-icon>
-        </a>
-
-        <a href="https://www.instagram.com/exploratoledo/" class="instagram" target="_blank" matTooltip="Instagram">
-          <fa-icon [icon]="faInstagram" alt="Instagram"></fa-icon>
-        </a>
-
-
-        <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
-          <fa-icon [icon]="faYoutube" alt="YouTube"></fa-icon>
-        </a>
-
-        <a href="https://www.tripadvisor.es/Attraction_Review-g187489-d23371505-Reviews-Explora_Toledo-Toledo_Province_of_Toledo_Castile_La_Mancha.html"
-          class="tripadvisor" target="_blank" matTooltip="TripAdvisor">
-          <fa-icon [icon]="faTripadvisor" alt="TripAdvisor"></fa-icon>
-        </a>
-      </div>
     </div>
-  </div>
-
-  <div class="logo">
-    <a [routerLink]="['/']">
-      <img src="../../assets/images/prruebalogo3.png" alt="Logo freetour">
-    </a>
-  </div>
 
 
-  <nav class="navbar">
-    <ul class="nav justify-content-end" id="mainnav">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-          aria-current="page">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq">faq</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active"><img src="../../assets/images/english.svg"
-            id="engl"></a>
-      </li>
-    </ul>
-    <div class="hamburger">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </nav>
+    <nav class="navbar">
+        <ul class="nav justify-content-end" id="mainnav">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-current="page">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq">faq</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active"><img src="../../assets/images/english.svg" id="engl"></a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
 </div>

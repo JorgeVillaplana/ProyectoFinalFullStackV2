@@ -16,7 +16,7 @@ export class TextsService {
     const params = {}
     return this.httpClient
       .get(
-        `$(environment.apiUrl)/texts`,
+        `${environment.apiUrl}/texts`,
          { params: params}
       )
       .pipe(
@@ -29,7 +29,7 @@ export class TextsService {
   getText(id: string | null): Observable<any> {
     return this.httpClient
     .get(
-      `$(environment.apiUrl)/text/$(id)`
+      `${environment.apiUrl}/text/${id}`
     ).pipe(
       catchError ( error => {
         return error;
@@ -40,7 +40,7 @@ export class TextsService {
   getTextByCode(code: string | null): Observable<any> {
     return this.httpClient
     .get(
-      `$(environment.apiUrl)/text/$(code)`
+      `${environment.apiUrl}/text/${code}`
     ).pipe(
       catchError ( error => {
         return error;
@@ -51,7 +51,7 @@ export class TextsService {
   saveText(text: Text): Observable<any> {
     return this.httpClient
     .post(
-      `$(environment.apiUrl)/save-text/`,
+      `${environment.apiUrl}/save-text/`,
       text
     ).pipe(
       catchError ( error => {
@@ -63,7 +63,7 @@ export class TextsService {
   updateText( text: Text ): Observable<any> {
     return this.httpClient
     .put(
-      `$(environment.apiUrl)/text/$(text._id)`,
+      `${environment.apiUrl}/text/${text._id}`,
       text
     ).pipe(
       catchError ( error => {
@@ -75,7 +75,7 @@ export class TextsService {
   deleteText(id: string | null): Observable<any> {
     return this.httpClient
     .delete(
-      `$(environment.apiUrl)/text/$(id)`
+      `${environment.apiUrl}/text/${id}`
     ).pipe(
       catchError ( error => {
         return error;
