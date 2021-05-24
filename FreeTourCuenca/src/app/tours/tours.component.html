@@ -3,6 +3,7 @@
     <div class="col-2">
       <aside>
         <ul class="nav flex-column">
+          <h5>Categorías de las rutas</h5>
           <li class="nav-item">
             <a class="nav-link deg-color" href="#">Museos</a>
           </li>
@@ -22,6 +23,7 @@
     <div class="col-10">
       <div class="tour">
         <div class="card">
+
           <div class="row">
             <div class="col">
               <img src="https://cdn.pixabay.com/photo/2016/11/09/12/20/toledo-1811636_960_720.jpg" class="card-img-top"
@@ -39,9 +41,11 @@
           </div>
         </div>
 
+
         <div class="col-10">
           <div class="tour">
             <div class="card">
+
               <div class="row">
                 <div class="col">
                   <img src="https://cdn.pixabay.com/photo/2015/04/17/08/55/toledo-726944_960_720.jpg"
@@ -50,15 +54,15 @@
                 <div class="col">
                   <div class="card-body">
                     <h1 class="card-title">Ruta 2: Nombre de la ruta</h1>
-                    <p class="card-text" id="tour2">Texto breve sobre la ruta.</p>
+                    <p class="card-text">Texto breve sobre la ruta.</p>
                     <p class="card-text">Horario:</p>
                     <p class="card-text">Nº plazas:</p>
                     <p>Ruta apta para:
                       <fa-icon [icon]="faWheelchair" alt="Accesible"></fa-icon>
                       <fa-icon [icon]="faDog" alt="Mascotas"></fa-icon>
                     </p>
+                    <a href="#" class="btn btn-warning" id="btn2" [routerLink]="['/booking']">Reserva</a>
                   </div>
-                  <a href="#" class="btn btn-warning" id="btn2" [routerLink]="['/booking']">Reserva</a>
                 </div>
               </div>
             </div>
