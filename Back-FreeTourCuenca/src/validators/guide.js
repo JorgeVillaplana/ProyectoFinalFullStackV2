@@ -5,7 +5,13 @@ const schema = joi.object({
     surname: joi.string().required(),
     dni: joi.string().max(9).required(),
     phone: joi.string().max(12).required(),
-    email: joi.string().email()
+    email: joi.string().email(),
+    languages: joi.array().items(joi.string()),
+    locations: joi.array().items(joi.object({
+        city: joi.string().required(),
+        state: joi.string(),
+        country: joi.string()
+    })),
 });
 
 function validate(body) {

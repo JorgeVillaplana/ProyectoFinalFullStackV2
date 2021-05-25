@@ -2,9 +2,11 @@ const mongoose = require('mongoose')
 const SchemaMongo = mongoose.Schema
 
 const Schema = new SchemaMongo({
-    name: String,
+    namesByLang: [{
+        name: String,
+        language: { type: Schema.Types.ObjectId, ref: "language" }
+    }],
     icon: String,
-    language: { type: Schema.Types.ObjectId, ref: "language" },
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

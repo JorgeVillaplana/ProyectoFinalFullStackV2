@@ -1,21 +1,21 @@
 const joi = require("joi");
+const langValidator = require("./language")
 
 const schema = joi.object({
-    code: joi.string().default(Math.random().toString(36).slice(2)), //{ type: String, default: Math.random().toString(36).slice(2) },
-    title: joi.string().required(), //String,
-    text: joi.string().required(), //String,
-    image: joi.string(), //Cambiar para que sea el id de una imagen
-    language: joi.string().min(2).max(3).default("es"), //{ type: String, default: "es" },
-    important: joi.boolean().default(false)
+    details: joi.array().items(joi.object({
+        title: joi.string().required(),
+        text: joi.string().required(),
+        language: langValidator.validate(data),
+        categories: joi.array().items(joi.string())
+    })),
+    image: joi.string(),
+    important: joi.boolean()
 });
 
 function validate(body) {
     return schema.validate({
-        code: body.code,
-        title: body.title,
-        text: body.text,
+        details: body.details,
         image: body.image,
-        language: body.language,
         important: body.important
     }, { abortEarly: false });
 }

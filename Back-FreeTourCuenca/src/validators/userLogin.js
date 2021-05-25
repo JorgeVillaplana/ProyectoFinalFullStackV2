@@ -1,29 +1,17 @@
 const joi = require("joi");
-const passwordComplexity = require("joi-password-complexity");
-const complexityOptions = {
-  min: 4,
-  max: 24,
-  lowerCase: 1,
-  upperCase: 1,
-  numeric: 1,
-  symbol: 0,
-};
 
 const schema = joi.object({
-  email: joi.string().email(),
-  password: passwordComplexity(complexityOptions),
+    email: joi.string().email().required(),
+    password: joi.string().required()
 });
 
 function validate(body) {
-  return schema.validate(
-    {
-      email: body.email,
-      password: body.password,
-    },
-    { abortEarly: false }
-  );
+    return schema.validate({
+        email: body.email,
+        password: body.password,
+    }, { abortEarly: false });
 }
 
 module.exports = {
-  validate,
+    validate,
 };

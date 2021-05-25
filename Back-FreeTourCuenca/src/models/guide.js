@@ -8,7 +8,11 @@ const Schema = new SchemaMongo({
     phone: String,
     email: String,
     languages: [String],
-    location: [String],
+    locations: [{
+        city: String,
+        state: String,
+        country: String
+    }],
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

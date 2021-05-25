@@ -1,15 +1,17 @@
 const joi = require("joi");
+const langValidator = require("./language")
 
 const schema = joi.object({
-    code: joi.string().required(), //String,
-    text: joi.string().required(), //String,
-    language: joi.string().min(2).max(3).required() //String,
+    texts: joi.array().items(joi.object({
+        code: joi.string().required(),
+        text: joi.string().required()
+    })),
+    language: langValidator.validate(data).required()
 });
 
 function validate(body) {
     return schema.validate({
-        code: body.code,
-        text: body.text,
+        texts: body.texts,
         language: body.language
     }, { abortEarly: false });
 }

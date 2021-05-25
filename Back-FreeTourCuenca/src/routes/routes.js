@@ -57,7 +57,7 @@ router.delete("/language/:id", languageController.deleteLanguage)
 router.get("/faqs", faqController.getFaqs)
 router.post("/save-faq", faqController.saveFaq)
 router.get("/faq/:id", faqController.getFaq)
-router.get("/faqc/:code", faqController.getFaqByCode)
+router.get("/faq/", faqController.getFaqByLang)
 router.put("/faq/:id", faqController.updateFaq)
 router.delete("/faq/:id", faqController.deleteFaq)
 

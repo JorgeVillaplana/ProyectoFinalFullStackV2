@@ -1,29 +1,28 @@
 const joi = require("joi");
+const specialValidator = require("./special")
+const detailValidator = require("./tourdetail")
 
 const schema = joi.object({
-    code: joi.string().default(Math.random().toString(36).slice(2)),
-    title: joi.string().required(),
-    description: joi.string().required(),
-    duration: joi.number().required(), //Cambiar para que sea una cantidad de tiempo
+    name: joi.string().required(),
+    duration: joi.number().required(),
     seats: joi.number().required(),
-    image: joi.string().required(), //Cambiar para que sea el id de una imagen
-    guide: joi.string().required(), //Cambiar para que sea el id de un guía
+    tourDetails: joi.array().items(detailValidator.validate(data)),
+    images: joi.array().items(joi.string()),
     map: joi.string(),
-    language: joi.string().min(2).max(3).required()
+    specialFeatures: joi.array().items(joi.object({
+        special: specialValidator.validate(data),
+        value: joi.boolean().required()
+    }))
 });
 
 function validate(body) {
     return schema.validate({
-        code: body.code,
-        title: body.title,
-        description: body.description,
-        timeInit: body.timeInit,
+        name: body.code,
         duration: body.duration,
         seats: body.seats,
         image: body.image,
-        guide: body.guide,
         map: body.map,
-        language: body.language
+        specialFeatures: body.specialFeatures
     }, { abortEarly: false });
 }
 

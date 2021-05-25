@@ -4,7 +4,7 @@ const SchemaMongo = mongoose.Schema
 const Schema = new SchemaMongo({
     code: String,
     name: String,
-    svg: String,
+    icon: String,
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

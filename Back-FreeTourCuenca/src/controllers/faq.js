@@ -10,7 +10,13 @@ controller.saveFaq = async(req, res) => {
     }
 
     try {
-        const faq = new Faq({ code: req.body.code, question: req.body.question, answer: req.body.answer, language: req.body.language })
+        const faq = new Faq({
+            details: {
+                question: req.body.question,
+                answer: req.body.answer
+            },
+            language: req.body.language
+        })
         faq.save()
         res.send()
     } catch (error) {
@@ -41,12 +47,12 @@ controller.getFaq = async(req, res) => {
 
 }
 
-controller.getFaqByCode = async(req, res) => {
+controller.getFaqByLang = async(req, res) => {
 
-    const code = req.params.code
+    const language = req.body.language
 
     try {
-        const faq = await faq.find(code)
+        const faq = await faq.find({ language: language })
         res.json(faq)
     } catch (err) {
         console.log(err)
@@ -63,7 +69,15 @@ controller.updateFaq = async(req, res) => {
     }
 
     try {
-        await Faq.findByIdAndUpdate(req.params.id, { code: req.body.code, question: req.body.question, answer: req.body.answer, language: req.body.language, updatedAt: Date.now() })
+        await Faq.findByIdAndUpdate(
+            req.params.id, {
+                details: {
+                    question: req.body.question,
+                    answer: req.body.answer
+                },
+                language: req.body.language,
+                updatedAt: Date.now()
+            })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
