@@ -1,7 +1,7 @@
 <div class="wrapper ">
-    <app-menu-aside></app-menu-aside>
-    <div class="main-panel">
-        <!-- Navbar
+  <app-menu-aside></app-menu-aside>
+  <div class="main-panel">
+    <!-- Navbar
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
@@ -38,62 +38,55 @@
         </nav>
          FIN Navbar -->
 
-        <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 
-        <div class="content" *ngIf="hideContent()">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="card card-chart">
-
-                            <div class="card-header card-header-success">
-                                <div class="ct-chart" id="dailySalesChart"></div>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Visitas</h4>
-                            </div>
-                            <div class="card-footer">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="card card-chart">
-                            <div class="card-header card-header-warning">
-                                <div class="ct-chart" id="websiteViewsChart"></div>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">Google Analytics</h4>
-                                <p class="card-category">Estadísticas varias</p>
-                            </div>
-                            <div class="card-footer">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="content" *ngIf="hideContent()">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="card card-chart">
+              <div class="card-header card-header-success">
+                <div class="ct-chart" id="dailySalesChart"></div>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Visitas</h4>
+              </div>
             </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card card-chart">
+              <div class="card-header card-header-warning">
+                <div class="ct-chart" id="websiteViewsChart"></div>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Google Analytics</h4>
+                <p class="card-category">Estadísticas varias</p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card card-chart">
+              <div class="card-header card-header-info">
+                <div class="ct-chart"></div>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-success float-right" (click)='createTour()'>Crear
+                  tour</button><br>
+                <h4 class="card-title">Listado de tours</h4>
+                <select ng-model="tours">
+                  <option value="" selected>Aquí insertar nombre de cada tour</option>
+                  <!-- <option  *ngFor="let tour of tours">{{ tour.name }} ({{ tour.code }})</option> -->
+                  <option value="value3">Tour 3</option>
+                </select>
+                <button type="button" class="btn btn-warning" (click)='editTour()'>Editar tour</button>
+                <button type="button" class="btn btn-danger" (click)='deleteTour()'>Eliminar tour</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <ul class="dropdown-menu">
-            <li class="header-title"> Sidebar Filters</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger active-color">
-                    <div class="badge-colors ml-auto mr-auto">
-                        <span class="badge filter badge-purple" data-color="purple"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-warning" data-color="orange"></span>
-                        <span class="badge filter badge-danger" data-color="danger"></span>
-                        <span class="badge filter badge-rose active" data-color="rose"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-        </ul>
-    </div>
+  </div>
 </div>

@@ -11,11 +11,21 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+
+  createTour(){
+    this.router.navigate(['/dashboard/tour-maker']);
+  }
+
+  editTour(){}
+  deleteTour(){}
+
+
   hideContent() {
     if(this.router.url === "/dashboard"){
       return true
     } else return false
   }
+
 
 
   ngOnInit(): void {

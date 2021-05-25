@@ -21,7 +21,13 @@ export class TourMakerComponent implements OnInit {
         time: ["", Validators.required],
       })
     }
-  languages = [{
+  languages = [
+    {
+      _id: 'tiruri',
+      code: 'en',
+      name: 'Español',
+    },
+    {
     _id: 'kjhgv',
     code: 'en',
     name: 'English',
