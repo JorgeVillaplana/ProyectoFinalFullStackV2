@@ -1,1 +1,14 @@
-<p>guides works!</p>
+<div class="col-6 mt-4">
+    <h3>Guías</h3>
+
+
+
+    <ul class="list-group" *ngFor="let guide of guides; let position = index">
+        <ng-container>
+            <li class="list-group-item">{{position+1}}. {{guide.name}} {{guide.surname}}
+                <button type="button" class="btn btn-success btn-sm float-right" (click)="editGuide(guide._id)">Editar</button>
+                <button type="button" class="btn btn-danger btn-sm float-right" (click)="deleteGuide(guide._id)">Eliminar</button>
+            </li>
+        </ng-container>
+    </ul>
+</div>

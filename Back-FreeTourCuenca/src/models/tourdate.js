@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 const SchemaMongo = mongoose.Schema;
 
 const Schema = new SchemaMongo({
-    date: Date, //Cambiar por fecha
-    timeInit: Date,
+    datePicker: [{
+        date: { type: Date },
+        timeInit: { type: Date }
+    }],
     remainingSeats: Number
 })
 

@@ -7,7 +7,8 @@ const Schema = new SchemaMongo({
     dni: { type: String, unique: true },
     phone: String,
     email: String,
-    idioms: [String],
+    languages: [String],
+    location: [String],
     savedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

@@ -1,74 +1,67 @@
-<div class="main-tours container">
-  <div class="d-flex row row-cols-2">
-    <div class="col-2">
-      <aside>
-        <ul class="nav flex-column">
-          <h5>Categorías de las rutas</h5>
-          <li class="nav-item">
-            <a class="nav-link deg-color" href="#">Museos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link deg-color" href="#">Casco histórico</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link deg-color" href="#">Gastronomía</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link deg-color" href="#">Lugares pintorescos</a>
-          </li>
-        </ul>
-      </aside>
-    </div>
-
-    <div class="col-10">
-      <div class="tour">
-        <div class="card">
-
-          <div class="row">
-            <div class="col">
-              <img src="https://cdn.pixabay.com/photo/2016/11/09/12/20/toledo-1811636_960_720.jpg" class="card-img-top"
-                alt="loquesea de Toledo">
-            </div>
-            <div class="col">
-              <div class="card-body">
-                <h1 class="card-title">Ruta 1: Nombre de la ruta</h1>
-                <p class="card-text">Texto de explicación de la ruta.</p>
-                <p class="card-text">Horario:</p>
-                <p class="card-text">Nº plazas:</p>
-                <a href="#" class="btn btn-warning" [routerLink]="['/booking']">Reserva</a>
-              </div>
-            </div>
-          </div>
+<div class="container">
+    <div class="d-flex row row-cols-2">
+        <div class="col-2">
+            <aside>
+                <h4 class="outstanding text-center">Categorías</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link deg-color" href="#">Museos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link deg-color" href="#">Casco histórico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link deg-color" href="#">Gastronomía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link deg-color" href="#">Lugares pintorescos</a>
+                    </li>
+                </ul>
+            </aside>
         </div>
 
+        <div class="main-tours col-8">
+            <div class="tour">
+                <div class="card">
 
-        <div class="col-10">
-          <div class="tour">
-            <div class="card">
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://cdn.pixabay.com/photo/2016/11/09/12/20/toledo-1811636_960_720.jpg" class="card-img-top" alt="loquesea de Toledo">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h1 class="card-title">Ruta 1: Nombre de la ruta</h1>
+                                <p class="card-text">Texto de explicación de la ruta.</p>
+                                <p class="card-text">Horario:</p>
+                                <p class="card-text">Nº plazas:</p>
+                                <a href="#" class="btn btn-warning" [routerLink]="['/booking']">Reserva</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-              <div class="row">
-                <div class="col">
-                  <img src="https://cdn.pixabay.com/photo/2015/04/17/08/55/toledo-726944_960_720.jpg"
-                    class="card-img-top" alt="...">
+                <div class="card">
+
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://cdn.pixabay.com/photo/2015/04/17/08/55/toledo-726944_960_720.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h1 class="card-title">Ruta 2: Nombre de la ruta</h1>
+                                <p class="card-text">Texto breve sobre la ruta.</p>
+                                <p class="card-text">Horario:</p>
+                                <p class="card-text">Nº plazas:</p>
+                                <p>Ruta apta para:
+                                    <fa-icon [icon]="faWheelchair" alt="Accesible"></fa-icon>
+                                    <fa-icon [icon]="faDog" alt="Mascotas"></fa-icon>
+                                </p>
+                                <a href="#" class="btn btn-warning" id="btn2" [routerLink]="['/booking']">Reserva</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col">
-                  <div class="card-body">
-                    <h1 class="card-title">Ruta 2: Nombre de la ruta</h1>
-                    <p class="card-text">Texto breve sobre la ruta.</p>
-                    <p class="card-text">Horario:</p>
-                    <p class="card-text">Nº plazas:</p>
-                    <p>Ruta apta para:
-                      <fa-icon [icon]="faWheelchair" alt="Accesible"></fa-icon>
-                      <fa-icon [icon]="faDog" alt="Mascotas"></fa-icon>
-                    </p>
-                    <a href="#" class="btn btn-warning" id="btn2" [routerLink]="['/booking']">Reserva</a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

@@ -11,7 +11,7 @@ const complexityOptions = {
 
 const schema = joi.object({
     name: joi.string().required(),
-    role: joi.string().valid(...["admin", "manipulator", "creator", "blogger", "translator"]).required(),
+    role: joi.string().valid(...["admin", "editor", "blogger", "translator"]).required(),
     email: joi.string().email().required(),
     password: passwordComplexity(complexityOptions),
 });
