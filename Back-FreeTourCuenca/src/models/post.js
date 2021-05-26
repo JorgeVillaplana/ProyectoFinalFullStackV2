@@ -1,7 +1,7 @@
-const mongoose = require("mongoose")
-const SchemaMongo = mongoose.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const Schema = new SchemaMongo({
+const PostSchema = new Schema({
     details: [{ type: Schema.Types.ObjectId, ref: "postdetail" }],
     image: { type: Schema.Types.ObjectId, ref: "image" },
     important: { type: Boolean, default: false },
@@ -9,4 +9,4 @@ const Schema = new SchemaMongo({
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("post", Schema);
+module.exports = mongoose.model("post", PostSchema);

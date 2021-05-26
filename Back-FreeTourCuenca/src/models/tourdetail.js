@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const SchemaMongo = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const Schema = new SchemaMongo({
+const TourDetailSchema = new Schema({
     language: { type: Schema.Types.ObjectId, ref: "language" },
     title: String,
     categories: [String],
@@ -16,4 +16,4 @@ const Schema = new SchemaMongo({
     }]
 })
 
-module.exports = mongoose.model("tourdetail", Schema);
+module.exports = mongoose.model("tourdetail", TourDetailSchema);

@@ -1,5 +1,7 @@
 const controller = {}
 const Post = require('../models/post')
+const Postdetail = require('../models/postdetail')
+const validator = require('../validators/post')
 
 
 controller.savePost = async(req, res) => {
@@ -10,7 +12,26 @@ controller.savePost = async(req, res) => {
     }
 
     try {
-        const post = new Post({ code: req.body.code, title: req.body.title, text: req.body.text, category: req.body.category, language: req.body.language, important: req.body.important })
+        let detailIdArray = []
+        req.body.details.foreach(
+            detail => {
+                const postdetail = new Postdetail({
+                    title: detail.title,
+                    text: detail.text,
+                    language: detail.language,
+                    categories: detail.categories
+                })
+                postdetail.save((err, item) => {
+                    detailIdArray.push(item.id)
+                })
+            }
+        )
+
+        const post = new Post({
+            details: detailIdArray,
+            image: req.body.image,
+            important: req.body.important
+        })
         post.save()
         res.send()
     } catch (error) {
@@ -20,7 +41,7 @@ controller.savePost = async(req, res) => {
 
 controller.getPosts = async(req, res) => {
     try {
-        const posts = await Post.find()
+        const posts = await Post.find().populate('postdetail')
         res.json(posts)
     } catch (err) {
         console.log(err)
@@ -32,7 +53,7 @@ controller.getPost = async(req, res) => {
     const id = req.params.id
 
     try {
-        const post = await post.findById(id)
+        const post = await post.findById(id).populate('postdetail')
         res.json(post)
     } catch (err) {
         console.log(err)
@@ -40,12 +61,20 @@ controller.getPost = async(req, res) => {
     }
 }
 
-controller.getPostByCode = async(req, res) => {
-    const code = req.params.code
-
+controller.getImportantPosts = async(req, res) => {
     try {
-        const post = await post.find(code)
-        res.json(post)
+        const posts = await Post.find({ important: true }).populate({ path: 'postdetail', match: { language: req.body.language } })
+        res.json(posts)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err.message)
+    }
+}
+
+controller.getPostByLanguage = async(req, res) => {
+    try {
+        const posts = await Post.find().populate({ path: 'postdetail', match: { language: req.body.language } })
+        res.json(posts)
     } catch (err) {
         console.log(err)
         res.status(500).send(err.message)
@@ -60,7 +89,26 @@ controller.updatePost = async(req, res) => {
     }
 
     try {
-        await Post.findByIdAndUpdate(req.params.id, { code: req.body.code, title: req.body.title, text: req.body.text, image: req.body.image, category: req.body.category, language: req.body.language, important: req.body.important, updatedAt: Date.now() })
+        let detailIdArray = []
+        req.body.details.foreach(
+            detail => {
+                const postdetail = new Postdetail({
+                    title: detail.title,
+                    text: detail.text,
+                    language: detail.language,
+                    categories: detail.categories
+                })
+                postdetail.save((err, item) => {
+                    detailIdArray.push(item.id)
+                })
+            }
+        )
+        await Post.findByIdAndUpdate(req.params.id, {
+            details: detailIdArray,
+            image: req.body.image,
+            important: req.body.important,
+            updatedAt: Date.now()
+        })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
@@ -75,7 +123,11 @@ controller.deletePost = async(req, res) => {
     }
 
     try {
-        await Post.findByIdAndDelete(id)
+        const post = await Post.findById(id)
+        post.details.foreach(async(detail) => {
+            await Postdetail.findByIdAndDelete(detail._id)
+        })
+        await Post.findByIdAndDelete(post._id)
         res.status(204).send()
     } catch (err) {
         console.log(err)

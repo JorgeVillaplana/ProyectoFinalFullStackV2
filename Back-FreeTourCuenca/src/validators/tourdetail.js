@@ -3,11 +3,11 @@ const guideValidator = require("./guide")
 const langValidator = require("./language")
 
 const schema = joi.object({
-    language: langValidator.validate(data),
+    language: joi.object(),
     title: joi.string(),
     categories: joi.array().items(joi.string()),
     description: joi.string(),
-    guides: joi.array().items(guideValidator.validate(data)),
+    guides: joi.array().items(guideValidator.validate(item)),
     tourdates: joi.array().items(joi.object({
         day: joi.date().min('now'),
         timePicker: joi.array().items(joi.object({
@@ -19,7 +19,7 @@ const schema = joi.object({
 
 function validate(body) {
     return schema.validate({
-        language: body.language,
+        language: langValidator.validate(body.language),
         title: body.title,
         categories: body.categories,
         description: body.description,

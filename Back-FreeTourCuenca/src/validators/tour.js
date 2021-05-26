@@ -6,11 +6,11 @@ const schema = joi.object({
     name: joi.string().required(),
     duration: joi.number().required(),
     seats: joi.number().required(),
-    tourDetails: joi.array().items(detailValidator.validate(data)),
+    tourDetails: joi.array().items(detailValidator.validate(item)),
     images: joi.array().items(joi.string()),
     map: joi.string(),
     specialFeatures: joi.array().items(joi.object({
-        special: specialValidator.validate(data),
+        special: joi.object(),
         value: joi.boolean().required()
     }))
 });
@@ -20,9 +20,13 @@ function validate(body) {
         name: body.code,
         duration: body.duration,
         seats: body.seats,
+        tourDetails: body.tourDetails,
         image: body.image,
         map: body.map,
-        specialFeatures: body.specialFeatures
+        specialFeatures: {
+            special: specialValidator.validate(body.specialFeatures.special),
+            value: body.specialFeatures.value
+        }
     }, { abortEarly: false });
 }
 
