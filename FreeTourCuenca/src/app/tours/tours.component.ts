@@ -19,6 +19,7 @@ export class ToursComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTours();
+    window.scrollTo(0,0);
 
   }
 

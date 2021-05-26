@@ -28,7 +28,8 @@ export class TranslateComponent implements OnInit {
 
     }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+      window.scrollTo(0,0);
+    }
 
 }

@@ -43,6 +43,7 @@ gForm: FormGroup
 
   deleteGuide(id: any){}
 
- ngOnInit(): void {
+  ngOnInit() {
+    window.scrollTo(0,0);
   }
 }

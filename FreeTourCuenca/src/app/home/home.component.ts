@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   constructor( private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
   }
 
   goToBooking(){
