@@ -10,25 +10,15 @@ controller.saveGuide = async(req, res) => {
     }
 
     try {
-        let locations = [] //Esto podría ser redundante, preguntar a Alberto
-        req.body.locations.foreach(
-            location => {
-                locations.push({
-                    city: location.city,
-                    state: location.state,
-                    country: location.country
-                })
-            }
-        )
-
+        console.log(req.body)
         const guide = new Guide({
             name: req.body.name,
             surname: req.body.surname,
             dni: req.body.dni,
             phone: req.body.phone,
-            mail: req.body.email,
+            email: req.body.email,
             languages: req.body.languages,
-            locations: locations
+            locations: req.body.locations
         })
         guide.save()
         res.send()
@@ -52,6 +42,7 @@ controller.getGuide = async(req, res) => {
     const id = req.params.id
 
     try {
+        console.log(id)
         const guide = await Guide.findById(id)
         res.json(guide)
     } catch (err) {
@@ -69,17 +60,6 @@ controller.updateGuide = async(req, res) => {
     }
 
     try {
-        let locations = [] //Esto podría ser redundante, preguntar a Alberto
-        req.body.locations.foreach(
-            location => {
-                locations.push({
-                    city: location.city,
-                    state: location.state,
-                    country: location.country
-                })
-            }
-        )
-
         await Guide.findByIdAndUpdate(req.params.id, {
             name: req.body.name,
             surname: req.body.surname,
@@ -87,10 +67,10 @@ controller.updateGuide = async(req, res) => {
             phone: req.body.phone,
             mail: req.body.email,
             languages: req.body.languages,
-            locations: locations,
+            locations: req.body.locations,
             updatedAt: Date.now()
         })
-        res.status(204).send()
+        res.status(204).send("Actualizado con éxito")
     } catch (err) {
         res.status(500).send(err)
     }
@@ -105,7 +85,7 @@ controller.deleteGuide = async(req, res) => {
 
     try {
         await Guide.findByIdAndDelete(id)
-        res.status(204).send()
+        res.status(204).send("Borrado con éxito")
     } catch (err) {
         console.log(err)
         res.status(500).send(err.message)
