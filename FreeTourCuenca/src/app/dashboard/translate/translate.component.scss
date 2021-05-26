@@ -1,0 +1,25 @@
+table,
+td,
+th {
+  margin-top: 2%;
+  border: 1px solid black;
+  padding: 15px;
+  background-color: white;
+}
+th {
+  text-align: center;
+}
+input {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.container-main {
+  background-color: rgba(170, 228, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 5% 0 5%;
+}

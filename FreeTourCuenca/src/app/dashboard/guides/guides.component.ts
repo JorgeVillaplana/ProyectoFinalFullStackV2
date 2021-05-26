@@ -22,9 +22,6 @@ gForm: FormGroup
     this.gForm = this.fb.group({
       name: ["", Validators.required],
       email: ["", Validators.required],
-      seats: ["", Validators.required],
-      date: ["", Validators.required],
-      time: ["", Validators.required],
     })
   }
 

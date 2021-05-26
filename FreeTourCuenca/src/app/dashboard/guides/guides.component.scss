@@ -1,5 +1,12 @@
 .guidelist {
   margin-left: 15%;
+  h3 {
+    text-align: center;
+  }
+  li {
+    padding-right: 70%;
+    white-space: nowrap;
+  }
 }
 
 .guide-maker {
@@ -8,4 +15,9 @@
   margin-top: 30px;
   border-radius: 5px;
   margin-left: 15%;
+}
+
+.btn-warning {
+  margin-top: 2%;
+  margin-left: 33%;
 }
