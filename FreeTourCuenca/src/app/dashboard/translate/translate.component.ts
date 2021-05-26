@@ -10,7 +10,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class TranslateComponent implements OnInit {
 
   languageForm: FormGroup;
-  textForm: FormGroup
+  textForm: FormGroup;
+
 
   constructor(private fb: FormBuilder,
     private router: Router) {
@@ -24,6 +25,7 @@ export class TranslateComponent implements OnInit {
         text: ["", Validators.required],
         language: ["", Validators.required]
       })
+
     }
 
   ngOnInit() {

@@ -1,17 +1,35 @@
-<div class="container">
-    <div class="container">
-        <form [formGroup]="languageForm" id="newLanguageForm">
-            <div class="form-group">
-                <input type="text" name="code" maxlength="3">
-                <input type="text" name="name">
-            </div>
-        </form>
-    </div>
-    <div class="container">
-        <form [formGroup]="textForm" id="newTextsForm">
-            <div class="form-group">
+<div class="container-main">
+  <h3>Formulario textos</h3>
+  <div class="container lang">
+    <p>Seleccionar idioma</p>
+    <select name="select">
+      <option value="value1">Español</option>
+      <option value="value2">English</option>
+    </select>
+  </div>
 
-            </div>
-        </form>
+  <div class="container-table">
+    <form [formGroup]="languageForm" id="newLanguageForm">
+      <div class="form-group">
+        <table>
+          <thead>
+            <tr>
+              <th>CÓDIGOS</th>
+              <th>IDIOMA PREDETERMINADO</th>
+              <th>IDIOMA SELECCIONADO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" name="code" placeholder="Códigos" maxlength="3"></td>
+              <td> <input type="text" name="name" placeholder="Idioma predeterminado"></td>
+              <td><input type="text2" name="name2" placeholder="Idioma seleccionado"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-dark mt-4">Enviar</button>
     </div>
-</div>
+  </div>
