@@ -1,20 +1,35 @@
-<div class="tour-maker col-8">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col">
+      <h4>Listado de tours</h4>
+      <select ng-model="tours">
+        <option value="" selected>Aquí insertar nombre de cada tour</option>
+        <!-- <option  *ngFor="let tour of tours">{{ tour.name }} ({{ tour.code }})</option> -->
+        <option value="value3">Tour 3</option>
+      </select>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-success float-right" (click)='createTour()'>Crear tour</button>
+    </div>
+  </div>
+</div>
 
+
+<div class="tour-maker col-8">
+  <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-warning" (click)='editTour()'>Editar tour</button>
+    <button type="button" class="btn btn-danger" (click)='deleteTour()'>Eliminar tour</button>
+  </div>
   <form [formGroup]="mForm" id="tourMakerForm">
     <div class="mb-3">
       <div class="tours form-group">
-        <label for="tours" class="col-form-label">Selecciona tour</label>
-        <select id="tours" name="tours" id="code">
-          <option value="tour1"> "[nombre del tour]" </option>
-          <option value="tour2">...</option>
-          <option value="tour3">Tour 3</option>
-        </select>
-        <button type="button" class="btn btn-danger btn-sm float-right">Eliminar</button>
+        <label for="tours" class="col-form-label">Nombre del tour</label>
+        <input type="text" class="form-control" name="tourname" id="tourname">
       </div>
       <div class="language form-group">
         <label for="language" class="col-form-label">¿En qué idioma lo quieres publicar?</label>
         <div id="language" *ngFor="let language of languages">
-          <input type="checkbox" id={{language?.code}} name="language" value={{language?._id}}>
+          <input type="radio" id={{language?.code}} name="language" value={{language?._id}}>
           <label for={{language?.code}}>{{language.name}}</label>
         </div>
       </div>
@@ -70,7 +85,9 @@
           <button type="submit" class="btn btn-outline-info btn-sm" (click)="addGuide()">Añadir</button>
         </div>
       </div>
-      <button type="submit" (click)="postTour()" class="btn btn-primary mt-3">Crear tour</button>
+      <div class="d-flex justify-content-center">
+        <button type="submit" (click)="saveTour()" class="btn btn-primary mt-3">Crear tour</button>
+      </div>
     </div>
   </form>
 </div>

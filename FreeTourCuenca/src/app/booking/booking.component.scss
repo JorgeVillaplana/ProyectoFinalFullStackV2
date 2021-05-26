@@ -1,5 +1,5 @@
 .container {
-  padding: 20px;
+  padding: 17px;
   .col {
     margin-right: 30px;
   }
@@ -19,6 +19,11 @@
   .gmap_canvas {
     padding: 10px;
   }
+  #carrusel {
+    max-width: 330px;
+    max-height: 100%;
+    border-radius: 5px;
+  }
   .col-4 {
     background-color: lightgrey;
     border-radius: 8px;
@@ -28,7 +33,12 @@
   select {
     margin-bottom: 20px;
   }
-
+  .form-group {
+    margin-top: 8%;
+  }
+  .btn-warning:hover {
+    box-shadow: 1px 1px grey;
+  }
   label {
     font-size: 20px;
     margin-left: 3px;

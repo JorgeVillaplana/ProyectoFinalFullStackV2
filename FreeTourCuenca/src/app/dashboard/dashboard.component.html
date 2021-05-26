@@ -65,27 +65,6 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="card card-chart">
-              <div class="card-header card-header-info">
-                <div class="ct-chart"></div>
-              </div>
-              <div class="card-body">
-                <button type="button" class="btn btn-success float-right" (click)='createTour()'>Crear
-                  tour</button><br>
-                <h4 class="card-title">Listado de tours</h4>
-                <select ng-model="tours">
-                  <option value="" selected>Aquí insertar nombre de cada tour</option>
-                  <!-- <option  *ngFor="let tour of tours">{{ tour.name }} ({{ tour.code }})</option> -->
-                  <option value="value3">Tour 3</option>
-                </select>
-                <button type="button" class="btn btn-warning" (click)='editTour()'>Editar tour</button>
-                <button type="button" class="btn btn-danger" (click)='deleteTour()'>Eliminar tour</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

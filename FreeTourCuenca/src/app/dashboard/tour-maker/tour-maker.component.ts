@@ -33,6 +33,10 @@ export class TourMakerComponent implements OnInit {
     name: 'English',
   }]
 
+  get f(): any {
+    return this.mForm.controls
+  }
+
   tags = [] as any
   newTag = ""
 
@@ -47,13 +51,23 @@ export class TourMakerComponent implements OnInit {
   newGuide = ""
   addGuide() {}
 
-
-  get f(): any {
-    return this.mForm.controls
+  createTour(){
+    // DESPLIEGA EL FORMULARIO VACÍO
   }
 
-  postTour(){
+  saveTour(){
+    // GUARDA TOUR
   }
+
+  editTour(){
+    // + CARGA LOS DATOS DE API
+  }
+
+  deleteTour(){}
+
+
+
+
 
   ngOnInit(): void {
   }
