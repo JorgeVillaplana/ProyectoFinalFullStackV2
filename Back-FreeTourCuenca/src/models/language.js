@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const SchemaMongo = mongoose.Schema
+const Schema = mongoose.Schema
 
-const Schema = new SchemaMongo({
+const LanguageSchema = new Schema({
     code: String,
     name: String,
     icon: String,
@@ -9,4 +9,4 @@ const Schema = new SchemaMongo({
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("language", Schema)
+module.exports = mongoose.model("language", LanguageSchema)

@@ -11,7 +11,11 @@ controller.saveLanguage = async(req, res) => {
     }
 
     try {
-        const language = new Language({ code: req.body.code, name: req.body.name, svg: req.body.svg })
+        const language = new Language({
+            code: req.body.code,
+            name: req.body.name,
+            icon: req.body.icon
+        })
         language.save()
         res.send()
     } catch (error) {
@@ -51,7 +55,12 @@ controller.updateLanguage = async(req, res) => {
     }
 
     try {
-        await Language.findByIdAndUpdate(req.params.id, { code: req.body.code, name: req.body.name, svg: req.body.svg, updatedAt: Date.now() })
+        await Language.findByIdAndUpdate(req.params.id, {
+            code: req.body.code,
+            name: req.body.name,
+            icon: req.body.icon,
+            updatedAt: Date.now()
+        })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)

@@ -10,7 +10,20 @@ controller.saveText = async(req, res) => {
     }
 
     try {
-        const text = new Text({ code: req.body.code, text: req.body.text, language: req.body.language })
+        let texts = []
+        req.body.texts.foreach(
+            text => {
+                const object = {
+                    code: text.code,
+                    text: text.text
+                }
+            }
+        )
+
+        const text = new Text({
+            texts: texts,
+            language: req.body.language
+        })
         text.save()
         res.send()
     } catch (error) {
@@ -41,13 +54,13 @@ controller.getText = async(req, res) => {
 
 }
 
-controller.getTextByCode = async(req, res) => {
+controller.getTextByLang = async(req, res) => {
 
-    const code = req.params.code
+    const language = req.body.language
 
     try {
-        const text = await text.find(code)
-        res.json(text)
+        const texts = await text.find({ language: language })
+        res.json(texts)
     } catch (err) {
         console.log(err)
         res.status(500).send(err.message)
@@ -63,7 +76,20 @@ controller.updateText = async(req, res) => {
     }
 
     try {
-        await Text.findByIdAndUpdate(req.params.id, { code: req.body.code, text: req.body.text, language: req.body.language, updatedAt: Date.now() })
+        let texts = []
+        req.body.texts.foreach(
+            text => {
+                const object = {
+                    code: text.code,
+                    text: text.text
+                }
+            }
+        )
+        await Text.findByIdAndUpdate(req.params.id, {
+            texts: texts,
+            language: req.body.language,
+            updatedAt: Date.now()
+        })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)

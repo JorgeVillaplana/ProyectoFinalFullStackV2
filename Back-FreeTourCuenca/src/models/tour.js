@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const SchemaMongo = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const Schema = new SchemaMongo({
+const TourSchema = new Schema({
     name: String,
     duration: Number,
     seats: Number,
@@ -16,4 +16,4 @@ const Schema = new SchemaMongo({
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("tour", Schema);
+module.exports = mongoose.model("tour", TourSchema);

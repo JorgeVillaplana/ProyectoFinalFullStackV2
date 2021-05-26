@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const SchemaMongo = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const Schema = new SchemaMongo({
+const GuideSchema = new Schema({
     name: String,
     surname: String,
     dni: { type: String, unique: true },
@@ -17,4 +17,4 @@ const Schema = new SchemaMongo({
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("guide", Schema);
+module.exports = mongoose.model("guide", GuideSchema);

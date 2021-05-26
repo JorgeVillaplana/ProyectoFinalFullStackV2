@@ -6,13 +6,13 @@ const schema = joi.object({
         code: joi.string().required(),
         text: joi.string().required()
     })),
-    language: langValidator.validate(data).required()
+    language: joi.object().required()
 });
 
 function validate(body) {
     return schema.validate({
         texts: body.texts,
-        language: body.language
+        language: langValidator.validate(body.language)
     }, { abortEarly: false });
 }
 

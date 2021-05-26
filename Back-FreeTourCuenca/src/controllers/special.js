@@ -10,7 +10,18 @@ controller.saveSpecial = async(req, res) => {
     }
 
     try {
-        const special = new Special({ name: req.body.name, icon: req.body.icon })
+        let namesByLang = []
+        req.body.namesByLang.foreach(
+            element => {
+                const item = {
+                    name: element.name,
+                    language: element.language
+                }
+                namesByLang.push(item)
+            }
+        )
+
+        const special = new Special({ namesByLang: namesByLang, icon: req.body.icon })
         special.save()
         res.send()
     } catch (error) {
@@ -50,7 +61,18 @@ controller.updateSpecial = async(req, res) => {
     }
 
     try {
-        await Special.findByIdAndUpdate(req.params.id, { name: req.body.name, icon: req.body.icon, updatedAt: Date.now() })
+        let namesByLang = []
+        req.body.namesByLang.foreach(
+            element => {
+                const item = {
+                    name: element.name,
+                    language: element.language
+                }
+                namesByLang.push(item)
+            }
+        )
+
+        await Special.findByIdAndUpdate(req.params.id, { namesByLang: namesByLang, icon: req.body.icon, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)

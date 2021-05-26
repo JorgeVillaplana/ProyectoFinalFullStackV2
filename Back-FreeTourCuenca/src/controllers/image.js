@@ -11,7 +11,10 @@ controller.saveImage = async(req, res) => {
     }
 
     try {
-        const image = new Image({ route: req.body.route })
+        const image = new Image({
+            detail: req.body.detail,
+            route: req.body.route
+        })
         image.save()
         res.send()
     } catch (error) {
@@ -51,7 +54,11 @@ controller.updateImage = async(req, res) => {
     }
 
     try {
-        await Image.findByIdAndUpdate(req.params.id, { route: req.body.route, updatedAt: Date.now() })
+        await Image.findByIdAndUpdate(req.params.id, {
+            detail: req.body.detail,
+            route: req.body.route,
+            updatedAt: Date.now()
+        })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)
@@ -71,6 +78,29 @@ controller.deleteImage = async(req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).send(err.message)
+    }
+}
+
+controller.saveImage2 = image => {
+    const valid = validator.validate(image)
+
+    if (!valid) {
+        return "Error, imagen no válida"
+    }
+
+    try {
+        let id = null
+        const myImage = new Image({
+            detail: image.detail,
+            route: image.route
+        })
+        id = myImage.save((err, image) => {
+            return image.id
+        })
+        return id
+
+    } catch (error) {
+        return error
     }
 }
 

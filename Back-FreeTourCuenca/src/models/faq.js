@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const SchemaMongo = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const Schema = new SchemaMongo({
+const FaqSchema = new Schema({
     details: [{
         question: String,
         answer: String,
@@ -11,4 +11,4 @@ const Schema = new SchemaMongo({
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("faq", Schema)
+module.exports = mongoose.model("faq", FaqSchema)

@@ -10,11 +10,19 @@ controller.saveFaq = async(req, res) => {
     }
 
     try {
+        let details = []
+        req.body.details.foreach(
+            element => {
+                const detail = {
+                    question: element.question,
+                    answer: element.answer
+                }
+                details.push(detail)
+            }
+        )
+
         const faq = new Faq({
-            details: {
-                question: req.body.question,
-                answer: req.body.answer
-            },
+            details: details,
             language: req.body.language
         })
         faq.save()
@@ -69,12 +77,20 @@ controller.updateFaq = async(req, res) => {
     }
 
     try {
+        let details = []
+        req.body.details.foreach(
+            element => {
+                const detail = {
+                    question: element.question,
+                    answer: element.answer
+                }
+                details.push(detail)
+            }
+        )
+
         await Faq.findByIdAndUpdate(
             req.params.id, {
-                details: {
-                    question: req.body.question,
-                    answer: req.body.answer
-                },
+                details: details,
                 language: req.body.language,
                 updatedAt: Date.now()
             })

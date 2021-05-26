@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const SchemaMongo = mongoose.Schema
+const Schema = mongoose.Schema
 
-const Schema = new SchemaMongo({
+const TextSchema = new Schema({
     texts: [{
         code: String,
         text: String
@@ -11,4 +11,4 @@ const Schema = new SchemaMongo({
     updatedAt: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model("text", Schema)
+module.exports = mongoose.model("text", TextSchema)
