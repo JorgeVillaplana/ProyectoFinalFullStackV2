@@ -42,7 +42,8 @@ export class UsersComponent implements OnInit {
 
   deleteUser(id: any){}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    window.scrollTo(0,0);
   }
 
 }
