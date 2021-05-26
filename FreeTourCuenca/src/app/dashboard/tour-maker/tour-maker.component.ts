@@ -33,14 +33,28 @@ export class TourMakerComponent implements OnInit {
     name: 'English',
   }]
 
-  ngOnInit(): void {
+  tags = [] as any
+  newTag = ""
+
+  addTag(data: any) {
+    this.tags.push(data);
+    data.value = "";
   }
+
+  newTime = ""
+  addTime() {}
+
+  newGuide = ""
+  addGuide() {}
+
 
   get f(): any {
     return this.mForm.controls
   }
 
   postTour(){
+  }
 
+  ngOnInit(): void {
   }
 }
