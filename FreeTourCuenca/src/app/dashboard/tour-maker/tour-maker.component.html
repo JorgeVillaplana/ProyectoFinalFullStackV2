@@ -9,13 +9,13 @@
       </select>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-success float-right" (click)='createTour()'>Crear tour</button>
+      <button type="button" class="btn btn-success float-right" (click)='showNewTour()'>Crear tour</button>
     </div>
   </div>
 </div>
 
 
-<div class="tour-maker col-8">
+<div class="tour-maker col-8" *ngIf="showForm">
   <div class="d-flex justify-content-end">
     <button type="button" class="btn btn-warning" (click)='editTour()'>Editar tour</button>
     <button type="button" class="btn btn-danger" (click)='deleteTour()'>Eliminar tour</button>

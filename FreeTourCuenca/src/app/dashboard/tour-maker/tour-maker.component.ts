@@ -51,12 +51,18 @@ export class TourMakerComponent implements OnInit {
   newGuide = ""
   addGuide() {}
 
-  createTour(){
+  showForm = false
+  showNewTour(){
+    this.showForm = !this.showForm
     // DESPLIEGA EL FORMULARIO VACÍO
   }
 
   saveTour(){
     // GUARDA TOUR
+  }
+
+  loadTours() {
+    // CARGA LISTADO DE TOURS DESDE API
   }
 
   editTour(){

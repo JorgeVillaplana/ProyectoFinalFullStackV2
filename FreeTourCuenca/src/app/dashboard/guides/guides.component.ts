@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,17 +15,37 @@ export class GuidesComponent implements OnInit {
     surname: "Manoplez"
   }]
 
-  constructor() { }
+gForm: FormGroup
 
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder,
+    private router: Router) {
+    this.gForm = this.fb.group({
+      name: ["", Validators.required],
+      email: ["", Validators.required],
+      seats: ["", Validators.required],
+      date: ["", Validators.required],
+      time: ["", Validators.required],
+    })
   }
+
+  get g(): any {
+    return this.gForm.controls
+  }
+
+
+  guideForm = false
+  addGuide() {
+    this.guideForm = !this.guideForm
+  }
+
+  saveGuide(){}
 
   editGuide(id: any){
 
   }
 
-  deleteGuide(id: any){
+  deleteGuide(id: any){}
 
+ ngOnInit(): void {
   }
-
 }
