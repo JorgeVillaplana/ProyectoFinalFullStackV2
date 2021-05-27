@@ -3,30 +3,37 @@ footer {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   text-align: center;
-  // margin: 0 auto;
   position: absolute;
   bottom: 0;
-  // margin-top: 5%;
   height: 8vh;
   .clearfix {
     overflow: auto;
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    a {
+      padding-right: 2em;
+      color: rgb(184, 184, 38);
+    }
+
+    a:active {
+      color: rgb(245, 160, 60);
+    }
+
+    a:hover {
+      color: rgb(207, 164, 46);
+    }
   }
-  .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+}
+
+.copyright {
+  #by {
+    color: rgb(122, 122, 122);
   }
-}
-
-a {
-  padding-right: 2em;
-  color: rgb(184, 184, 38);
-}
-
-a:active {
-  color: rgb(245, 160, 60);
-}
-
-a:hover {
-  color: rgb(207, 164, 46);
+  #by:hover {
+    color: rgb(207, 164, 46);
+  }
 }
