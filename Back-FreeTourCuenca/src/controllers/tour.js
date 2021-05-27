@@ -89,6 +89,25 @@ controller.getToursByName = async(req, res) => {
 
 }
 
+controller.getToursByLang = async(req, res) => {
+
+    try {
+        const tours = await tour.find()
+            .populate({
+                path: "tourdetail",
+                match: { language: req.body.language },
+                populate: {
+                    path: 'guides'
+                }
+            })
+        res.json(tours)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err.message)
+    }
+
+}
+
 controller.updateTour = async(req, res) => {
     const valid = validator.validate(req.body)
 

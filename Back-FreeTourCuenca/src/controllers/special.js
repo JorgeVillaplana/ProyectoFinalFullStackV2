@@ -32,7 +32,7 @@ controller.getSpecialsByLang = async(req, res) => {
     try {
         language = req.body.language
         console.log(language)
-        const specials = await Special.find({ language: language })
+        const specials = await Special.find({ 'namesByLang.language': language })
         res.json(specials)
     } catch (err) {
         console.log(err)

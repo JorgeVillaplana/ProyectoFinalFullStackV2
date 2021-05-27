@@ -58,7 +58,11 @@ controller.getImportantPosts = async(req, res) => {
 
 controller.getPostByLanguage = async(req, res) => {
     try {
-        const posts = await Post.find().populate({ path: 'postdetail', match: { language: req.body.language } })
+        const posts = await Post.find()
+            .populate({
+                path: 'postdetail',
+                match: { language: req.body.language }
+            })
         res.json(posts)
     } catch (err) {
         console.log(err)
