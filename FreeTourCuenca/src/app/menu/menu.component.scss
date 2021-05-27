@@ -94,9 +94,9 @@
   }
   .logo {
     float: left;
-    margin-left: 3%;
-    margin-top: 0.8%;
-    height: 60%;
+    margin-left: 1%;
+    margin-top: -1%;
+    height: 100%;
     img {
       height: 100%;
       width: auto;
@@ -182,7 +182,7 @@
     background-color: yellow;
   }
 
-  @media only screen and (max-width: 860px) {
+  @media only screen and (max-width: 898px) {
     #mainnav {
       position: fixed;
       left: -100%;
