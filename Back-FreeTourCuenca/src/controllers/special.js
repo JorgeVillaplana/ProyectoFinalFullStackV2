@@ -28,6 +28,18 @@ controller.getSpecials = async(req, res) => {
     }
 }
 
+controller.getSpecialsByLang = async(req, res) => {
+    try {
+        language = req.body.language
+        console.log(language)
+        const specials = await Special.find({ language: language })
+        res.json(specials)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err.message)
+    }
+}
+
 controller.getSpecial = async(req, res) => {
     const id = req.params.id
 
