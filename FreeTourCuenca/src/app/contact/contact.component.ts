@@ -22,7 +22,7 @@ export class ContactComponent implements OnInit {
     })
   }
 
-  get c(): any {
+  get c(): any { //no sé para qué sirve esto realmente, está copiado de thepeople
     return this.cForm.controls
   }
 
