@@ -1,7 +1,6 @@
 const controller = {}
 const Tour = require('../models/tour')
 const TourDetail = require('../models/tourdetail')
-const Guide = require('../models/guide')
 const validator = ('../validators/tour.js')
 const imageController = require('./image')
 
@@ -13,55 +12,18 @@ controller.saveTour = async(req, res) => {
     }
 
     try {
-        let images = []
-        req.body.images.foreach(image => {
-            images.push(imageController.saveImage2(image))
-        })
-
-        let specials = []
-        req.body.specialFeatures.foreach(feature => {
-            special.push({
-                special: feature.special,
-                value: feature.value
-            })
-        })
-
-        let details = []
-        req.body.tourDetails.foreach(detail => {
-            let tourdates = detail.tourdates.map(element => {
-                return {
-                    day: element.day,
-                    timePicker: element.timePicker.map(
-                        time => {
-                            return {
-                                hour: time.hour,
-                                remainingSeats: time.remainingSeats
-                            }
-                        })
-                }
-            })
-
-            let tourdetail = new TourDetail({
-                language: detail.language,
-                tilte: detail.title,
-                categories: detail.categories,
-                guides: detail.guides,
-                tourdates: tourdates
-            })
-
-            details.push(tourdetail.save((err, item) => {
-                return item.id
-            }))
+        const images = req.body.images.map(image => {
+            return imageController.saveImage2(image)
         })
 
         const tour = new Tour({
             name: req.body.name,
             duration: req.body.duration,
             seats: req.body.seats,
-            tourDetails: details,
+            tourDetails: req.body.tourDetails,
             images: images,
             map: req.body.map,
-            specialFeatures: special
+            specialFeatures: req.body.specialFeatures
         })
         tour.save()
         res.send()
@@ -135,55 +97,14 @@ controller.updateTour = async(req, res) => {
     }
 
     try {
-        let images = []
-        req.body.images.foreach(image => {
-            images.push(imageController.saveImage2(image))
-        })
-
-        let specials = []
-        req.body.specialFeatures.foreach(feature => {
-            special.push({
-                special: feature.special,
-                value: feature.value
-            })
-        })
-
-        let details = []
-        req.body.tourDetails.foreach(detail => {
-            let tourdates = detail.tourdates.map(element => {
-                return {
-                    day: element.day,
-                    timePicker: element.timePicker.map(
-                        time => {
-                            return {
-                                hour: time.hour,
-                                remainingSeats: time.remainingSeats
-                            }
-                        })
-                }
-            })
-
-            let tourdetail = new TourDetail({
-                language: detail.language,
-                tilte: detail.title,
-                categories: detail.categories,
-                guides: detail.guides,
-                tourdates: tourdates
-            })
-
-            details.push(tourdetail.save((err, item) => {
-                return item.id
-            }))
-        })
-
         await Tour.findByIdAndUpdate(req.params.id, {
             name: req.body.name,
             duration: req.body.duration,
             seats: req.body.seats,
-            tourDetails: details,
-            images: images,
+            tourDetails: req.body.tourDetails,
+            images: req.body.images,
             map: req.body.map,
-            specialFeatures: special,
+            specialFeatures: req.body.specialFeatures,
             updatedAt: Date.now()
         })
         res.status(204).send()
@@ -201,7 +122,7 @@ controller.deleteTour = async(req, res) => {
 
     try {
         const tour = await Tour.findById(id)
-        tour.tourDetail.foreach(async(tourdetail) => {
+        tour.tourDetail.forEach(async(tourdetail) => {
             await TourDetail.findByIdAndDelete(tourdetail._id)
         })
         await Tour.findByIdAndDelete(tour._id)

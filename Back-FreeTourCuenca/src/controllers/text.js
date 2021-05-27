@@ -10,18 +10,8 @@ controller.saveText = async(req, res) => {
     }
 
     try {
-        let texts = []
-        req.body.texts.foreach(
-            text => {
-                const object = {
-                    code: text.code,
-                    text: text.text
-                }
-            }
-        )
-
         const text = new Text({
-            texts: texts,
+            texts: req.body.texts,
             language: req.body.language
         })
         text.save()
@@ -76,17 +66,8 @@ controller.updateText = async(req, res) => {
     }
 
     try {
-        let texts = []
-        req.body.texts.foreach(
-            text => {
-                const object = {
-                    code: text.code,
-                    text: text.text
-                }
-            }
-        )
         await Text.findByIdAndUpdate(req.params.id, {
-            texts: texts,
+            texts: req.body.texts,
             language: req.body.language,
             updatedAt: Date.now()
         })
