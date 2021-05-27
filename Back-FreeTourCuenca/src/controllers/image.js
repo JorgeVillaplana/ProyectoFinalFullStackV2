@@ -104,4 +104,8 @@ controller.saveImage2 = image => {
     }
 }
 
+controller.upload = async(req, res) => {
+
+}
+
 module.exports = controller

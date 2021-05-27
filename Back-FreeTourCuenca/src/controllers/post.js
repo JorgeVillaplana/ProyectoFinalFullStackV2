@@ -12,23 +12,8 @@ controller.savePost = async(req, res) => {
     }
 
     try {
-        let detailIdArray = []
-        req.body.details.foreach(
-            detail => {
-                const postdetail = new Postdetail({
-                    title: detail.title,
-                    text: detail.text,
-                    language: detail.language,
-                    categories: detail.categories
-                })
-                postdetail.save((err, item) => {
-                    detailIdArray.push(item.id)
-                })
-            }
-        )
-
         const post = new Post({
-            details: detailIdArray,
+            details: req.body.details,
             image: req.body.image,
             important: req.body.important
         })
@@ -41,7 +26,7 @@ controller.savePost = async(req, res) => {
 
 controller.getPosts = async(req, res) => {
     try {
-        const posts = await Post.find().populate('postdetail')
+        const posts = await Post.find().populate({ path: 'postdetail', match: { language: req.body.language } })
         res.json(posts)
     } catch (err) {
         console.log(err)
@@ -53,7 +38,7 @@ controller.getPost = async(req, res) => {
     const id = req.params.id
 
     try {
-        const post = await post.findById(id).populate('postdetail')
+        const post = await post.findById(id).populate({ path: 'postdetail', match: { language: req.body.language } })
         res.json(post)
     } catch (err) {
         console.log(err)
@@ -89,22 +74,8 @@ controller.updatePost = async(req, res) => {
     }
 
     try {
-        let detailIdArray = []
-        req.body.details.foreach(
-            detail => {
-                const postdetail = new Postdetail({
-                    title: detail.title,
-                    text: detail.text,
-                    language: detail.language,
-                    categories: detail.categories
-                })
-                postdetail.save((err, item) => {
-                    detailIdArray.push(item.id)
-                })
-            }
-        )
         await Post.findByIdAndUpdate(req.params.id, {
-            details: detailIdArray,
+            details: req.body.details,
             image: req.body.image,
             important: req.body.important,
             updatedAt: Date.now()
