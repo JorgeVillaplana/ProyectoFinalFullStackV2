@@ -21,6 +21,7 @@ p {
 .card-img-top {
   height: 40vh;
   width: auto;
+  object-fit: cover;
 }
 .card-footer {
   background-color: rgba(247, 196, 58, 0.3);
@@ -54,6 +55,6 @@ a:hover {
 }
 
 .limitTextHeight {
-  height: 20px;
+  height: 40px;
   overflow: hidden;
 }
