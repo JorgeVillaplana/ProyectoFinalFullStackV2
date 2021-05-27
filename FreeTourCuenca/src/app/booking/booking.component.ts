@@ -16,9 +16,9 @@ export class BookingComponent implements OnInit {
 
       this.mForm = this.fb.group({
         name: ["", Validators.required],
-        email: ["", Validators.required],
-        seats: ["", Validators.required],
-        date: ["", Validators.required],
+        email: ["", Validators.required, Validators.email],
+        seats: ["", Validators.required, Validators.max(9)],
+        date: ["", Validators.required], // VER SI HAY UN VALIDATOR ESPECÍFICO DE FECHAS (MOMENT?)
         time: ["", Validators.required],
       })
     }
@@ -29,7 +29,7 @@ export class BookingComponent implements OnInit {
   }
 
 
-  get f(): any {
+  get m(): any {
     return this.mForm.controls
   }
 

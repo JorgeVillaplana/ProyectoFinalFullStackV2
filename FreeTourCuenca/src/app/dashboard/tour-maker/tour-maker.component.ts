@@ -35,7 +35,7 @@ export class TourMakerComponent implements OnInit {
     name: 'English',
   }]
 
-  get f(): any {
+  get m(): any {
     return this.mForm.controls
   }
 
