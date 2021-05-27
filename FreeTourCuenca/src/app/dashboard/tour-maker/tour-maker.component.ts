@@ -14,8 +14,10 @@ export class TourMakerComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private router: Router) {
       this.mForm = this.fb.group({
-        name: ["", Validators.required],
-        email: ["", Validators.required],
+        tourname: ["", Validators.required],
+        language: ["", Validators.required],
+        title: ["", Validators.required],
+        duration: ["", Validators.required, Validators.minLength(2), Validators.maxLength(3)],
         seats: ["", Validators.required],
         date: ["", Validators.required],
         time: ["", Validators.required],

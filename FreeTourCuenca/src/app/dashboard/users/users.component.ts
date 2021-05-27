@@ -20,11 +20,16 @@ export class UsersComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private router: Router) {
-    this.uForm = this.fb.group({
+
+      this.uForm = this.fb.group({
+      email: ["", Validators.required, Validators.email],
       name: ["", Validators.required],
-      email: ["", Validators.required],
+      surname: ["", Validators.required],
+      password: ["", Validators.required],
+      role: ["", Validators.required],
     })
   }
+
   get u(): any {
     return this.uForm.controls
   }

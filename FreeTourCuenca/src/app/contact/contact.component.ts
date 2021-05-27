@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  cForm: FormGroup
+
+  constructor(private fb: FormBuilder,
+    private router: Router) {
+
+      this.cForm = this.fb.group({
+      name: ["", Validators.required],
+      email: ["", Validators.required, Validators.email],
+      message: ["", Validators.required],
+
+    })
+  }
+
+  get c(): any {
+    return this.cForm.controls
+  }
 
   ngOnInit(): void {
     window.scrollTo(0,0);

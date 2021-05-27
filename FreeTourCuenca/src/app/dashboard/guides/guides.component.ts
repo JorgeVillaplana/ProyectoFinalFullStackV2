@@ -19,9 +19,11 @@ gForm: FormGroup
 
   constructor(private fb: FormBuilder,
     private router: Router) {
+
     this.gForm = this.fb.group({
       name: ["", Validators.required],
-      email: ["", Validators.required],
+      surname: ["", Validators.required],
+      email: ["", Validators.required, Validators.email],
     })
   }
 

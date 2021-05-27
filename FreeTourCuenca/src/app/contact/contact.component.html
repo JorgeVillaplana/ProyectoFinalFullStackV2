@@ -7,7 +7,7 @@
           contacto con nosotros a través de este formulario. <br>Te responderemos lo antes posible.</p>
       </div>
       <div class="col-md-12">
-        <form class="mb-5" method="post" id="contactForm" name="contactForm">
+        <form [formGroup]="cForm" class="mb-5" method="post" id="contactForm" name="contactForm">
           <div class="row">
             <div class="col-md-6 form-group">
               <label for="name" class="col-form-label">Nombre</label>
