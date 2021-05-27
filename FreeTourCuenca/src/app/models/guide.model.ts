@@ -4,6 +4,11 @@ export class Guide {
   dni?: string;
   phone?: string;
   email?: string;
-  idioms?: Array<string>;
+  languages?: Array<string>;
+  locations?: [{
+    city?: string;
+    state?: string;
+    country?: string;
+  }]
   _id?: string;
 }

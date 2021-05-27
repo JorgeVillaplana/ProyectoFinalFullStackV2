@@ -1,6 +1,6 @@
 export class Language {
   code?: string;
   name?: string;
-  svg?: string;
+  icon?: string;
   _id?: string;
 }

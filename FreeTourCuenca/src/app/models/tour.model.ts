@@ -1,17 +1,16 @@
 import { Image } from './image.model'
-import{ Guide } from './guide.model'
+import { Special } from './special.model';
+import { TourDetail } from './tourdetail.model';
 export class Tour {
-  code?: string;
-  title?: string;
-  description?: string;
+  name?: string;
   duration?: number;
   seats?: number;
-  image?: Image;
-  guide?: Guide;
+  tourDetails?: Array<TourDetail>;
+  images?: Array<Image>;
   map?: string;
-  language?: string;
-  categories?: Array<any>;
-  special?: Array<any>;
-  tourdates?: Array<any>;
+  specialFeatures?: [{
+    special?: Special;
+    value?: boolean;
+  }];
   _id?: string;
 }

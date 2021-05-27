@@ -1,5 +1,10 @@
+import { Language } from "./language.model";
+
 export class Special {
-  name?: string;
+  namesByLang?: [{
+    name?: string;
+    language?: Language;
+   }];
   icon?: string;
   _id?: string;
 }
