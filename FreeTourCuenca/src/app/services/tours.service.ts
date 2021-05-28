@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Tour } from '../models/tour.model';
+import { Language } from '../models/language.model';
 
 
 @Injectable({
@@ -38,10 +39,21 @@ export class ToursService {
     )
   }
 
-  getTourByCode(code: string | null): Observable<any> {
+  getTourByName(tour: Tour): Observable<any> {
     return this.httpClient
     .get(
-      `${environment.apiUrl}/tourc/${code}`
+      `${environment.apiUrl}/tour-name/${tour.name}`
+    ).pipe(
+      catchError ( error => {
+        return error;
+      })
+    )
+  }
+
+  getTourByLang(lang: Language): Observable<any> {
+    return this.httpClient
+    .get(
+      `${environment.apiUrl}/tour-by-lang/${lang._id}`
     ).pipe(
       catchError ( error => {
         return error;

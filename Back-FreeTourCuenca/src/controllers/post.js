@@ -61,7 +61,7 @@ controller.getPostByLanguage = async(req, res) => {
         const posts = await Post.find()
             .populate({
                 path: 'postdetail',
-                match: { language: req.body.language }
+                match: { language: req.params.language }
             })
         res.json(posts)
     } catch (err) {
@@ -71,7 +71,6 @@ controller.getPostByLanguage = async(req, res) => {
 }
 
 controller.updatePost = async(req, res) => {
-    const valid = validator.validate(req.body)
 
     if (!valid) {
         res.status(400).send()

@@ -73,10 +73,9 @@ controller.getTour = async(req, res) => {
 controller.getToursByName = async(req, res) => {
 
     try {
-        const tours = await tour.find({ name: req.body.name })
+        const tours = await tour.find({ name: req.params.name })
             .populate({
                 path: "tourdetail",
-                match: { language: req.body.language._id },
                 populate: {
                     path: 'guides'
                 }
@@ -95,7 +94,7 @@ controller.getToursByLang = async(req, res) => {
         const tours = await tour.find()
             .populate({
                 path: "tourdetail",
-                match: { language: req.body.language },
+                match: { language: req.params.language },
                 populate: {
                     path: 'guides'
                 }

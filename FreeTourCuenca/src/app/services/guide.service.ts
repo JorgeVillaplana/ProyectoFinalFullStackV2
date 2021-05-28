@@ -48,7 +48,8 @@ export class GuideService {
   }
 
   deleteGuide(id: string): Observable<any> {
-    return this.httpClient.delete(`${environment.apiUrl}/guide/${id}`).pipe(
+    return this.httpClient.delete(`${environment.apiUrl}/guide/${id}`)
+    .pipe(
       catchError(error => {
         return error;
       })

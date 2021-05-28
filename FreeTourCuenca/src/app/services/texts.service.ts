@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Text } from '../models/text.model'
+import { Language } from '../models/language.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,11 +38,10 @@ export class TextsService {
     )
   }
 
-  getTextByCode(code: string | null): Observable<any> {
+  getTextByLang(language: Language): Observable<any> {
     return this.httpClient
-    .get(
-      `${environment.apiUrl}/text/${code}`
-    ).pipe(
+    .get(`${environment.apiUrl}/text-by-lang/${language._id}`)
+      .pipe(
       catchError ( error => {
         return error;
       })

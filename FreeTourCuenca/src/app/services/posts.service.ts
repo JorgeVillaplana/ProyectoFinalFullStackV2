@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
+import { Language } from '../models/language.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,10 +38,10 @@ export class PostsService {
     )
   }
 
-  getPostByCode(code: string | null): Observable<any> {
+  getPostByLang(lang: Language): Observable<any> {
     return this.httpClient
     .get(
-      `${environment.apiUrl}/postc/${code}`
+      `${environment.apiUrl}/postc/${lang._id}`
     ).pipe(
       catchError ( error => {
         return error;

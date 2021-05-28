@@ -46,7 +46,7 @@ controller.getFaq = async(req, res) => {
 
 controller.getFaqByLang = async(req, res) => {
 
-    const language = req.body.language
+    const language = req.params.language
 
     try {
         const faq = await faq.find({ language: language })

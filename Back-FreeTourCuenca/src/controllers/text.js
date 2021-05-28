@@ -46,7 +46,7 @@ controller.getText = async(req, res) => {
 
 controller.getTextByLang = async(req, res) => {
 
-    const language = req.body.language
+    const language = req.params.language
 
     try {
         const texts = await text.find({ language: language })

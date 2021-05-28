@@ -1,6 +1,6 @@
 import { Language } from "./language.model";
 
-export class Guide {
+export class Faq {
   details?: [{
     question?: string;
     answer?: string;
