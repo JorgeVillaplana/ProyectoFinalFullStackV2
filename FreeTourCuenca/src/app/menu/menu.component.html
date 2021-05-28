@@ -64,9 +64,33 @@
       </li>
     </ul>
     <div class="hamburger">
+      <span class="bar" (click)="showMenu()"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-      <span class="bar"></span>
+      <ul id="h-menu">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            aria-current="page">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq"
+            title="Preguntas frecuentes">faq</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active">
+            <img src="../../assets/images/english.svg" id="engl" title="Cambiar idioma">
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 </div>

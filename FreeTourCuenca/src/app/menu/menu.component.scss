@@ -126,6 +126,9 @@
     margin-top: 2em;
     margin-right: 4em;
   }
+  #h-menu {
+    display: none;
+  }
   .bar {
     display: block;
     width: 25px;
@@ -159,6 +162,25 @@
       color: yellow;
       display: block;
       cursor: pointer;
+    }
+
+    #h-menu {
+      display: block;
+      background-color: $color-support-one;
+      padding: 20px;
+      border-radius: 5px;
+      li {
+        text-align: center;
+        list-style: none;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 2px;
+      }
+      a {
+        margin-top: 1px;
+        padding: 2px;
+      }
+      // AÑADIR CSS DE contenido desplegable
     }
   }
 }
