@@ -25,7 +25,7 @@
       }
     }
     /*CSS para los iconos de las redes sociales */
-    /* Style the icon bar links */
+
     .navbar-social {
       white-space: nowrap;
       margin-top: 13px;
@@ -107,7 +107,7 @@
     }
   }
   .nav-link {
-    font-size: 22px;
+    font-size: 23px;
     padding: 30px 30px;
     color: rgb(255, 255, 255);
     &:hover {
@@ -118,52 +118,6 @@
       font-weight: 800;
       color: rgb(250, 255, 0);
     }
-  }
-
-  .tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
-
-  /* Tooltip text - INVESTIGAR BIEN */
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: rgb(224, 224, 224);
-    color: rgb(3, 3, 3);
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  /* Tooltip arrow */
-  .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
   }
 
   .hamburger {

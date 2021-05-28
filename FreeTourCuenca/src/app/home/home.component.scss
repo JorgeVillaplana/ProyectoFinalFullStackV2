@@ -20,21 +20,23 @@
       line-height: 60px;
       font-size: 55px;
       width: 80%;
-      margin: 230px 0px 40px 0px;
+      margin: 210px 0px 40px 0px;
       #highlight {
         color: yellow;
       }
     }
     h2 {
       color: white;
+      font-weight: bold;
       font-size: 25px;
+      font-style: oblique;
     }
     button {
       background-color: yellow;
       color: black;
       padding: 40px;
       border: none;
-      margin-top: 20px;
+      margin-top: 25px;
       border-radius: 8%;
       margin-left: 120px;
       transition-duration: 0.2s;
@@ -55,7 +57,25 @@
   background: linear-gradient(#000000, #4b4b4b);
   justify-content: center;
   p {
-    margin-right: 15%;
-    margin-left: 15%;
+    margin-right: 18%;
+    margin-left: 18%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+}
+
+.last-post-container {
+  margin-top: 4%;
+}
+
+.fb-container {
+  margin-top: 4%;
+}
+
+.review-container {
+  margin-top: 4%;
+  .card {
+    border: none;
+    align-content: center;
   }
 }
