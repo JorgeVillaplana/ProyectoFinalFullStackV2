@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SelectedlangService } from '../services/selectedlang.service';
+import { SelectedtextService } from '../services/selectedtext.service';
 
 @Component({
   selector: 'app-booking',

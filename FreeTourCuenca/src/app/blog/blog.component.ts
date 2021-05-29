@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Text } from '../models/text.model'
+import { Language } from '../models/language.model'
+import { Post } from '../models/post.model'
+import { PostsService } from './../services/posts.service';
+import { SelectedlangService } from '../services/selectedlang.service';
+import { SelectedtextService } from '../services/selectedtext.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,7 +13,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  posts: Array<Post> = [];
+  selectedLang: Language = {}
+  selectedText: Text = {}
+
+  constructor(
+    private postService: PostsService,
+    private selLangService: SelectedlangService,
+    private selTextService: SelectedtextService
+    ) { }
 
   isReadMore = true
 
@@ -17,6 +31,21 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0,0);
+    this.selectedLang = this.selLangService.language
+    this.selectedText = this.selTextService.text
+    this.loadPosts()
+  }
+
+  loadPosts(){
+    this.postService.getPostByLang(this.selectedLang).subscribe(
+      (data: Post[]) => {
+        this.posts = data
+        console.log(data)
+      },
+      error => {
+        console.log("Error: ", error)
+      }
+    )
   }
 
 }
