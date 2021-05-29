@@ -74,8 +74,16 @@
 
 .review-container {
   margin-top: 4%;
+  margin-bottom: 5%;
+
   .card {
     border: none;
     align-content: center;
+  }
+}
+
+@media (max-width: 770px) {
+  .review-container {
+    margin-bottom: 12%;
   }
 }

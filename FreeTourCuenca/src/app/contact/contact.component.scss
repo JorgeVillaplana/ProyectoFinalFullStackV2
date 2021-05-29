@@ -1,7 +1,7 @@
 #main-contact-form {
   background-color: rgb(224, 224, 224);
   border-radius: 15px;
-  padding: 30px;
+  padding: 5%;
   width: 50%;
   margin-top: 15%;
 
@@ -10,8 +10,16 @@
   }
 }
 
+h1 {
+  margin-bottom: -5px;
+}
 label {
   padding-bottom: 12px;
+  font-weight: bold;
+}
+
+p {
+  padding: 28px;
 }
 
 p,
@@ -24,4 +32,28 @@ p,
 }
 .btn-warning:hover {
   box-shadow: 1px 1px grey;
+}
+
+@media only screen and (max-width: 1200px) {
+  #main-contact-form {
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (max-width: 994px) {
+  #main-contact-form {
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #main-contact-form {
+    margin-top: 30%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  #main-contact-form {
+    margin-top: 35%;
+  }
 }
