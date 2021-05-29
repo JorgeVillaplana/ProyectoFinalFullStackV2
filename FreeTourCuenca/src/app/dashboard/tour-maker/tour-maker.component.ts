@@ -56,7 +56,7 @@ export class TourMakerComponent implements OnInit {
   showForm = false
   showNewTour(){
     this.showForm = !this.showForm
-    // DESPLIEGA EL FORMULARIO VACÍO
+    // DESPLIEGA FORMULARIO VACÍO
   }
 
   saveTour(){

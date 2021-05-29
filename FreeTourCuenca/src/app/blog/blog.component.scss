@@ -44,6 +44,12 @@ p {
   margin-right: 7px;
 }
 
+.left-box {
+  .card {
+    padding: 8px;
+  }
+}
+
 .left-box .categories-clouds li a {
   display: block;
   border: 1px solid;
@@ -62,4 +68,10 @@ a:hover {
 .limitTextHeight {
   height: 40px;
   overflow: hidden;
+}
+
+.right-box {
+  .card {
+    padding: 8px;
+  }
 }
