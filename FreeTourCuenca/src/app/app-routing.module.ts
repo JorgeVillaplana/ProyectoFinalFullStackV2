@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -14,12 +15,18 @@ import { TranslateComponent } from './dashboard/translate/translate.component';
 import { GuidesComponent } from './dashboard/guides/guides.component';
 import { UsersComponent } from './dashboard/users/users.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { CookiesComponent } from './cookies/cookies.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { LegalComponent } from './legal/legal.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "tours", component: ToursComponent },
   { path: "blog", component: BlogComponent },
   { path: "contact", component: ContactComponent },
+  { path: "aviso-legal", component: LegalComponent },
+  { path: "politica-privacidad", component: PrivacyPolicyComponent},
+  { path: "cookies", component: CookiesComponent },
   { path: "login", component:LoginComponent },
   { path: "dashboard", component:DashboardComponent, children: [
     { path: "", redirectTo: "", pathMatch: "full"},
