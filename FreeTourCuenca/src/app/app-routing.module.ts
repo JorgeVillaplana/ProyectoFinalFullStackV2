@@ -18,6 +18,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { LegalComponent } from './legal/legal.component';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
@@ -35,7 +36,7 @@ const routes: Routes = [
     { path: "translate", component:TranslateComponent },
     { path: "guides", component:GuidesComponent },
     { path: "users", component:UsersComponent }
-  ] },
+  ], /*canActivate: [AuthGuardService],*/ },
   { path: "booking", component:BookingComponent },
   { path: "faq", component:FaqComponent },
   { path: "404", component: NotfoundComponent },
