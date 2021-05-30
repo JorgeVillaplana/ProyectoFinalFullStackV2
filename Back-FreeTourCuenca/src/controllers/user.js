@@ -1,6 +1,7 @@
 const controller = {}
 const User = require('../models/user')
 const validator = require('../validators/userSignup')
+const authJWT = require("../auth/jwt")
 
 controller.saveUser = async(req, res) => {
     const valid = validator.validate(req.body)
@@ -69,6 +70,44 @@ controller.deleteUser = async(req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).send(err.message)
+    }
+}
+
+controller.login = async(req, res) => {
+    const email = req.body.email
+    const password = req.body.password
+
+    if (!email || !password) {
+        console.log("Datos obligatorios")
+        res.status(401).send("Error en las credenciales")
+        return
+    }
+
+    try {
+        const user = await User.findOne({ email: email })
+
+        if (!user) {
+            console.log("El usuario no existe")
+            res.status(401).send("Credenciales incorrectas")
+            return
+        }
+
+        const validate = await user.isValidPassword(password)
+        if (!validate) {
+            console.log("Contraseña incorrecta")
+            res.status(401).send("Contraseña incorrecta")
+            return
+        }
+
+        const dataToken = authJWT.createToken(user)
+
+        return res.send({
+            access_token: dataToken[0],
+            expires_in: dataToken[1]
+        })
+    } catch (err) {
+        console.log(err)
+        res.status(500).send("Error en el servidor")
     }
 }
 
