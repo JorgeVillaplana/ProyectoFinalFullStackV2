@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/user.model'
+import { UserService } from '../../services/user.service'
 
 @Component({
   selector: 'app-users',
@@ -9,22 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  users = [{
-    _id: "aisduhfg",
-    name: "Jesús",
-    surname: "Apellido",
-    role: "Editor"
-  }]
+  users: Array<User> = []
 
   uForm: FormGroup
-
+  isEdit = false
   constructor(private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private userService: UserService) {
 
       this.uForm = this.fb.group({
       email: ["", Validators.required, Validators.email],
       name: ["", Validators.required],
-      surname: ["", Validators.required],
       password: ["", Validators.required],
       role: ["", Validators.required],
     })
@@ -39,16 +36,78 @@ export class UsersComponent implements OnInit {
     this.userForm = !this.userForm
   }
 
-  saveUser(){}
-
-  editUser(id: any){
-
+  editMode(){
+    this.isEdit = !this.isEdit
   }
 
-  deleteUser(id: any){}
+  submitForm(){
+    if(this.isEdit){
+      this.editUser()
+    }else{
+      this.saveUser()
+    }
+  }
+
+  readUser(): User {
+    const user: User = new User()
+
+    if(this.isEdit) user._id
+    user.name
+    user.email
+    user.password
+    user.role
+
+    return user
+  }
+
+  saveUser(){
+    this.userService.saveUser(this.readUser()).subscribe(
+      data => {
+        console.log(data)
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  editUser(){
+    this.userService.updateUser(this.readUser()).subscribe(
+      data => {
+        console.log(data)
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  deleteUser(id: any){
+    this.userService.deleteUser(id).subscribe(
+      data => {
+        console.log(data)
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  loadUsers(){
+    this.userService.getUsers().subscribe(
+      (data: User[]) => {
+        this.users = data
+        console.log(data)
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
 
   ngOnInit() {
     window.scrollTo(0,0);
+    this.loadUsers()
   }
 
 }
