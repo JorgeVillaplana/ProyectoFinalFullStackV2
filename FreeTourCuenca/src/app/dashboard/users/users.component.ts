@@ -65,7 +65,6 @@ export class UsersComponent implements OnInit {
     user.password = this.u.password.value
     user.role = this.u.role.value
 
-    console.log(user)
     return user
   }
 

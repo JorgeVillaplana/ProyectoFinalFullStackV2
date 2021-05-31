@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const TourSchema = new Schema({
-    name: String,
+    name: { type: String, unique: true },
     duration: Number,
     seats: Number,
     tourDetails: [{ type: Schema.Types.ObjectId, ref: "tourdetail" }],
