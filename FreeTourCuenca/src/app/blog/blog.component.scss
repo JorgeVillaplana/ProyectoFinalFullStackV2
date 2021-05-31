@@ -93,3 +93,25 @@ a:hover {
     color: $color-corporative;
   }
 }
+
+@media (max-width: 535px) {
+  .left-box,
+  .right-box {
+    display: none;
+  }
+
+  .center-box {
+    width: 100%;
+  }
+  .main-blog {
+    padding-bottom: 30%;
+  }
+
+  .wrapper {
+    float: right;
+    position: relative;
+    margin-top: 30%;
+    margin-right: 43%;
+    bottom: 10vh;
+  }
+}
