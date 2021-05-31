@@ -12,7 +12,7 @@ import { UserService } from '../../services/user.service'
 export class UsersComponent implements OnInit {
 
   users: Array<User> = []
-
+  user: User = new User()
   uForm: FormGroup
   isEdit = false
   constructor(private fb: FormBuilder,
@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
     private userService: UserService) {
 
       this.uForm = this.fb.group({
-      email: ["", Validators.required, Validators.email],
+      email: ["", Validators.required],
       name: ["", Validators.required],
       password: ["", Validators.required],
       role: ["", Validators.required],
@@ -36,8 +36,16 @@ export class UsersComponent implements OnInit {
     this.userForm = !this.userForm
   }
 
-  editMode(){
+  editMode(user: User){
     this.isEdit = !this.isEdit
+    this.user = user
+    this.addUser()
+    this.uForm.patchValue({
+      name: user.name,
+      email: user.email,
+      role: user.role
+    })
+
   }
 
   submitForm(){
@@ -52,11 +60,12 @@ export class UsersComponent implements OnInit {
     const user: User = new User()
 
     if(this.isEdit) user._id
-    user.name
-    user.email
-    user.password
-    user.role
+    user.name = this.u.name.value
+    user.email = this.u.email.value
+    user.password = this.u.password.value
+    user.role = this.u.role.value
 
+    console.log(user)
     return user
   }
 

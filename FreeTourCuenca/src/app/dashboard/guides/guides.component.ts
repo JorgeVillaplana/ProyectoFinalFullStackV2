@@ -14,6 +14,9 @@ export class GuidesComponent implements OnInit {
   guideForm = false
   gForm: FormGroup
   isEdit = false
+  guide: Guide = {}
+  languages: string[] = []
+  locations: Array<any> = [{}]
 
   constructor(private fb: FormBuilder,
     private router: Router,
@@ -24,6 +27,8 @@ export class GuidesComponent implements OnInit {
       name: ["", Validators.required],
       surname: ["", Validators.required],
       email: ["", Validators.required, Validators.email],
+      dni: ["", Validators.required, Validators.maxLength(9)],
+      phone: ["", Validators.required, Validators.maxLength(9)],
     })
   }
 
@@ -35,8 +40,19 @@ export class GuidesComponent implements OnInit {
     this.guideForm = !this.guideForm
   }
 
-  editMode(){
+  editMode(guide: Guide){
     this.isEdit = !this.isEdit
+    this.guide = guide
+    this.addGuide()
+    this.gForm.patchValue({
+      name: guide.name,
+      surname: guide.surname,
+      dni: guide.dni,
+      phone: guide.phone,
+      email: guide.email,
+      languages: guide.languages!.toString(),
+      locations: guide.locations!.toString()
+    })
   }
 
   submitForm(){
@@ -54,20 +70,22 @@ export class GuidesComponent implements OnInit {
     error => {
       console.log("Error: ", error)
     })
+    this.loadGuides()
   }
 
   readGuide(): Guide {
     const guide: Guide = new Guide()
 
-    if (this.isEdit) guide._id
-    guide.name
-    guide.surname
-    guide.dni
-    guide.phone
-    guide.email
-    guide.languages
-    guide.locations
+    if (this.isEdit) guide._id = this.guide._id
+    guide.name = this.g.name.value
+    guide.surname = this.g.surname.value
+    guide.dni = this.g.dni.value
+    guide.phone = this.g.phone.value
+    guide.email = this.g.email.value
+    guide.languages = this.languages
+    //guide.locations = this.locations
 
+    console.log(guide)
     return guide
   }
 
@@ -84,6 +102,7 @@ export class GuidesComponent implements OnInit {
     this.guideService.deleteGuide(id).subscribe(
       data => {
         console.log(data)
+        this.loadGuides()
       },
       error => {
         console.log(error)
@@ -106,5 +125,20 @@ export class GuidesComponent implements OnInit {
   ngOnInit() {
     window.scrollTo(0,0);
     this.loadGuides()
+  }
+
+  onEnter(value: string){
+    this.languages.push(value)
+
+  }
+
+  newLocation(city: string, state: string, country: string){
+    let location = {
+      city: city,
+      state: state,
+      country: country
+    }
+
+    this.locations.push(location)
   }
 }
