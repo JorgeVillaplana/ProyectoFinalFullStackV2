@@ -10,19 +10,14 @@ controller.saveUser = async(req, res) => {
         res.status(400).send()
         return
     }
-    console.log("Este es el body", req.body)
     try {
         const exists = await User.findOne({ email: req.body.email })
         if (exists) {
-            console.log("usuario ya existe")
             res.status(400).send("usuario ya existe")
             return
         }
         const user = new User({ email: req.body.email, name: req.body.name, password: req.body.password, role: req.body.role })
-        console.log("Este es el objeto user:", user)
-        await user.save(err => {
-            console.log("Hey! Estoy dentro del save() del controlador: ", err)
-        })
+        await user.save(err => {})
         const data = await User.findOne({ email: req.body.email })
         res.send({ status: "ok", data: data })
     } catch (error) {
@@ -61,7 +56,7 @@ controller.updateUser = async(req, res) => {
     }
 
     try {
-        await User.findByIdAndUpdate(req.params.id, { mail: req.body.mail, name: req.body.name, password: req.body.password, role: req.body.role, updatedAt: Date.now() })
+        await User.findByIdAndUpdate(req.params.id, { email: req.body.email, name: req.body.name, password: req.body.password, role: req.body.role, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err)

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
@@ -52,8 +52,10 @@ export class UserService {
   }
 
   updateUser( user: User): Observable<any> {
+    console.log(user)
+    const reqHeader = new HttpHeaders({ 'Content-Type': 'application/json', 'No-Auth': 'True' });
     return this.httpClient
-    .put(`${environment.apiUrl}/user/${user._id}`, user)
+    .put(`${environment.apiUrl}/user/${user._id}`, user, { headers: reqHeader })
     .pipe(
       catchError ( error => {
         return error

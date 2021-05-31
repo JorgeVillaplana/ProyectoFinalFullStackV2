@@ -59,7 +59,7 @@ export class UsersComponent implements OnInit {
   readUser(): User {
     const user: User = new User()
 
-    if(this.isEdit) user._id
+    if(this.isEdit) user._id = this.user._id
     user.name = this.u.name.value
     user.email = this.u.email.value
     user.password = this.u.password.value
