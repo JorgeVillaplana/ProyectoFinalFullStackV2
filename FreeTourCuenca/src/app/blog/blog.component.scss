@@ -1,3 +1,5 @@
+@import "../../styles";
+
 .main-blog {
   padding-top: 20px;
   padding-bottom: 20%;
@@ -29,7 +31,6 @@ p {
   object-fit: cover;
 }
 .card-footer {
-  background-color: rgba(247, 196, 58, 0.3);
   width: inherit;
   align-content: center;
 }
@@ -73,5 +74,22 @@ a:hover {
 .right-box {
   .card {
     padding: 8px;
+  }
+}
+
+.wrapper {
+  float: right;
+  margin-right: 5%;
+  position: fixed;
+  bottom: 15vh;
+  right: 3vw;
+
+  fa-icon {
+    font-size: 40px;
+    color: $color-degradation;
+    cursor: pointer;
+  }
+  fa-icon:hover {
+    color: $color-corporative;
   }
 }
