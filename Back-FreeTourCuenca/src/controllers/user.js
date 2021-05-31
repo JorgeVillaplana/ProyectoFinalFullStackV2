@@ -8,12 +8,23 @@ controller.saveUser = async(req, res) => {
 
     if (!valid) {
         res.status(400).send()
+        return
     }
-
+    console.log("Este es el body", req.body)
     try {
-        const user = new User({ mail: req.body.mail, name: req.body.name, password: req.body.password, role: req.body.role })
-        user.save()
-        res.send()
+        const exists = await User.findOne({ email: req.body.email })
+        if (exists) {
+            console.log("usuario ya existe")
+            res.status(400).send("usuario ya existe")
+            return
+        }
+        const user = new User({ email: req.body.email, name: req.body.name, password: req.body.password, role: req.body.role })
+        console.log("Este es el objeto user:", user)
+        await user.save(err => {
+            console.log("Hey! Estoy dentro del save() del controlador: ", err)
+        })
+        const data = await User.findOne({ email: req.body.email })
+        res.send({ status: "ok", data: data })
     } catch (error) {
         res.status(500).send("Error")
     }
@@ -33,7 +44,7 @@ controller.getUser = async(req, res) => {
 
     const id = req.params.id
     try {
-        const user = await user.findById(id)
+        const user = await User.findById(id)
         res.json(user)
     } catch (err) {
         console.log(err)
