@@ -6,21 +6,17 @@
   background-repeat: no-repeat;
   background-size: 100% 120%;
   background-position: center center;
-  .left-item {
-    position: left;
-    padding: 12em 3em;
-  }
+
   .right-item {
-    position: right;
-    width: 90%;
+    margin-left: 50%;
+
     h1 {
       color: white;
       font-weight: bold;
-      white-space: nowrap;
       line-height: 60px;
-      font-size: 55px;
+      font-size: 4.5em;
       width: 80%;
-      margin: 210px 0px 40px 0px;
+      margin: 35% 0px 40px 0px;
       #highlight {
         color: yellow;
       }
@@ -28,17 +24,18 @@
     h2 {
       color: white;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 1.5em;
       font-style: oblique;
     }
     button {
       background-color: yellow;
       color: black;
-      padding: 40px;
+      padding: 4%;
+      margin-left: 16%;
       border: none;
       margin-top: 25px;
       border-radius: 8%;
-      margin-left: 120px;
+
       transition-duration: 0.2s;
       box-shadow: 3px 3px #888888;
       position: sticky;
@@ -85,5 +82,29 @@
 @media (max-width: 770px) {
   .review-container {
     margin-bottom: 12%;
+  }
+}
+
+@media (max-width: 535px) {
+  // POR QUÉ SALE FRANJA BLANCA A LA DERECHA
+  .initial-container {
+    width: 100%;
+
+    .right-item {
+      margin-left: 40%;
+
+      h1 {
+        font-size: 3em;
+      }
+      button {
+        margin-left: 0;
+      }
+    }
+  }
+  .jumbotron {
+    p {
+      margin-right: 3%;
+      margin-left: 3%;
+    }
   }
 }
