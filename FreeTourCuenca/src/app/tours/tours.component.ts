@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { faDog, faWheelchair } from '@fortawesome/free-solid-svg-icons';
 import { Text } from '../models/text.model'
 import { Language } from '../models/language.model'
+import { Image } from '../models/image.model';
+import { TourDetail } from './../models/tourdetail.model';
 import { Tour } from './../models/tour.model';
 import { ToursService } from './../services/tours.service';
 import { SelectedlangService } from '../services/selectedlang.service';
@@ -23,9 +25,10 @@ export class ToursComponent implements OnInit {
   faWheelchair = faWheelchair
   faDog = faDog
 
-  tours: Array<Tour> = [];
+  tours: Array<Tour> = []
   selectedLang: Language = {}
   selectedText: Text = {}
+
 
   ngOnInit(): void {
     this.selectedLang = this.selLangService.language
@@ -45,6 +48,31 @@ export class ToursComponent implements OnInit {
         console.log("Error: ", error)
       }
     );
+  }
+
+  checkTour(tour: Tour){
+    let check = true
+
+    if(tour){
+      if(tour.images){
+        if(tour.images.length < 1){
+          check = false
+        }
+      }else {
+        check = false
+      }
+      if(tour.tourDetails){
+        if(tour.tourDetails.length < 1){
+          check = false
+        }
+      }else{
+        check = false
+      }
+    }else{
+      check = false
+    }
+
+    return check
   }
 
 }

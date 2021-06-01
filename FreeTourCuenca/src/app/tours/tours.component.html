@@ -19,51 +19,65 @@
         </ul>
       </aside>
     </div>
+        <div class="main-tours col-8">
+            <div class="tour" *ngFor="let tour of tours">
+                <div class="card" *ngIf="checkTour(tour)">
+                    <div class="row">
+                        <div class="col">
+                            <img [src]="(tour.images)? tour.images[0].route : '' " class="card-img-top" [alt]="(tour.images)? tour.images[0].detail : '' ">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h1 class="card-title">{{(tour.tourDetails)? tour.tourDetails[0].title : ''}}</h1>
+                                <p class="card-text">{{(tour.tourDetails)? tour.tourDetails[0].description : ''}}</p>
+                                <p class="card-text">Duración: {{tour.duration}}</p>
+                                <p class="card-text">Personas por ruta: {{tour.seats}}</p>
+                                <a class="btn btn-warning" [routerLink]="['/booking', tour._id]">Reserva</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="main-tours col-8">
-      <div class="tour">
-        <div class="card">
+                <div class="card">
 
-          <div class="row">
-            <div class="col">
-              <img src="https://cdn.pixabay.com/photo/2016/11/09/12/20/toledo-1811636_960_720.jpg" class="card-img-top"
-                alt="loquesea de Toledo">
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://cdn.pixabay.com/photo/2016/11/09/12/20/toledo-1811636_960_720.jpg" class="card-img-top" alt="loquesea de Toledo">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h1 class="card-title">Ruta 1: Nombre de la ruta</h1>
+                                <p class="card-text">Texto de explicación de la ruta.</p>
+                                <p class="card-text">Horario:</p>
+                                <p class="card-text">Nº plazas:</p>
+                                <a href="#" class="btn btn-warning" [routerLink]="['/booking']">Reserva</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://cdn.pixabay.com/photo/2015/04/17/08/55/toledo-726944_960_720.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h1 class="card-title">Ruta 2: Nombre de la ruta</h1>
+                                <p class="card-text">Texto breve sobre la ruta.</p>
+                                <p class="card-text">Horario:</p>
+                                <p class="card-text">Nº plazas:</p>
+                                <p>Ruta apta para:
+                                    <fa-icon [icon]="faWheelchair" alt="Accesible" title="Accesible"></fa-icon>
+                                    <fa-icon [icon]="faDog" alt="Mascotas" title="Mascotas"></fa-icon>
+                                </p>
+                                <a href="#" class="btn btn-warning" id="btn2" [routerLink]="['/booking']">Reserva</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-              <div class="card-body">
-                <h1 class="card-title">Ruta 1: Nombre de la ruta</h1>
-                <p class="card-text">Texto de explicación de la ruta.</p>
-                <p class="card-text">Horario:</p>
-                <p class="card-text">Nº plazas:</p>
-                <a href="#" class="btn btn-warning" [routerLink]="['/booking']">Reserva</a>
-              </div>
-            </div>
-          </div>
         </div>
-
-        <div class="card">
-
-          <div class="row">
-            <div class="col">
-              <img src="https://cdn.pixabay.com/photo/2015/04/17/08/55/toledo-726944_960_720.jpg" class="card-img-top"
-                alt="...">
-            </div>
-            <div class="col">
-              <div class="card-body">
-                <h1 class="card-title">Ruta 2: Nombre de la ruta</h1>
-                <p class="card-text">Texto breve sobre la ruta.</p>
-                <p class="card-text">Horario:</p>
-                <p class="card-text">Nº plazas:</p>
-                <p>Ruta apta para:
-                  <fa-icon [icon]="faWheelchair" alt="Accesible" title="Accesible"></fa-icon>
-                  <fa-icon [icon]="faDog" alt="Mascotas" title="Mascotas"></fa-icon>
-                </p>
-                <a href="#" class="btn btn-warning" id="btn2" [routerLink]="['/booking']">Reserva</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>

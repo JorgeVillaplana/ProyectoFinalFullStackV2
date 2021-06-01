@@ -54,7 +54,7 @@ controller.getTour = async(req, res) => {
     const id = req.params.id
 
     try {
-        const tour = await tour.findById(id)
+        const tour = await Tour.findById(id)
             .populate({
                 path: "tourdetail",
                 match: { language: req.body.language._id },
