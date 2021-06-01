@@ -55,19 +55,29 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq"
-          title="Preguntas frecuentes">faq</a>
+          title="Preguntas frecuentes">Ayuda</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item banderas">
         <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active">
           <img src="../../assets/images/english.svg" id="engl" title="Cambiar idioma">
         </a>
+        <div class="dropLang">
+          <ul class="flagmenu">
+            <li class="nav-item changeLang">
+              <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">
+                <img src="../../assets/images/Spain.svg" id="spa"></a>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
+
+
     <div class="hamburger">
-      <span class="bar" (click)="showMenu()"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-      <ul id="h-menu">
+      <span class="bar"></span>
+      <ul class="h-menu">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
             aria-current="page">Inicio</a>
@@ -83,7 +93,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq"
-            title="Preguntas frecuentes">faq</a>
+            title="Preguntas frecuentes">Ayuda</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active">

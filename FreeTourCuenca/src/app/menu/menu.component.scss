@@ -81,17 +81,42 @@
     float: right;
     white-space: nowrap;
     margin-right: 2em;
-    #faq {
-      font-variant: small-caps;
+
+    .banderas {
+      #engl {
+        max-height: 26px;
+        max-width: 26px;
+      }
+      #engl:hover {
+        opacity: 0.7;
+      }
     }
-    #engl {
-      max-height: 26px;
-      max-width: 26px;
-    }
-    #engl:hover {
-      opacity: 0.7;
+
+    .banderas:hover {
+      .dropLang {
+        background-color: $color-support-one;
+        margin-top: -80px;
+        .flagmenu {
+          display: inline;
+        }
+        #spa {
+          max-height: 26px;
+          max-width: 26px;
+          margin-top: 20px;
+        }
+        ul {
+          list-style: none;
+        }
+      }
     }
   }
+
+  .dropLang {
+    .flagmenu {
+      display: none;
+    }
+  }
+
   .logo {
     float: left;
     margin-left: 1%;
@@ -122,7 +147,6 @@
 
   .hamburger {
     display: none;
-    color: white;
     margin-top: 2em;
     margin-right: 4em;
   }
@@ -139,7 +163,7 @@
     background-color: yellow;
   }
 
-  @media only screen and (max-width: 898px) {
+  @media only screen and (max-width: 959px) {
     #mainnav {
       position: fixed;
       left: -100%;
@@ -162,25 +186,43 @@
       color: yellow;
       display: block;
       cursor: pointer;
+      .h-menu {
+        display: none;
+        background-color: $color-support-one;
+        padding: 0px;
+        border-radius: 5px;
+      }
     }
+  }
 
-    #h-menu {
+  .hamburger:hover {
+    margin-right: 0px;
+    .h-menu {
       display: block;
       background-color: $color-support-one;
       padding: 20px;
       border-radius: 5px;
-      li {
-        text-align: center;
-        list-style: none;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 2px;
-      }
-      a {
-        margin-top: 1px;
-        padding: 2px;
-      }
-      // AÑADIR CSS DE contenido desplegable
     }
+    li {
+      text-align: center;
+      list-style: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding: 2px;
+    }
+    a {
+      margin-top: 1px;
+      padding: 2px;
+    }
+    #engl {
+      max-height: 26px;
+      max-width: 26px;
+    }
+  }
+}
+
+@media (max-width: 535px) {
+  .nav-bar {
+    width: 100vw;
   }
 }

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Language } from '../../models/language.model';
+import { LanguageService } from '../../services/language.service';
+import { Text } from '../../models/text.model';
+import { TextsService } from '../../services/texts.service';
+
+
 
 @Component({
   selector: 'app-translate',
@@ -11,13 +17,18 @@ export class TranslateComponent implements OnInit {
 
   languageForm: FormGroup;
   textForm: FormGroup;
+  languages: Language[] = [];
+  texts: Text[] = [];
 
 
   constructor(private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private languageService: LanguageService,
+    private textService: TextsService) {
       this.languageForm = this.fb.group({
         name: ["", Validators.required],
-        code: ["", Validators.required]
+        code: ["", Validators.required],
+        icon: [""]
       })
 
       this.textForm = this.fb.group({
@@ -26,6 +37,87 @@ export class TranslateComponent implements OnInit {
         language: ["", Validators.required]
       })
 
+    }
+
+    get l(): any {
+      return this.languageForm.controls
+    }
+
+    get t(): any {
+      return this.textForm.controls
+    }
+
+    readLanguage():Language {
+      const lang: Language = new Language()
+
+      lang.code = this.l.code.value
+      lang.name = this.l.name.value
+      lang.icon = this.l.icon.value
+
+      return lang
+    }
+
+    saveLanguage(){
+      this.languageService.saveLanguage(this.readLanguage()).subscribe(
+        data =>{
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
+    loadLanguages(){
+      this.languageService.getLanguages().subscribe(
+        (data: Language[]) => {
+          this.languages = data
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
+    readText(): Text {
+      const text: Text =  new Text()
+
+      return text
+    }
+
+    saveText(){
+      this.textService.saveText(this.readText()).subscribe(
+        data => {
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
+    editText(){
+      this.textService.updateText(this.readText()).subscribe(
+        data => {
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
+    loadTexts(){
+      this.textService.getTexts().subscribe(
+        (data: Text[]) => {
+          this.texts = data
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
     }
 
     ngOnInit() {

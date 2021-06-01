@@ -5,6 +5,7 @@ import { Post } from '../models/post.model'
 import { PostsService } from './../services/posts.service';
 import { SelectedlangService } from '../services/selectedlang.service';
 import { SelectedtextService } from '../services/selectedtext.service';
+import  { faArrowUp} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-blog',
@@ -48,4 +49,9 @@ export class BlogComponent implements OnInit {
     )
   }
 
+  faArrowUp = faArrowUp
+
+  toTop() {
+  window.scrollTo(0,0);
+}
 }

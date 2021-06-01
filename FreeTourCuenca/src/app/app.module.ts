@@ -24,6 +24,11 @@ import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component'
 import { TranslateComponent } from './dashboard/translate/translate.component';
 import {MatIconModule} from '@angular/material/icon';
 import { NotfoundComponent } from './notfound/notfound.component';
+import 'froala-editor/js/plugins/align.min.js';
+import 'froala-editor/js/plugins/char_counter.min.js';
+import 'froala-editor/js/plugins/code_view.min.js';
+import 'froala-editor/js/plugins/link.min.js';
+import 'froala-editor/js/plugins/lists.min.js';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { FaqComponent } from './faq/faq.component';
 import { GuidesComponent } from './dashboard/guides/guides.component';

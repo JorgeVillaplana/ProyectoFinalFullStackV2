@@ -37,3 +37,11 @@ footer {
     color: rgb(214, 214, 214);
   }
 }
+
+@media (max-width: 535px) {
+  footer {
+    margin-top: 2%;
+    width: 100%;
+    padding-bottom: 65px;
+  }
+}

@@ -23,7 +23,7 @@ export class GuideService {
   }
 
   saveGuide(guide: Guide): Observable<any> {
-    return this.httpClient.post(`${environment.apiUrl}/guide`, guide)
+    return this.httpClient.post(`${environment.apiUrl}/save-guide`, guide)
       .pipe(
         catchError(error => {
           return error;

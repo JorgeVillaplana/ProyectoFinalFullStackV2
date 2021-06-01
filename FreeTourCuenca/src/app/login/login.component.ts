@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,9 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
   isSent = false
 
-  constructor(private router: Router, private fb: FormBuilder) {
+  constructor(private router: Router,
+    private fb: FormBuilder,
+    private userService: UserService) {
     this.loginForm = this.fb.group({
       email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,8}$")]],
       password: ["", [Validators.required]]
@@ -20,10 +24,6 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit() {
-  }
-
-  register() {
-    this.router.navigate(["/register"])
   }
 
   signin() {
@@ -42,7 +42,11 @@ export class LoginComponent implements OnInit {
       console.error("Tu form no es valido");
       return
     }
-    this.signin()
+
+    const login: User = new User()
+    login.email = this.login.email.value
+    login.password = this.login.password.value
+
   }
 
 }

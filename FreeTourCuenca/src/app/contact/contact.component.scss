@@ -1,20 +1,48 @@
-#main-contact-form {
-  background-color: rgb(224, 224, 224);
-  border-radius: 15px;
-  padding: 30px;
-  width: 50%;
-  margin-top: 15%;
+#bg-container {
+  margin-bottom: -4%;
+  margin-top: -0.1%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  overflow: auto;
+  width: 100%;
+}
 
-  .fs-3 {
-    text-align: center;
-  }
+#main-contact-form {
+  background-color: rgba(224, 224, 224, 0.8);
+  border-radius: 15px;
+  padding: 5%;
+  width: 75%;
+  margin: 5% auto 5% auto;
+}
+
+h1 {
+  margin-bottom: -5px;
 }
 
 label {
   padding-bottom: 12px;
+  font-weight: bold;
 }
 
-p,
+p {
+  padding: 18px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.6em;
+  a {
+    color: rgb(104, 104, 104);
+  }
+  a:hover {
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    text-shadow: yellow;
+    filter: drop-shadow(1px 1px 2px rgb(253, 189, 13));
+  }
+}
+
 .col-form-label {
   font-size: 18px;
 }
@@ -24,4 +52,10 @@ p,
 }
 .btn-warning:hover {
   box-shadow: 1px 1px grey;
+}
+
+@media only screen and (max-width: 1200px) {
+  #main-contact-form {
+    margin-top: 10%;
+  }
 }

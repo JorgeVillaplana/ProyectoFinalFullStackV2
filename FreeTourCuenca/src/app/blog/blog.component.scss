@@ -1,3 +1,5 @@
+@import "../../styles";
+
 .main-blog {
   padding-top: 20px;
   padding-bottom: 20%;
@@ -18,9 +20,13 @@ p {
   border-radius: 8px;
   background-color: rgba(255, 255, 255);
   border: solid rgb(26, 26, 26, 0.85);
+  overflow: hidden;
 }
-.card-text {
+
+.card-text,
+.header {
   text-align: justify;
+  white-space: nowrap;
 }
 
 .card-img-top {
@@ -29,19 +35,25 @@ p {
   object-fit: cover;
 }
 .card-footer {
-  background-color: rgba(247, 196, 58, 0.3);
   width: inherit;
   align-content: center;
 }
 
 .text-right {
-  text-align: right;
+  text-align: center;
 }
 
 .left-box .categories-clouds li {
   display: inline-block;
   margin-bottom: 5px;
   margin-right: 7px;
+}
+
+.left-box {
+  .card {
+    padding: 8px;
+    margin-left: -60%;
+  }
 }
 
 .left-box .categories-clouds li a {
@@ -62,4 +74,54 @@ a:hover {
 .limitTextHeight {
   height: 40px;
   overflow: hidden;
+}
+
+.right-box {
+  .card {
+    padding: 8px;
+    margin-right: -60%;
+    min-width: auto;
+    .header {
+      white-space: nowrap;
+    }
+  }
+}
+
+.wrapper {
+  float: right;
+  margin-right: 5%;
+  position: fixed;
+  bottom: 15vh;
+  right: 3vw;
+
+  fa-icon {
+    font-size: 40px;
+    color: $color-degradation;
+    cursor: pointer;
+  }
+  fa-icon:hover {
+    color: $color-corporative;
+  }
+}
+
+@media (max-width: 769px) {
+  .left-box,
+  .right-box {
+    display: none;
+  }
+
+  .center-box {
+    width: 100%;
+  }
+  .main-blog {
+    padding-bottom: 30%;
+  }
+
+  .wrapper {
+    float: right;
+    position: relative;
+    margin-top: 30%;
+    margin-right: 43%;
+    bottom: 10vh;
+  }
 }

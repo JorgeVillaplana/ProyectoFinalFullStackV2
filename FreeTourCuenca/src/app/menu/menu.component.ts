@@ -28,9 +28,6 @@ export class MenuComponent implements OnInit {
   faYoutube = faYoutube;
   faTripadvisor = faTripadvisor;
 
-  showMenu() {
-    // función mostrar menu
-  }
 
   ngOnInit(): void {
 

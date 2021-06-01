@@ -5,7 +5,7 @@ const config = require('../config')
 const authJWT = {}
 
 authJWT.createToken = (user) => {
-    let exp_token = moment().add(7, 'days').unix()
+    let exp_token = moment().add(30, 'days').unix()
         // current time + 7 day ahead
     return [
         JWT.sign({
