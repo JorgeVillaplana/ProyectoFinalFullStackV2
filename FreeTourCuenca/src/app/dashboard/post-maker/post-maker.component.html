@@ -1,44 +1,41 @@
-<div class="col-8 mt-4 post">
-  <h3>Crear publicación</h3>
-  <form [formGroup]="pForm" id="postForm">
-      <div class="language form-group">
-        <label for="language" class="col-form-label">Idioma de la publicación</label>
-        <div id="language" *ngFor="let language of languages">
-          <input type="checkbox" id={{language?.code}} name="language" value={{language?._id}} >
-          <label for={{language?.code}}>{{language.name}}</label>
+<div class="col-9 mt-4 post">
+    <h3>Crear publicación</h3>
+    <form [formGroup]="pForm" id="postForm">
+        <div class="language form-group">
+            <label for="language" class="col-form-label">Idioma de la publicación</label>
+            <p>
+                <select formControlName="language">
+                <option *ngFor="let language of languages" [value]="language._id" [selected]="language.code == 'es'">{{language.name}}</option>
+              </select>
+            </p>
         </div>
-      </div>
-      <div class="title form-group">
-        <label for="title" class="col-form-label">Título de la publicación</label>
-        <input type="text" class="form-control"  name="title" id="title" placeholder="Título del post">
-      </div>
-      <div class="details form-group">
-        <label for="details" class="col-form-label">Descripción del tour</label>
-        <div class="wysiwyg" class="form-control"   name="details" id="details">
-          <div [froalaEditor]>Escribe aquí</div>
+        <div class="title form-group">
+            <label for="title" class="col-form-label">Título de la publicación</label>
+            <input type="text" class="form-control" formControlName="title" id="title" placeholder="Título del post">
         </div>
-      </div>
-      <div class="categories form-group ">
-        <label for="categories" class="col-form-label">Categorías</label>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" name="categories" id="categories" readonly [value]=""
-            placeholder="Lista de categorías">
-          <input type="text" class="form-control" #newTag (keyup.enter)="addCategory(newCategory)"
-            placeholder="Introduce categoría y pulsa Enter" />
-          <button type="submit" class="btn btn-outline-warning btn-sm" (click)="addCategory(newCategory)">Añadir</button>
+        <div class="text form-group">
+            <label for="text" class="col-form-label">Texto del post</label>
+            <textarea class="wysiwyg" class="form-control" [froalaEditor]="froalaOptions" formControlName="text" id="text"></textarea>
         </div>
-      </div>
-      <div class="image form-group">
-         <label for="image" class="col-form-label">Imagen</label>
-         <input type="text" class="form-control" name="image"  id="image" placeholder="Enlace de la imagen">
-         <input type="text" class="form-control" name="imagename" id="imagename" placeholder="Descripción de la imagen">
-      </div>
-      <div class="important form-group">
-         <input type="checkbox" id="important" name="important" value="important" >
-         <label for="important">Post destacado</label><br>
-      </div>
-    <div class="d-flex justify-content-center">
-       <button type="submit" (click)="savePost()" class="btn btn-outline-dark mt-3">Guardar publicación</button>
-    </div>
-  </form>
+        <div class="categories form-group ">
+            <label for="categories" class="col-form-label">Categorías</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" formControlName="categories" id="categories" readonly [value]="categories.join(', ')" placeholder="Lista de categorías">
+                <input type="text" class="form-control" #newCategory (keyup.enter)="addCategory(newCategory.value); newCategory.value=''" placeholder="Introduce categoría y pulsa Enter" />
+                <button type="button" class="btn btn-outline-warning btn-sm" (click)="addCategory(newCategory.value); newCategory.value=''">Añadir</button>
+            </div>
+        </div>
+        <div class="image form-group">
+            <label for="image" class="col-form-label">Imagen</label>
+            <input type="text" class="form-control" formControlName="route" id="route" placeholder="Enlace de la imagen">
+            <input type="text" class="form-control" formControlName="detail" id="detail" placeholder="Descripción de la imagen">
+        </div>
+        <div class="important form-group">
+            <input type="checkbox" id="important" formControlName="important" value="important">
+            <label for="important">Post destacado</label><br>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" (click)="savePost()" class="btn btn-outline-dark mt-3">Guardar publicación</button>
+        </div>
+    </form>
 </div>

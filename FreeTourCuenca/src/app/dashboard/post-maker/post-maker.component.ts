@@ -1,7 +1,12 @@
+import { LanguageService } from './../../services/language.service';
+import { PostsService } from './../../services/posts.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
+import { Language } from '../../models/language.model';
+import { Image } from '../../models/image.model';
+import { Post } from './../../models/post.model';
+import { PostDetail } from './../../models/postdetail.model';
 
 @Component({
   selector: 'app-post-maker',
@@ -12,64 +17,81 @@ import { Component, OnInit } from '@angular/core';
 export class PostMakerComponent implements OnInit {
 
   pForm: FormGroup
+  froalaOptions: Object = {
+    placeholder: 'Escribe aquí'
+  }
 
   constructor(private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private postService: PostsService,
+    private languageService: LanguageService) {
+
       this.pForm = this.fb.group({
         language: ["", Validators.required],
         title: ["", Validators.required],
-        details: ["", Validators.required],
-        categories: ["", Validators.required],
-        image: ["", Validators.required]
+        text: ["", Validators.required],
+        categories: [""],
+        route: ["", Validators.required],
+        detail: [""],
+        important: ['', Validators.required]
       })
+
      }
 
-     get p(): any {
-      return this.pForm.controls
-    }
+  get p(): any {
+    return this.pForm.controls
+  }
 
 
   ngOnInit() {
     window.scrollTo(0,0);
+    this.loadLanguages()
+    this.loadPosts()
   }
 
-  // esto quitarlo y subirlo de API
-  languages = [
-    {
-      _id: 'tiruri',
-      code: 'en',
-      name: 'Español',
-    },
-    {
-    _id: 'kjhgv',
-    code: 'en',
-    name: 'English',
-  }]
-
+  languages: Array<Language> = []
+  posts: Array<Post> = []
   categories = [] as any
   newCategory = ""
 
-  addCategory(data: any) {
+  addCategory(data: string) {
     this.categories.push(data);
-    data.value = "";
+    data = "";
+  }
+
+  readPost(): Post {
+    const post: Post = new Post()
+
+    post.details = [{
+      language: this.p.language,
+      title: this.p.title,
+      categories: this.categories,
+      text: this.p.text
+    }]
+    post.image = {
+      detail: this.p.detail,
+      route: this.p.route,
+    }
+    this.p
+    post.important = this.p.important
+
+    return post
   }
 
   savePost() {
-   /* las dejo comentadas por si son el caos
-
-   this.postService.savePost(this.readPost(¿?)).subscribe(data => {
-      console.log(data)
-    },
-    error => {
-      console.log("Error: ", error)
-    })
+   this.postService.savePost(this.readPost()).subscribe(
+      data => {
+        console.log(data)
+      },
+      error => {
+        console.log("Error: ", error)
+      }
+    )
     this.loadPosts()
-
-  */
   }
 
   loadPosts(){
-    /*
+
     this.postService.getPosts().subscribe(
       (data: Post[]) => {
         this.posts = data
@@ -79,7 +101,19 @@ export class PostMakerComponent implements OnInit {
         console.log("Error: ", error)
       }
     )
-    */
+
+  }
+
+  loadLanguages() {
+    this.languageService.getLanguages().subscribe(
+      (data: Language[]) =>{
+        this.languages = data
+        console.log(data)
+      },
+      error => {
+        console.log("Error: ", error);
+      }
+    );
   }
 
 }
