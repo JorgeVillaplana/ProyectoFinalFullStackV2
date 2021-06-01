@@ -17,21 +17,23 @@ export class PostMakerComponent implements OnInit {
     private router: Router) {
       this.pForm = this.fb.group({
         language: ["", Validators.required],
-        postname: ["", Validators.required],
-        froala: ["", Validators.required],
-        tags: ["", Validators.required],
+        title: ["", Validators.required],
+        details: ["", Validators.required],
+        categories: ["", Validators.required],
+        image: ["", Validators.required]
       })
      }
 
-     /* get m(): any {
+     get p(): any {
       return this.pForm.controls
     }
-    */
+
 
   ngOnInit() {
     window.scrollTo(0,0);
   }
 
+  // esto quitarlo y subirlo de API
   languages = [
     {
       _id: 'tiruri',
@@ -52,5 +54,33 @@ export class PostMakerComponent implements OnInit {
     data.value = "";
   }
 
-  savePost() {}
+  savePost() {
+   /* las dejo comentadas por si son el caos
+
+   this.postService.savePost(this.readPost(¿?)).subscribe(data => {
+      console.log(data)
+    },
+    error => {
+      console.log("Error: ", error)
+    })
+    this.loadPosts()
+
+  */
+  }
+
+  loadPosts(){
+    /*
+    this.postService.getPosts().subscribe(
+      (data: Post[]) => {
+        this.posts = data
+        console.log(data)
+      },
+      error => {
+        console.log("Error: ", error)
+      }
+    )
+    */
+  }
+
 }
+

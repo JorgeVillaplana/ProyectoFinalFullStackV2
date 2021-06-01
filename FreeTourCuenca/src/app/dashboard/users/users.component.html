@@ -1,8 +1,8 @@
 <div class="col-6 mt-4 userlist">
     <h3>Listado de USUARIOS</h3>
     <ng-container>
-        <ul class="list-group" *ngFor="let user of users; let position = index">
-            <div class="d-flex justify-content-end">
+        <ul class="list-group" >
+            <div class="d-flex justify-content-center" *ngFor="let user of users; let position = index">
                 <li class="list-group-item">{{position+1}}. {{user.name}}</li>
                 <button type="button" class="btn btn-success btn-sm" (click)="editMode(user)">Editar</button>
                 <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user._id)">Eliminar</button>

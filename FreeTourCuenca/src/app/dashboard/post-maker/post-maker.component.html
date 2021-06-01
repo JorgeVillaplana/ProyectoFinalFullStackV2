@@ -4,38 +4,38 @@
       <div class="language form-group">
         <label for="language" class="col-form-label">Idioma de la publicación</label>
         <div id="language" *ngFor="let language of languages">
-          <input type="radio" id={{language?.code}} name="language" value={{language?._id}}>
+          <input type="checkbox" id={{language?.code}} name="language" value={{language?._id}} >
           <label for={{language?.code}}>{{language.name}}</label>
         </div>
       </div>
-      <div class="blog form-group">
-        <label for="postname" class="col-form-label">Título de la publicación</label>
-        <input type="text" class="form-control" name="postname" id="postname" placeholder="Título del post">
+      <div class="title form-group">
+        <label for="title" class="col-form-label">Título de la publicación</label>
+        <input type="text" class="form-control"  name="title" id="title" placeholder="Título del post">
       </div>
-      <div class="froala form-group">
-        <label for="froala" class="col-form-label">Texto del post</label>
-        <div class="wysiwyg">
-          <div [froalaEditor]></div>
+      <div class="details form-group">
+        <label for="details" class="col-form-label">Descripción del tour</label>
+        <div class="wysiwyg" class="form-control"   name="details" id="details">
+          <div [froalaEditor]>Escribe aquí</div>
         </div>
       </div>
-      <div class="category form-group ">
-        <label for="tags" class="col-form-label">Categorías</label>
+      <div class="categories form-group ">
+        <label for="categories" class="col-form-label">Categorías</label>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" formControlName="tags" id="tags" readonly [value]=""
+          <input type="text" class="form-control" name="categories" id="categories" readonly [value]=""
             placeholder="Lista de categorías">
           <input type="text" class="form-control" #newTag (keyup.enter)="addCategory(newCategory)"
             placeholder="Introduce categoría y pulsa Enter" />
           <button type="submit" class="btn btn-outline-warning btn-sm" (click)="addCategory(newCategory)">Añadir</button>
         </div>
       </div>
-      <div class="images form-group">
-         <label for="images" class="col-form-label">Imagen</label>
-         <input type="text" class="form-control" name="imagelink" id="imagelink" placeholder="Enlace de la imagen">
+      <div class="image form-group">
+         <label for="image" class="col-form-label">Imagen</label>
+         <input type="text" class="form-control" name="image"  id="image" placeholder="Enlace de la imagen">
          <input type="text" class="form-control" name="imagename" id="imagename" placeholder="Descripción de la imagen">
       </div>
-      <div class="starred form-group">
-         <input type="checkbox" id="starred" name="starred" value="starred">
-         <label for="starred">Post destacado</label><br>
+      <div class="important form-group">
+         <input type="checkbox" id="important" name="important" value="important" >
+         <label for="important">Post destacado</label><br>
       </div>
     <div class="d-flex justify-content-center">
        <button type="submit" (click)="savePost()" class="btn btn-outline-dark mt-3">Guardar publicación</button>
