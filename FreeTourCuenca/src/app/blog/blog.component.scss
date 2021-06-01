@@ -20,9 +20,13 @@ p {
   border-radius: 8px;
   background-color: rgba(255, 255, 255);
   border: solid rgb(26, 26, 26, 0.85);
+  overflow: hidden;
 }
-.card-text {
+
+.card-text,
+.header {
   text-align: justify;
+  white-space: nowrap;
 }
 
 .card-img-top {
@@ -36,7 +40,7 @@ p {
 }
 
 .text-right {
-  text-align: right;
+  text-align: center;
 }
 
 .left-box .categories-clouds li {
@@ -48,6 +52,7 @@ p {
 .left-box {
   .card {
     padding: 8px;
+    margin-left: -60%;
   }
 }
 
@@ -74,6 +79,11 @@ a:hover {
 .right-box {
   .card {
     padding: 8px;
+    margin-right: -60%;
+    min-width: auto;
+    .header {
+      white-space: nowrap;
+    }
   }
 }
 
@@ -94,7 +104,7 @@ a:hover {
   }
 }
 
-@media (max-width: 535px) {
+@media (max-width: 769px) {
   .left-box,
   .right-box {
     display: none;

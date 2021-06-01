@@ -1,3 +1,5 @@
+@import "../../styles";
+
 #faq {
   margin-bottom: -30vh;
   overflow-x: hidden;
@@ -42,6 +44,20 @@
   background-size: 200% 100%;
   background-position: left center;
   transform: scaleX(-1);
+}
+
+.footer-content {
+  border-radius: 7px;
+  background-color: rgb(131, 131, 131);
+  width: 40%;
+  text-align: center;
+  padding: 1%;
+  margin: 10% auto;
+  font-size: 1.2em;
+}
+
+a:hover {
+  color: $color-corporative;
 }
 
 @media (max-width: 770px) {

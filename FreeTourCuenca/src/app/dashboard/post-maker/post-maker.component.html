@@ -1,3 +1,20 @@
-<div class="wysiwyg">
-  <div [froalaEditor]>Hello, Froala!</div>
-</div>
+<div class="col-6 mt-4 post">
+  <h3>Crear publicación</h3>
+  <form [formGroup]="pForm" id="postForm">
+    <div class="mb-3">
+      <div class="language form-group">
+        <label for="language" class="col-form-label">Idioma de la publicación</label>
+        <div id="language" *ngFor="let language of languages">
+          <input type="radio" id={{language?.code}} name="language" value={{language?._id}}>
+          <label for={{language?.code}}>{{language.name}}</label>
+        </div>
+        <div class="blog form-group">
+          <label for="postname" class="col-form-label">Título de la publicación</label>
+          <input type="text" class="form-control" name="postname" id="postname">
+        </div>
+
+        <div class="wysiwyg">
+          <div [froalaEditor]>Hello, Froala!</div>
+        </div>
+
+      </div>
