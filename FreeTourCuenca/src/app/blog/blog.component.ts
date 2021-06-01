@@ -5,7 +5,8 @@ import { Post } from '../models/post.model'
 import { PostsService } from './../services/posts.service';
 import { SelectedlangService } from '../services/selectedlang.service';
 import { SelectedtextService } from '../services/selectedtext.service';
-import  { faArrowUp} from '@fortawesome/free-solid-svg-icons';
+import  { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-blog',
@@ -17,6 +18,8 @@ export class BlogComponent implements OnInit {
   posts: Array<Post> = [];
   selectedLang: Language = {}
   selectedText: Text = {}
+  importantPosts: Array<Post> = [];
+  p: number = 1;
 
   constructor(
     private postService: PostsService,
@@ -35,6 +38,7 @@ export class BlogComponent implements OnInit {
     this.selectedLang = this.selLangService.language
     this.selectedText = this.selTextService.text
     this.loadPosts()
+    this.getLastsImportantPost()
   }
 
   loadPosts(){
@@ -49,9 +53,37 @@ export class BlogComponent implements OnInit {
     )
   }
 
+  checkCategories(){
+    let check = false
+
+    check = this.posts.some((post) => {
+      if(post.details){
+        post.details.some((detail) => {
+          if(detail.categories){
+            detail.categories.length >= 1
+          }
+        })
+      }
+    })
+
+    return check
+  }
+
+  getLastsImportantPost(){
+    let i = 0
+
+    while(this.importantPosts.length <= 4){
+      if(this.posts[i].important == true){
+        this.importantPosts.push(this.posts[i])
+      }
+      i++;
+    }
+
+  }
+
   faArrowUp = faArrowUp
 
   toTop() {
-  window.scrollTo(0,0);
-}
+    window.scrollTo(0,0);
+  }
 }

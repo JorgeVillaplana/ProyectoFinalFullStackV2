@@ -1,68 +1,60 @@
 <div class="main-blog">
-  <div class="container">
-    <div class="row">
-      <div class="col-2 left-box">
-        <div class="card">
-          <div class="header">
-            <h2>Categorías</h2>
-          </div>
-          <div class="body widget">
-            <ul class="list-unstyled categories-clouds m-b-0">
-              <li><a href="#">Historia</a></li>
-              <li><a href="#">Rutas</a></li>
-              <li><a href="#">Personajes históricos</a></li>
-              <li><a href="#">Arquitectura</a></li>
-              <li><a href="#">Provincia</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-2 left-box" *ngIf="checkCategories()">
+                <div class="card">
+                    <div class="header">
+                        <h2>Categorías</h2>
+                    </div>
+                    <div class="body widget">
+                        <ul class="list-unstyled categories-clouds m-b-0">
+                            <li><a href="#">Historia</a></li>
+                            <li><a href="#">Rutas</a></li>
+                            <li><a href="#">Personajes históricos</a></li>
+                            <li><a href="#">Arquitectura</a></li>
+                            <li><a href="#">Provincia</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-      <div class="col-8 center-box">
-        <div id="posts">
-          <div class="card">
-            <img src="../../assets/images/89321602-7140-4b06-b09d-6318140681a7.jfif" alt="" class="card-img-top" />
-            <div class="card-body">
-              <h3 class="card-title">Post title</h3>
-              <p class="card-text" [ngClass]="{'limitTextHeight': isReadMore}">Some quick example text to build on the
-                card title and make up the bulk of the
-                card's content. Sed non ipsum eu eros aliquet consectetur. Suspendisse tincidunt erat tempor finibus
-                feugiat. Sed et placerat ante, a hendrerit dolor. Morbi felis lorem, sollicitudin sed sapien
-                facilisis,
-                tincidunt vehicula neque. Maecenas dapibus massa eu eros pretium bibendum. Integer leo orci,
-                pellentesque in laoreet sit amet, tincidunt et ipsum. Donec pretium faucibus convallis. Sed tempor
-                porttitor orci eget porttitor. Suspendisse ac lacus elementum, vehicula purus vel, gravida ante. Sed
-                placerat posuere nisi, eget rhoncus felis eleifend in. Etiam blandit pellentesque dui non tempus.
-                Nulla
-                facilisis odio nec nisi suscipit, ut facilisis risus malesuada. Praesent a pretium odio. Suspendisse
-                ex
-                justo, ornare eu molestie ut, hendrerit id elit. Pellentesque at tellus tellus. Cras justo justo,
-                finibus nec justo nec, tempus fringilla lacus.</p>
-              <button type="button" class="btn btn-outline-dark" (click)="showText()">
+            <div class="col-8 center-box">
+                <div id="posts" *ngFor="let post of posts | paginate: { itemsPerPage: 5, currentPage: p }">
+
+                    <div class="card">
+                        <img [src]="post.image? post.image.route : ''" [alt]="post.image? post.image.detail : ''" class="card-img-top" />
+                        <div class="card-body">
+                            <h3 class="card-title">{{post.details? post.details[0].title : ''}}</h3>
+                            <p class="card-text" [ngClass]="{'limitTextHeight': isReadMore}">{{post.details? post.details[0].text : ''}}</p>
+                            <button type="button" class="btn btn-outline-dark" (click)="showText()">
                 {{ isReadMore ? 'Leer más': 'Leer menos' }}
               </button>
+                        </div>
+                        <div class="card-footer row deg-color outstanding">
+                            <div class="col">
+                                Publicado en: {{post.updatedAt? post.updatedAt.toString() : ''}}
+                            </div>
+                            <div class="col text-right">
+                                {{post.details? (post.details[0].categories ? post.details[0].categories.join(', ') : '') : ''}}
+                            </div>
+                        </div>
+                    </div>
+                    <pagination-controls (pageChange)="p = $event" [maxSize]="9" [autoHide]="true" [responsive]="true" previousLabel="Anterior" nextLabel="Siguiente">
+                    </pagination-controls>
+                </div>
             </div>
-            <div class="card-footer row deg-color outstanding">
-              <div class="col">
-                2 days ago
-              </div>
-              <div class="col text-right">
-                Category
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-2 right-box">
-        <div class="card">
-          <h2>Entradas destacadas</h2>
-          <p>Aquí insertar posts</p>
+            <div class="col-2 right-box">
+                <div class="card">
+                    <h2>Entradas destacadas</h2>
+                    <ul class="list-group list-group-flush" *ngFor="let importantPost of importantPosts">
+                        <li class="list-group-item">{{importantPost.details? importantPost.details[0].title : ''}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="wrapper">
-    <fa-icon [icon]="faArrowUp" (click)="toTop()"></fa-icon>
-  </div>
+    <div class="wrapper">
+        <fa-icon [icon]="faArrowUp" (click)="toTop()"></fa-icon>
+    </div>
 </div>

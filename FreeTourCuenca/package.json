@@ -30,6 +30,8 @@
     "angular-froala-wysiwyg": "^3.2.6-1",
     "bootstrap": "^5.0.1",
     "material-design-icons": "^3.0.1",
+    "moment": "^2.29.1",
+    "ngx-pagination": "^5.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
