@@ -47,4 +47,6 @@ export class PostMakerComponent implements OnInit {
     this.categories.push(data);
     data.value = "";
   }
+
+  savePost() {}
 }
