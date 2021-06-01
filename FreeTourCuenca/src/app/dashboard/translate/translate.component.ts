@@ -80,6 +80,46 @@ export class TranslateComponent implements OnInit {
       )
     }
 
+    readText(): Text {
+      const text: Text =  new Text()
+
+      return text
+    }
+
+    saveText(){
+      this.textService.saveText(this.readText()).subscribe(
+        data => {
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
+    editText(){
+      this.textService.updateText(this.readText()).subscribe(
+        data => {
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
+    loadTexts(){
+      this.textService.getTexts().subscribe(
+        (data: Text[]) => {
+          this.texts = data
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+
     ngOnInit() {
       window.scrollTo(0,0);
     }
