@@ -1,13 +1,14 @@
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 
 @Component({
   selector: 'app-post-maker',
   templateUrl: './post-maker.component.html',
   styleUrls: ['./post-maker.component.scss']
 })
+
 export class PostMakerComponent implements OnInit {
 
   pForm: FormGroup
@@ -15,7 +16,10 @@ export class PostMakerComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private router: Router) {
       this.pForm = this.fb.group({
+        language: ["", Validators.required],
         postname: ["", Validators.required],
+        froala: ["", Validators.required],
+        tags: ["", Validators.required],
       })
      }
 
