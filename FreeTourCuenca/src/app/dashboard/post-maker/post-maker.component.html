@@ -12,9 +12,18 @@
           <label for="postname" class="col-form-label">Título de la publicación</label>
           <input type="text" class="form-control" name="postname" id="postname">
         </div>
-
         <div class="wysiwyg">
+          <label for="wysiwyg" class="col-form-label">Texto de la publicación</label>
           <div [froalaEditor]>Hello, Froala!</div>
         </div>
-
+        <div class="category form-group ">
+          <label for="category" class="col-form-label">Categorías</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Añadir categoría" #newTag
+              (keyup.enter)="addCategory(newCategory)">
+            <button type="submit" class="btn btn-outline-info btn-sm" (click)="addCategory(newCategory)">Añadir</button>
+          </div>
+        </div>
       </div>
+    </div>
+  </form>

@@ -74,9 +74,6 @@ export class TourMakerComponent implements OnInit {
   deleteTour(){}
 
 
-
-
-
   ngOnInit() {
     window.scrollTo(0,0);
   }

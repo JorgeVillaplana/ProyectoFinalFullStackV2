@@ -40,4 +40,11 @@ export class PostMakerComponent implements OnInit {
     name: 'English',
   }]
 
+  categories = [] as any
+  newCategory = ""
+
+  addCategory(data: any) {
+    this.categories.push(data);
+    data.value = "";
+  }
 }
