@@ -25,6 +25,10 @@
                     <div class="row">
                         <div class="col">
                             <img [src]="(tour.images)? tour.images[0].route : '' " class="card-img-top" [alt]="(tour.images)? tour.images[0].detail : '' ">
+                            <br>
+                            <div class="map">
+                                {{tour.map}}
+                            </div>
                         </div>
                         <div class="col">
                             <div class="card-body">
@@ -32,12 +36,19 @@
                                 <p class="card-text">{{(tour.tourDetails)? tour.tourDetails[0].description : ''}}</p>
                                 <p class="card-text">Duración: {{tour.duration}}</p>
                                 <p class="card-text">Personas por ruta: {{tour.seats}}</p>
+                                <div>Ruta apta para:
+                                    <div *ngFor="let feature of tour.specialFeatures">
+                                        <img [src]="feature.special?  feature.special.icon : '' " [alt]="feature.special?  (feature.special.namesByLang ? feature.special.namesByLang[0].name : '') : '' " [title]="feature.special?  (feature.special.namesByLang ? feature.special.namesByLang[0].name : '') : '' "
+                                        />
+                                    </div>
+                                </div>
                                 <a class="btn btn-warning" [routerLink]="['/booking', tour._id]">Reserva</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="tour">
                 <div class="card">
 
                     <div class="row">
@@ -62,6 +73,7 @@
                     <div class="row">
                         <div class="col">
                             <img src="https://cdn.pixabay.com/photo/2015/04/17/08/55/toledo-726944_960_720.jpg" class="card-img-top" alt="...">
+
                         </div>
                         <div class="col">
                             <div class="card-body">
