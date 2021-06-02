@@ -51,7 +51,7 @@ export class PostMakerComponent implements OnInit {
 
   languages: Array<Language> = []
   posts: Array<Post> = []
-  categories = [] as any
+  categories: string[]= []
   newCategory = ""
 
 
@@ -64,17 +64,16 @@ export class PostMakerComponent implements OnInit {
     const post: Post = new Post()
 
     post.details = [{
-      language: this.p.language,
-      title: this.p.title,
+      language: this.p.language.value,
+      title: this.p.title.value,
       categories: this.categories,
-      text: this.p.text
+      text: this.p.text.value
     }]
     post.image = {
-      detail: this.p.detail,
-      route: this.p.route,
+      detail: this.p.detail.value,
+      route: this.p.route.value,
     }
-    this.p
-    post.important = this.p.important
+    post.important = this.p.important.value
 
     return post
   }
@@ -96,12 +95,12 @@ export class PostMakerComponent implements OnInit {
    this.postService.savePost(this.readPost()).subscribe(
       data => {
         console.log(data)
+        this.loadPosts()
       },
       error => {
         console.log("Error: ", error)
       }
     )
-    this.loadPosts()
   }
 
   deletePost() {
@@ -127,6 +126,15 @@ export class PostMakerComponent implements OnInit {
         console.log("Error: ", error);
       }
     );
+  }
+
+  onChangeLanguage(){
+    /*
+    *Si es nuevo
+    */
+   if(this.readPost() == new Post()){
+     /** Comparar this.readPost con vacío para saber si se puede cambiar de idioma, si no,  */
+   }
   }
 
 }

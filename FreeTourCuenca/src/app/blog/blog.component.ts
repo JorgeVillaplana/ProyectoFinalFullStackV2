@@ -16,6 +16,7 @@ import * as moment from 'moment';
 export class BlogComponent implements OnInit {
 
   posts: Array<Post> = [];
+  auxiliaryPosts: Array<Post> = [];
   selectedLang: Language = {}
   selectedText: Text = {}
   importantPosts: Array<Post> = [];
@@ -38,19 +39,30 @@ export class BlogComponent implements OnInit {
     this.selectedLang = this.selLangService.language
     this.selectedText = this.selTextService.text
     this.loadPosts()
-    this.getLastsImportantPost()
   }
 
   loadPosts(){
     this.postService.getPostByLang(this.selectedLang).subscribe(
       (data: Post[]) => {
         this.posts = data
+        this.auxiliaryPosts = this.posts
+        this.getLastsImportantPost()
         console.log(data)
       },
       error => {
         console.log("Error: ", error)
       }
     )
+  }
+
+  onSelectedCategory(data: string){
+    // this.auxiliaryPosts = this.posts.filter( post => {
+    //   post.details.filter( detail => {
+    //     detail.categories.filter( category => {
+    //       category == data
+    //     })
+    //   })
+    // })
   }
 
   checkCategories(){
@@ -72,11 +84,15 @@ export class BlogComponent implements OnInit {
   getLastsImportantPost(){
     let i = 0
 
-    while(this.importantPosts.length <= 4){
-      if(this.posts[i].important == true){
-        this.importantPosts.push(this.posts[i])
+    if(this.posts.length >= 4){
+      while(this.importantPosts.length <= 4 && i < this.posts.length){
+        if(this.posts[i]){
+          if(this.posts[i].important == true){
+            this.importantPosts.push(this.posts[i])
+          }
+        }
+        i++
       }
-      i++;
     }
 
   }
