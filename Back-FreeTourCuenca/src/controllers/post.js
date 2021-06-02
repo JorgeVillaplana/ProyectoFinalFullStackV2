@@ -1,6 +1,7 @@
 const controller = {}
 const Post = require('../models/post')
 const Postdetail = require('../models/postdetail')
+const Image = require('../models/image')
 const validator = require('../validators/post')
 
 
@@ -12,15 +13,30 @@ controller.savePost = async(req, res) => {
     }
 
     try {
+        const postDetails = new Postdetail({
+            title: req.body.details[0].title,
+            text: req.body.details[0].text,
+            language: req.body.details[0].language,
+            categories: req.body.details[0].categories
+        })
+
+        const image = new Image({
+            detail: req.body.image.detail,
+            route: req.body.image.route
+        })
+
+        postDetails.save()
+        image.save()
         const post = new Post({
-            details: req.body.details,
-            image: req.body.image,
+            details: postDetails._id,
+            image: image._id,
             important: req.body.important
         })
         post.save()
         res.send()
     } catch (error) {
-        res.status(500).send("Error")
+        console.log("Holi, he dado un errorcito", error)
+        res.status(500).send("Error: ", error)
     }
 }
 

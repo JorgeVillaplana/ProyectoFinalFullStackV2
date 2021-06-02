@@ -17,7 +17,7 @@ function validate(body) {
         details: [{
             title: body.details.title,
             text: body.details.text,
-            language: langValidator.validate(body.details.language),
+            language: body.details.language,
             categories: body.details.categories
         }],
         image: body.image,
