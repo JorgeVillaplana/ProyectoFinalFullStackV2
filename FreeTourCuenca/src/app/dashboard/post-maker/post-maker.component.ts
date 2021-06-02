@@ -54,6 +54,7 @@ export class PostMakerComponent implements OnInit {
   categories = [] as any
   newCategory = ""
 
+
   addCategory(data: string) {
     this.categories.push(data);
     data = "";
@@ -78,6 +79,19 @@ export class PostMakerComponent implements OnInit {
     return post
   }
 
+   loadPosts(){
+
+    this.postService.getPosts().subscribe(
+      (data: Post[]) => {
+        this.posts = data
+        console.log(data)
+      },
+      error => {
+        console.log("Error: ", error)
+      }
+    )
+  }
+
   savePost() {
    this.postService.savePost(this.readPost()).subscribe(
       data => {
@@ -90,19 +104,18 @@ export class PostMakerComponent implements OnInit {
     this.loadPosts()
   }
 
-  loadPosts(){
-
-    this.postService.getPosts().subscribe(
-      (data: Post[]) => {
-        this.posts = data
+  deletePost() {
+   /*  this.postService.deletePost(id).subscribe(
+      data => {
         console.log(data)
       },
       error => {
-        console.log("Error: ", error)
+        console.log(error)
       }
     )
-
+    */
   }
+
 
   loadLanguages() {
     this.languageService.getLanguages().subscribe(
