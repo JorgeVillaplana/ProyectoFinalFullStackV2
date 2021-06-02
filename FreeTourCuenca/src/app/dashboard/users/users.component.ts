@@ -47,13 +47,14 @@ export class UsersComponent implements OnInit {
     })
 
   }
-
+  alert: boolean = false
   submitForm(){
     if(this.isEdit){
       this.editUser()
     }else{
       this.saveUser()
     }
+    this.alert = true
   }
 
   readUser(): User {

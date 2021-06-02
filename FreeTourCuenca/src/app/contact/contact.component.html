@@ -37,10 +37,15 @@
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
-              <br><input type="submit" value="Enviar" class="btn btn-warning btn-lg">
+              <br><input type="submit" value="Enviar" class="btn btn-warning btn-lg"  (click)="sendMsg()">
             </div>
           </div>
         </form>
+            <div *ngIf="alert" class="alert alert-primary alert-dismissible fade show" role="alert">
+              ¡Tu mensaje ha sido enviado!
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+
       </div>
     </div>
   </div>

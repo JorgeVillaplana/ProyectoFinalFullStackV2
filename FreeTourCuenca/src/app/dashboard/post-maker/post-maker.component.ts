@@ -94,7 +94,9 @@ export class PostMakerComponent implements OnInit {
     )
   }
 
+  alert: boolean = false
   savePost() {
+    this.alert = true
    this.postService.savePost(this.readPost()).subscribe(
       data => {
         console.log(data)

@@ -39,4 +39,11 @@ export class ContactComponent implements OnInit {
     this.selectedText = this.selTextService.text
   }
 
+  alert: boolean = false
+
+ sendMsg() {
+     this.alert = true
+
+    }
+
 }

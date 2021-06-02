@@ -11,6 +11,8 @@ import { SelectedtextService } from '../services/selectedtext.service';
 })
 export class BookingComponent implements OnInit {
 
+
+
   mForm: FormGroup
 
   constructor(private fb: FormBuilder,
@@ -35,8 +37,11 @@ export class BookingComponent implements OnInit {
     return this.mForm.controls
   }
 
+
+ alert: boolean = false
+
  saveTickets() {
-      // aquí función para enviar mail a Jesús y confirmación a asistentes
+     this.alert = true
 
     }
 }

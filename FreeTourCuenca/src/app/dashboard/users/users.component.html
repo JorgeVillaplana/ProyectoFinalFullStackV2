@@ -43,4 +43,8 @@
             <button type="submit" (click)="submitForm()" class="btn btn-primary mt-3">Guardar usuario</button>
         </div>
     </form>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+      ¡Usuario guardado correctamente!
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     </div>
 </div>

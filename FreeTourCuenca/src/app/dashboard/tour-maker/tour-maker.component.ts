@@ -59,8 +59,9 @@ export class TourMakerComponent implements OnInit {
     // DESPLIEGA FORMULARIO VACÍO
   }
 
+  alert: boolean = false
   saveTour(){
-    // GUARDA TOUR
+      this.alert = true
   }
 
   loadTours() {

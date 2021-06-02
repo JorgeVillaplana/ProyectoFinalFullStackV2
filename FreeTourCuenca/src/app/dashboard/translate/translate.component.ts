@@ -120,6 +120,13 @@ export class TranslateComponent implements OnInit {
       )
     }
 
+
+    alert: boolean = false
+    alert2: boolean = false
+
+    // AÑADIR this.alert = true Y this.alert2 = true CUANDO ESTÉN SUS FUNCIONES
+
+
     ngOnInit() {
       window.scrollTo(0,0);
     }

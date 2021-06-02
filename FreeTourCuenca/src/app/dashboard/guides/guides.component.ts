@@ -55,12 +55,14 @@ export class GuidesComponent implements OnInit {
     })
   }
 
+alert: boolean = false
   submitForm(){
     if(this.isEdit){
       this.editGuide()
     } else{
       this.saveGuide()
     }
+    this.alert = true
   }
 
   saveGuide(){
