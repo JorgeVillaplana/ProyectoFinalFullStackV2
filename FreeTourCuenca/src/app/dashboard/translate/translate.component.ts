@@ -15,7 +15,7 @@ import { TextsService } from '../../services/texts.service';
 })
 export class TranslateComponent implements OnInit {
 
-  languageForm: FormGroup;
+  langForm: FormGroup;
   textForm: FormGroup;
   languages: Language[] = [];
   texts: Text[] = [];
@@ -25,7 +25,7 @@ export class TranslateComponent implements OnInit {
     private router: Router,
     private languageService: LanguageService,
     private textService: TextsService) {
-      this.languageForm = this.fb.group({
+      this.langForm = this.fb.group({
         name: ["", Validators.required],
         code: ["", Validators.required],
         icon: [""]
@@ -40,7 +40,7 @@ export class TranslateComponent implements OnInit {
     }
 
     get l(): any {
-      return this.languageForm.controls
+      return this.langForm.controls
     }
 
     get t(): any {

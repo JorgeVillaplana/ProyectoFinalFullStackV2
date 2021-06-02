@@ -41,7 +41,7 @@ export class PostsService {
   getPostByLang(lang: Language): Observable<any> {
     return this.httpClient
     .get(
-      `${environment.apiUrl}/postc/${lang._id}`
+      `${environment.apiUrl}/posts-by-lang/${lang._id}`
     ).pipe(
       catchError ( error => {
         return error;

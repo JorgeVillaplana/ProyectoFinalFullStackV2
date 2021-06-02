@@ -20,7 +20,7 @@ export class BookingComponent implements OnInit {
         name: ["", Validators.required],
         email: ["", Validators.required, Validators.email],
         seats: ["", Validators.required, Validators.max(9)],
-        date: ["", Validators.required], // VER SI HAY UN VALIDATOR ESPECÍFICO DE FECHAS (MOMENT?)
+        date: ["", Validators.required],
         time: ["", Validators.required],
       })
     }
