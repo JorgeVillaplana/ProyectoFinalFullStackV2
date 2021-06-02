@@ -27,13 +27,13 @@ export class PostMakerComponent implements OnInit {
     private languageService: LanguageService) {
 
       this.pForm = this.fb.group({
-        language: ["", Validators.required],
+        language: [ 1 , Validators.required],
         title: ["", Validators.required],
         text: ["", Validators.required],
         categories: [""],
         route: ["", Validators.required],
         detail: [""],
-        important: ['', Validators.required]
+        important: [false, Validators.required]
       })
 
      }
@@ -53,7 +53,7 @@ export class PostMakerComponent implements OnInit {
   posts: Array<Post> = []
   categories: string[]= []
   newCategory = ""
-
+  selLang: number = -1
 
   addCategory(data: string) {
     this.categories.push(data);
@@ -63,8 +63,10 @@ export class PostMakerComponent implements OnInit {
   readPost(): Post {
     const post: Post = new Post()
 
+    console.log("Berberecho: ", this.p.language.value)
+
     post.details = [{
-      language: this.p.language.value,
+      language: this.languages[this.p.language.value],
       title: this.p.title.value,
       categories: this.categories,
       text: this.p.text.value
@@ -74,6 +76,7 @@ export class PostMakerComponent implements OnInit {
       route: this.p.route.value,
     }
     post.important = this.p.important.value
+    console.log("Esto es el post: ", post)
 
     return post
   }
