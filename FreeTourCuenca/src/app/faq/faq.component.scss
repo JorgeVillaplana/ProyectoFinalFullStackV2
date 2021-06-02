@@ -64,12 +64,17 @@ a:hover {
   .right-image,
   .left-image {
     display: none;
-    background: black;
+    background: transparent;
   }
 
   .jumbotron {
     min-height: 150vh;
-    width: 100%;
+    min-width: 100%;
     background-color: rgb(68, 68, 68);
+  .col-8 {
+    width: 100%;
   }
+  }
+
+
 }

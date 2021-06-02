@@ -67,3 +67,21 @@ p {
     margin-top: 10%;
   }
 }
+
+@media only screen and (max-width: 770px) {
+  #main-contact-form {
+    width: 100%;
+    margin-bottom: 15%;
+
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #main-contact-form {
+    width: 90%;
+  }
+  .alert {
+    width: 80%;
+    margin-left: 10%;
+}
+}

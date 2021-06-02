@@ -33,7 +33,7 @@
       margin-left: 16%;
       border: none;
       margin-top: 25px;
-      border-radius: 8%;
+      border-radius: 15px;
 
       transition-duration: 0.2s;
       box-shadow: 3px 3px #888888;
@@ -96,17 +96,22 @@
       }
       button {
         margin-left: 0;
+        font-size: 1.2em;
+        padding: 15px 10px;
+        border-radius: 18px;
+
       }
     }
   }
   .jumbotron {
-    p {
-      margin-right: 3%;
-      margin-left: 3%;
+    h1, p {
+      margin-right: -15%;
+      margin-left: -15%;
     }
   }
 
   .review-container {
+    align-content: center;
     h2 {
       text-align: center;
     }
