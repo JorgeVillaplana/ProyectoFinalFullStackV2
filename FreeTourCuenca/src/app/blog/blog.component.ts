@@ -72,13 +72,16 @@ export class BlogComponent implements OnInit {
   getLastsImportantPost(){
     let i = 0
 
-    while(this.importantPosts.length <= 4){
-      if(this.posts[i].important == true){
-        this.importantPosts.push(this.posts[i])
+    if(this.posts.length >= 4){
+      while(this.importantPosts.length <= 4 && i < this.posts.length){
+        if(this.posts[i]){
+          if(this.posts[i].important == true){
+            this.importantPosts.push(this.posts[i])
+          }
+        }
+        i++
       }
-      i++;
     }
-
   }
 
   faArrowUp = faArrowUp
