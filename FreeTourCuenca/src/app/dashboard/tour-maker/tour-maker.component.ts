@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Tour } from '../../models/tour.model'
 import { TourDetail } from '../../models/tourdetail.model'
+import { Image } from '../../models/image.model'
 import { Language } from '../../models/language.model'
 import { Guide } from '../../models/guide.model'
 import { Special } from '../../models/special.model'
@@ -42,13 +43,15 @@ export class TourMakerComponent implements OnInit {
     }
   languages: Array<Language> = []
   guides: Array<Guide> = []
+  guideNames: string[] = []
   selGuides: Array<Guide> = []
-  dates = []
-  hours = []
-  images = []
+  dates: string[] = []
+  hours: string[] = []
+  images: Image[] = []
   specials: Array<Special> = []
   specialFeatures = []
   tourdates = [{}]
+
 
   get m(): any {
     return this.mForm.controls
@@ -62,21 +65,30 @@ export class TourMakerComponent implements OnInit {
     this.newCategory = "";
   }
 
-  newTime = ""
-  addTime() {}
+  addDate(date: string) {
+    this.dates.push(date)
+  }
 
-  newGuide = ""
-  addGuide() {}
+  addTime(hour: string) {
+    this.hours.push(hour)
+  }
+
+  addGuide(guidePos: string) {
+    const guidePosition: number = +guidePos
+    if(this.guides[guidePosition] && this.guides[guidePosition].name){
+      this.guideNames.push(this.guides[guidePosition].name!)
+    }
+  }
 
   addTourdate(){
     const tourdate = this.dates.map(
       d =>{
         return {
-          day: Date = d,
+          day: d,
           timePicker: this.hours.map(
             hour => {
               return {
-                hour: String = hour,
+                hour: hour,
                 remainingSeats: this.m.seats.value
               }
             }
@@ -112,12 +124,20 @@ export class TourMakerComponent implements OnInit {
     tour.specialFeatures = this.specialFeatures
 
     return tour
-
   }
 
   alert: boolean = false
   saveTour(){
       this.alert = true
+      this.tourService.saveTour(this.readTour()).subscribe(
+        data => {
+          console.log(data)
+          this.loadTours()
+        },
+        error => {
+          console.log("Error: ", error)
+        }
+      )
   }
 
   loadTours() {
@@ -135,7 +155,19 @@ export class TourMakerComponent implements OnInit {
     // + CARGA LOS DATOS DE API
   }
 
-  deleteTour(){}
+  deleteTour(id: string | undefined){
+    if(id){
+      this.tourService.deleteTour(id).subscribe(
+        data => {
+          console.log(data)
+          this.loadTours()
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+  }
 
   loadLanguages() {
     this.langService.getLanguages().subscribe(
