@@ -24,6 +24,7 @@ export class BlogComponent implements OnInit {
   importantPosts: Array<Post> = [];
   p: number = 1;
 
+
   constructor(
     private postService: PostsService,
     private selLangService: SelectedlangService,
