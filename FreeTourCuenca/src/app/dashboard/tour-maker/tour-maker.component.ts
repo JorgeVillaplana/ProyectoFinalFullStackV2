@@ -32,9 +32,9 @@ export class TourMakerComponent implements OnInit {
     private specialService: SpecialService) {
       this.mForm = this.fb.group({
         tourname: ["", Validators.required],
-        language: [{code: 'es'}, Validators.required],
+        language: [1, Validators.required],
         title: ["", Validators.required],
-        duration: [150, Validators.required, Validators.minLength(2), Validators.maxLength(3)],
+        duration: ["", Validators.required, Validators.minLength(2), Validators.maxLength(3)],
         seats: [9, Validators.required],
         date: ["", Validators.required],
         time: ["", Validators.required],
