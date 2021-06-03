@@ -13,6 +13,7 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   login(user: User) {
+    console.log
     return this.httpClient.post(`${environment.apiUrl}/login`, user).pipe(
       catchError(error => {
         return throwError(error);

@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    email: { type: String, unique: true },
+    email: { type: String, require: true, unique: true },
     name: String,
     password: { type: String, require: true },
     role: String,
@@ -11,7 +11,7 @@ const UserSchema = new Schema({
     updatedAt: { type: Date, default: Date.now }
 })
 
-UserSchema.pre('save', async function(next) {
+UserSchema.pre(['save', 'updateOne', 'findOneAndUpdate'], async function(next) {
     try {
         const user = this
         const hash = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10))

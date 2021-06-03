@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Tour } from '../../models/tour.model'
+import { TourDetail } from '../../models/tourdetail.model'
+import { Language } from '../../models/language.model'
+import { Guide } from '../../models/guide.model'
+import { Special } from '../../models/special.model'
+import { LanguageService } from 'src/app/services/language.service';
+import { GuideService } from 'src/app/services/guide.service';
+import { ToursService } from 'src/app/services/tours.service';
+import { SpecialService } from 'src/app/services/special.service';
 
 @Component({
   selector: 'app-tour-maker',
@@ -10,30 +19,31 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class TourMakerComponent implements OnInit {
 
   mForm: FormGroup
+  froalaOptions: Object = {
+    placeholder: 'Escribe aquí'
+  }
+  tours: Array<Tour> = []
 
   constructor(private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private langService: LanguageService,
+    private guideService: GuideService,
+    private tourService: ToursService) {
       this.mForm = this.fb.group({
         tourname: ["", Validators.required],
-        language: ["", Validators.required],
+        language: [{code: 'es'}, Validators.required],
         title: ["", Validators.required],
-        duration: ["", Validators.required, Validators.minLength(2), Validators.maxLength(3)],
-        seats: ["", Validators.required],
+        duration: [150, Validators.required, Validators.minLength(2), Validators.maxLength(3)],
+        seats: [9, Validators.required],
         date: ["", Validators.required],
         time: ["", Validators.required],
       })
     }
-  languages = [
-    {
-      _id: 'tiruri',
-      code: 'en',
-      name: 'Español',
-    },
-    {
-    _id: 'kjhgv',
-    code: 'en',
-    name: 'English',
-  }]
+  languages: Array<Language> = []
+  guides: Array<Guide> = []
+  selGuides: Array<Guide> = []
+  dates = []
+  hours = []
 
   get m(): any {
     return this.mForm.controls
@@ -59,13 +69,61 @@ export class TourMakerComponent implements OnInit {
     // DESPLIEGA FORMULARIO VACÍO
   }
 
+  readTour(): Tour {
+    const tour: Tour = new Tour()
+
+    tour.name = this.m.name.value
+    tour.duration = this.m.duration.value
+    tour.seats = this.m.seats.value
+    tour.tourDetails = [{
+      language: this.languages[this.m.language.value],
+      title: this.m.title.value,
+      categories: this.tags,
+      description: this.m.description.value,
+      guides: this.selGuides,
+      tourdates: this.dates.map(
+        d =>{
+          return {
+            day: Date = d,
+            timePicker: this.hours.map(
+              hour => {
+                return {
+                  hour: String = hour,
+                  remainingSeats: this.m.seats.value
+                }
+              }
+            )
+          }
+        }
+      )
+    }]
+    tour.images = [{
+      detail,
+      route
+    }]
+    tour.map
+    tour.specialFeatures = [{
+      special,
+      value
+    }]
+
+    return tour
+  }
+
   alert: boolean = false
   saveTour(){
       this.alert = true
   }
 
   loadTours() {
-    // CARGA LISTADO DE TOURS DESDE API
+    this.tourService.getTours().subscribe(
+      (data: Tour[]) => {
+        this.tours = data
+      },
+      error => {
+        console.log("Error: ", error)
+      }
+    )
   }
 
   editTour(){
@@ -74,8 +132,33 @@ export class TourMakerComponent implements OnInit {
 
   deleteTour(){}
 
+  loadLanguages() {
+    this.langService.getLanguages().subscribe(
+      (data: Language[]) =>{
+        this.languages = data
+        console.log(data)
+      },
+      error => {
+        console.log("Error: ", error);
+      }
+    );
+  }
+
+  loadGuides() {
+    this.guideService.getGuides().subscribe(
+      (data: Guide[]) => {
+        this.guides = data
+      },
+      error => {
+        console.log("Error: ", error)
+      }
+    )
+  }
 
   ngOnInit() {
     window.scrollTo(0,0);
+    this.loadLanguages()
+    this.loadGuides()
+    this.loadTours()
   }
 }

@@ -7,6 +7,7 @@ import { Language } from '../../models/language.model';
 import { Image } from '../../models/image.model';
 import { Post } from './../../models/post.model';
 import { PostDetail } from './../../models/postdetail.model';
+import { SelectedlangService } from './../../services/selectedlang.service';
 
 @Component({
   selector: 'app-post-maker',
@@ -24,7 +25,8 @@ export class PostMakerComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private router: Router,
     private postService: PostsService,
-    private languageService: LanguageService) {
+    private languageService: LanguageService,
+    private selAppLang: SelectedlangService) {
 
       this.pForm = this.fb.group({
         language: [ 1 , Validators.required],
@@ -63,8 +65,6 @@ export class PostMakerComponent implements OnInit {
   readPost(): Post {
     const post: Post = new Post()
 
-    console.log("Berberecho: ", this.p.language.value)
-
     post.details = [{
       language: this.languages[this.p.language.value],
       title: this.p.title.value,
@@ -76,14 +76,12 @@ export class PostMakerComponent implements OnInit {
       route: this.p.route.value,
     }
     post.important = this.p.important.value
-    console.log("Esto es el post: ", post)
-
     return post
   }
 
    loadPosts(){
 
-    this.postService.getPosts().subscribe(
+    this.postService.getPostByLang(this.selAppLang.language).subscribe(
       (data: Post[]) => {
         this.posts = data
         console.log(data)

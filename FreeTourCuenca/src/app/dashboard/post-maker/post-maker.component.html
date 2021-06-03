@@ -39,19 +39,19 @@
         </div>
     </form>
     <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-      ¡Post creado correctamente!
-       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-     </div>
+        ¡Post creado correctamente!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 </div>
 
 <div class="panel panel-primary" id="posts-panel">
     <div class="panel-heading">
         <h3 class="panel-title">Listado de posts</h3>
         <ul class="list-group">
-            <div class="panel-body" *ngFor="let post of posts; let position = index">
-                <li class="list-group-item">{{position+1}}. {{p.title}}
-                <button type="button" class="btn btn-danger btn-sm float-end" (click)="deletePost()">Eliminar</button>
-              </li>
+            <div class="panel-body" *ngFor="let post of posts; index as position">
+                <li class="list-group-item">{{position+1}}. {{post.details? post.details[0].title : ''}}
+                    <button type="button" class="btn btn-danger btn-sm float-end" (click)="deletePost()">Eliminar</button>
+                </li>
             </div>
         </ul>
     </div>

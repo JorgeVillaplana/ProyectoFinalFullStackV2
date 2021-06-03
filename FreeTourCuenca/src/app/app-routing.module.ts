@@ -36,7 +36,7 @@ const routes: Routes = [
     { path: "translate", component:TranslateComponent },
     { path: "guides", component:GuidesComponent },
     { path: "users", component:UsersComponent }
-  ], /*canActivate: [AuthGuardService],*/ },
+  ], canActivate: [AuthGuardService] },
   { path: "booking", component:BookingComponent },
   { path: "faq", component:FaqComponent },
   { path: "404", component: NotfoundComponent },

@@ -26,10 +26,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  signin() {
-    this.router.navigate(["/dashboard"])
-  }
-
   get login(): any {
     return this.loginForm.controls
   }
@@ -46,7 +42,16 @@ export class LoginComponent implements OnInit {
     const login: User = new User()
     login.email = this.login.email.value
     login.password = this.login.password.value
-
+    this.userService.login(login).subscribe(
+      (data: any) => {
+      localStorage.setItem("token",data.access_token)
+      this.router.navigate(["/dashboard"])
+      console.log(data)
+    },
+      error => {
+        console.log("Error:", error);
+      }
+    );
   }
 
 }

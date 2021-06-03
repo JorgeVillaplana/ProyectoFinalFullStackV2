@@ -1,41 +1,33 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col">
-      <h4>Listado de TOURS</h4>
-      <select ng-model="tours">
-        <option value="" selected>Aquí insertar nombre de cada tour</option>
-        <!-- <option  *ngFor="let tour of tours">{{ tour.name }} ({{ tour.code }})</option> -->
-        <option value="value3">Tour 3</option>
-      </select>
-    </div>
-    <div class="col">
-      <button type="button" class="btn btn-success float-right" (click)='showNewTour()'>Crear tour</button>
-    </div>
+<div class="panel panel-primary" id="tours-panel">
+  <div class="panel-heading">
+      <h3 class="panel-title">Listado de tours</h3>
+      <ul class="list-group">
+          <div class="panel-body" *ngFor="let tour of tours; index as position">
+              <li class="list-group-item">{{position+1}}. {{tour.name}}
+                  <button type="button" class="btn btn-danger btn-sm float-end" (click)="deleteTour()">Eliminar</button>
+              </li>
+          </div>
+      </ul>
   </div>
 </div>
 
 
 <div class="tour-maker col-8" *ngIf="showForm">
-  <div class="d-flex justify-content-end">
-    <button type="button" class="btn btn-warning" (click)='editTour()'>Editar tour</button>
-    <button type="button" class="btn btn-danger" (click)='deleteTour()'>Eliminar tour</button>
-  </div>
   <form [formGroup]="mForm" id="tourMakerForm">
     <div class="mb-3">
       <div class="tours form-group">
         <label for="tourname" class="col-form-label">Nombre del tour</label>
-        <input type="text" class="form-control" name="tourname" id="tourname">
+        <input type="text" class="form-control" formControlName="tourname" id="tourname">
       </div>
       <div class="language form-group">
         <label for="language" class="col-form-label">¿En qué idioma lo quieres publicar?</label>
-        <div id="language" *ngFor="let language of languages">
-          <input type="radio" id={{language?.code}} name="language" value={{language?._id}}>
-          <label for={{language?.code}}>{{language.name}}</label>
-        </div>
+        <select id="language"  formControlName="language">
+          <option *ngFor="let language of languages; index as i" [value]="i">{{language.name}}</option>
+        </select>
       </div>
       <div class="title form-group">
         <label for="title" class="col-form-label">Título de la ruta</label>
-        <input type="text" class="form-control" name="title" id="title" >
+        <input type="text" class="form-control" formControlName="title" id="title" >
       </div>
       <div class="category form-group ">
         <label for="category" class="col-form-label">Categorías</label>
@@ -45,43 +37,43 @@
         </div>
       </div>
       <div class="description form-group">
-        <label for="froala" class="col-form-label">Descripción del tour</label>
-        <div class="wysiwyg">
-          <div [froalaEditor]></div>
+        <div class="text form-group">
+          <label for="text" class="col-form-label">Descripción del tour</label>
+          <textarea class="wysiwyg" class="form-control" [froalaEditor]="froalaOptions" formControlName="text" id="text"></textarea>
         </div>
       </div>
       <div class="duration form-group">
         <label for="duration" class="col-form-label">Duración (minutos)</label>
-        <input type="number" class="form-control" name="duration" id="duration">
+        <input type="number" class="form-control" formControlName="duration" id="duration">
       </div>
       <div class="pictures form-group">
         <label for="pictures" class="col-form-label">Imágenes del tour</label>
-        <input type="file" class="form-control" name="pictures" multiple id="pictures">
+        <input type="file" class="form-control" formControlName="pictures" multiple id="pictures">
       </div>
       <div class="seats form-group">
         <label for="seats" class="col-form-label">Nº de reservas posibles</label>
-        <input type="number" class="form-control" name="seats" id="seats">
+        <input type="number" class="form-control" formControlName="seats" id="seats">
       </div>
       <div class="dates form-group">
         <label for="dates" class="col-form-label">Fechas</label>
-        <input type="date" class="form-control" name="dates" id="dates">
+        <input type="date" class="form-control" formControlName="dates" id="dates">
       </div>
       <div class="time form-group">
         <label for="time" class="col-form-label">Horas</label>
         <div class="input-group mb-3">
-          <input type="time" class="form-control" name="time" id="time" #newTime (keyup.enter)="addTime()">
+          <input type="time" class="form-control" formControlName="time" id="time" #newTime (keyup.enter)="addTime()">
           <button type="submit" class="btn btn-outline-info btn-sm" (click)="addTime()">Añadir</button>
         </div>
       </div>
-      <div class="startingpoint form-group">
-        <label for="startingpoint" class="col-form-label">Inicio del itinerario</label>
-        <input type="text" class="form-control" name="startingpoint" id="startingpoint"
+      <div class="map form-group">
+        <label for="map" class="col-form-label">Inicio del itinerario</label>
+        <input type="text" class="form-control" formControlName="map" id="map"
           placeholder="Iframe con punto de partida en Google Maps">
       </div>
       <div class="guides form-group">
         <label for="guides" class="col-form-label">Guías del tour</label>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="guide" id="guide" #newGuide (keyup.enter)="addGuide()">
+          <input type="text" class="form-control" formControlName="guide" id="guide" #newGuide (keyup.enter)="addGuide()">
           <button type="submit" class="btn btn-outline-info btn-sm" (click)="addGuide()">Añadir</button>
         </div>
       </div>

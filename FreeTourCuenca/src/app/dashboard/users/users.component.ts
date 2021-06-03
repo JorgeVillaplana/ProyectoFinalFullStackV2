@@ -60,7 +60,7 @@ export class UsersComponent implements OnInit {
   readUser(): User {
     const user: User = new User()
 
-    if(this.isEdit) user._id = this.user._id
+    if(this.isEdit) {user._id = this.user._id}
     user.name = this.u.name.value
     user.email = this.u.email.value
     user.password = this.u.password.value
@@ -73,6 +73,7 @@ export class UsersComponent implements OnInit {
     this.userService.saveUser(this.readUser()).subscribe(
       data => {
         console.log(data)
+        this.loadUsers()
       },
       error => {
         console.log(error)
@@ -84,6 +85,7 @@ export class UsersComponent implements OnInit {
     this.userService.updateUser(this.readUser()).subscribe(
       data => {
         console.log(data)
+        this.loadUsers()
       },
       error => {
         console.log(error)
@@ -95,6 +97,7 @@ export class UsersComponent implements OnInit {
     this.userService.deleteUser(id).subscribe(
       data => {
         console.log(data)
+        this.loadUsers()
       },
       error => {
         console.log(error)

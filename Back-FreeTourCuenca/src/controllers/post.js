@@ -76,9 +76,13 @@ controller.getPostByLanguage = async(req, res) => {
     try {
         const posts = await Post.find()
             .populate({
-                path: 'postdetail',
-                match: { language: req.params.language }
+                path: 'details',
+                populate: {
+                    path: 'postdetail',
+                    match: { language: req.params.language }
+                }
             })
+            .populate({ path: 'image' })
         res.json(posts)
     } catch (err) {
         console.log(err)

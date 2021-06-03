@@ -36,6 +36,7 @@ router.post("/save-user", userController.saveUser)
 router.get("/user/:id", userController.getUser)
 router.put("/user/:id", userController.updateUser)
 router.delete("/user/:id", userController.deleteUser)
+router.post("/login", userController.login)
 
 router.get("/tours", tourController.getTours)
 router.post("/save-tour", tourController.saveTour)

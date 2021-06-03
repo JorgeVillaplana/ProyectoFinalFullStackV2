@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +34,9 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { FaqComponent } from './faq/faq.component';
 import { GuidesComponent } from './dashboard/guides/guides.component';
 import { UsersComponent } from './dashboard/users/users.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +75,13 @@ import { UsersComponent } from './dashboard/users/users.component';
     FroalaEditorModule,
     FroalaViewModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }, { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
