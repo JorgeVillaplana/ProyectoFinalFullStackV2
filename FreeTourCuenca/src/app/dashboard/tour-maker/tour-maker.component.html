@@ -4,7 +4,7 @@
         <ul class="list-group">
             <div class="panel-body" *ngFor="let tour of tours; index as position">
                 <li class="list-group-item">{{position+1}}. {{tour.name}}
-                    <button type="button" class="btn btn-danger btn-sm float-end" (click)="deleteTour()">Eliminar</button>
+                    <button type="button" class="btn btn-danger btn-sm float-end" (click)="deleteTour(tour._id)">Eliminar</button>
                 </li>
             </div>
         </ul>
@@ -31,7 +31,7 @@
             <div class="category form-group ">
                 <label for="category" class="col-form-label">Categorías</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" formControlName="categories" id="categories" readonly [value]="categories.join(', ')" placeholder="Lista de categorías">
+                    <input type="text" class="form-control" formControlName="categories" id="ca-tegories" readonly [value]="categories.join(', ')" placeholder="Lista de categorías">
                     <input type="text" class="form-control" placeholder="Añadir categoría" #newCategory (keyup.enter)="addCategory(newCategory.value)">
                     <button type="submit" class="btn btn-outline-info btn-sm" (click)="addCategory(newCategory.value)">Añadir</button>
                 </div>
@@ -47,8 +47,9 @@
                 <input type="number" class="form-control" formControlName="duration" id="duration">
             </div>
             <div class="pictures form-group">
-                <label for="pictures" class="col-form-label">Imágenes del tour</label>
-                <input type="file" class="form-control" formControlName="pictures" multiple id="pictures">
+                <label for="pictures" class="col-form-label">Imagen del tour</label>
+                <input type="text" class="form-control" formControlName="route" placeholder="Ruta de la imagen" id="pictures">
+                <input type="text" class="form-control" formControlName="detail" id="detail" placeholder="Descripción de la imagen">
             </div>
             <div class="seats form-group">
                 <label for="seats" class="col-form-label">Nº de reservas posibles</label>
@@ -56,13 +57,16 @@
             </div>
             <div class="dates form-group">
                 <label for="dates" class="col-form-label">Fechas</label>
-                <input type="date" class="form-control" formControlName="dates" id="dates">
+                <input type="text" class="form-control" formControlName="dates" id="dates" readonly [value]="dates.join(', ')">
+                <input type="date" class="form-control" #date id="dates">
+                <button type="submit" class="btn btn-outline-info btn-sm" (click)="addDate(date.value)">Añadir</button>
             </div>
             <div class="time form-group">
                 <label for="time" class="col-form-label">Horas</label>
                 <div class="input-group mb-3">
-                    <input type="time" class="form-control" formControlName="time" id="time" #newTime (keyup.enter)="addTime()">
-                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addTime()">Añadir</button>
+                    <input type="text" class="form-control" formControlName="hours" id="hours" readonly [value]="hours.join(', ')">
+                    <input type="time" class="form-control" id="time" #newTime (keyup.enter)="addTime(newTime.value)">
+                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addTime(newTime.value)">Añadir</button>
                 </div>
             </div>
             <div class="map form-group">
@@ -72,8 +76,11 @@
             <div class="guides form-group">
                 <label for="guides" class="col-form-label">Guías del tour</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" formControlName="guide" id="guide" #newGuide (keyup.enter)="addGuide()">
-                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addGuide()">Añadir</button>
+                    <input type="text" class="form-control" formControlName="guides" id="guides" readonly [value]="guideNames">
+                    <select id="guide" #guide formControlName="language">
+                    <option *ngFor="let guide of guides; index as i" [value]="i">{{guide.name}} {{guide.surname}}</option>
+                  </select>
+                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addGuide(guide.value)">Añadir</button>
                 </div>
             </div>
             <div class="d-flex justify-content-center">

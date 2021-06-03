@@ -107,16 +107,18 @@ export class PostMakerComponent implements OnInit {
     )
   }
 
-  deletePost() {
-   /*  this.postService.deletePost(id).subscribe(
-      data => {
-        console.log(data)
-      },
-      error => {
-        console.log(error)
-      }
-    )
-    */
+  deletePost(id: string | undefined) {
+    if(id){
+      this.postService.deletePost(id).subscribe(
+        data => {
+          console.log(data)
+          this.loadPosts()
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
   }
 
 
