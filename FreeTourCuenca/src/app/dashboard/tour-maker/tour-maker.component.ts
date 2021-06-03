@@ -69,6 +69,7 @@ export class TourMakerComponent implements OnInit {
     // DESPLIEGA FORMULARIO VACÍO
   }
 
+/*
   readTour(): Tour {
     const tour: Tour = new Tour()
 
@@ -108,7 +109,9 @@ export class TourMakerComponent implements OnInit {
     }]
 
     return tour
+
   }
+*/
 
   alert: boolean = false
   saveTour(){
