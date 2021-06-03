@@ -1,3 +1,4 @@
+import { PostDetail } from './../models/postdetail.model';
 import { Component, OnInit } from '@angular/core';
 import { Text } from '../models/text.model'
 import { Language } from '../models/language.model'
@@ -14,6 +15,7 @@ import * as moment from 'moment';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
+
 
   posts: Array<Post> = [];
   auxiliaryPosts: Array<Post> = [];
@@ -54,6 +56,8 @@ export class BlogComponent implements OnInit {
       }
     )
   }
+
+  categories = ["cultura", "historia", "ciudad"]
 
   onSelectedCategory(data: string){
     // this.auxiliaryPosts = this.posts.filter( post => {

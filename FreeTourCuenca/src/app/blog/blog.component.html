@@ -1,8 +1,4 @@
-<style>
-  .my-pagination .ngx-pagination .current {
-    background: red;
-  }
-</style>
+
 
 <div class="main-blog">
     <div class="container">
@@ -13,12 +9,10 @@
                         <h2>Categorías</h2>
                     </div>
                     <div class="body widget">
-                        <ul class="list-unstyled categories-clouds m-b-0">
-                            <li><a href="#">Historia</a></li>
-                            <li><a href="#">Rutas</a></li>
-                            <li><a href="#">Personajes históricos</a></li>
-                            <li><a href="#">Arquitectura</a></li>
-                            <li><a href="#">Provincia</a></li>
+                        <ul class="list-unstyled categories-clouds m-b-0" >
+                            <li *ngFor="let category of categories">
+                              <a href="#">{{category}}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -34,14 +28,14 @@
                             <div class="card-text" [ngClass]="{'limitTextHeight': isReadMore}" [innerHTML]="post.details? post.details[0].text : ''"></div>
                             <button type="button" class="btn btn-outline-dark" (click)="showText()">
                 {{ isReadMore ? 'Leer más': 'Leer menos' }}
-              </button>
-                        </div>
+              </button></div>
+
                         <div class="card-footer row deg-color outstanding">
                             <div class="col">
                                 Publicado en: {{post.updatedAt? post.updatedAt.toString() : ''}}
                             </div>
                             <div class="col text-right">
-                                {{post.details? (post.details[0].categories ? post.details[0].categories.join(', ') : '') : ''}}
+                                <p id="tags">{{post.details? (post.details[0].categories ? post.details[0].categories.join(', ') : '') : ''}}</p>
                             </div>
                         </div>
                     </div>
