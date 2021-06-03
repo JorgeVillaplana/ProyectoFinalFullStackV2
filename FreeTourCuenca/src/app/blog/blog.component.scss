@@ -87,6 +87,24 @@ a:hover {
   }
 }
 
+
+.paginator {
+  align-content: center;
+}
+.my-pagination  {
+  padding: 35px;
+  color: rgb(241, 159, 7);
+  font-size: 20px;
+  ::ng-deep .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #666666;
+    color: #fefefe;
+    cursor: default;
+  }
+}
+
+
+
 .wrapper {
   float: right;
   margin-right: 5%;

@@ -46,6 +46,34 @@
   transform: scaleX(-1);
 }
 
+
+.accordion {
+  width: 100%;
+  padding: 0px;
+  border: none;
+}
+
+
+
+.accordion-button {
+  padding: 3px;
+  color:white;
+  background: black;
+}
+
+.accordion-body {
+  padding: 3px;
+  margin-bottom: 15px;
+  color:yellow;
+
+}
+
+.accordion-item {
+  background: rgb(83, 83, 83);
+}
+
+
+
 .footer-content {
   border-radius: 7px;
   background-color: rgb(131, 131, 131);

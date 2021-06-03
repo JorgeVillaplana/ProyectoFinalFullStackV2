@@ -9,17 +9,18 @@
               <h1 class="outstanding">Preguntas Frecuentes / FAQ</h1>
             </header>
           </div>
-          <div class="main-content">
-            <main>
-              <ul>
-                <li class="question">
-                  <p>Aquí va una pregunta</p>
-                  <ul>
-                    <li class="answer">Y aquí va su respuesta.</li>
-                  </ul>
-                </li>
-              </ul>
-            </main>
+          <div class="accordion">
+            <div class="accordion-item" *ngFor="let detail of faq.details">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">{{detail.question}}
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  {{detail.answer}}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="footer-content">

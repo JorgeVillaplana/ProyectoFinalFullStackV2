@@ -1,3 +1,9 @@
+<style>
+  .my-pagination .ngx-pagination .current {
+    background: red;
+  }
+</style>
+
 <div class="main-blog">
     <div class="container">
         <div class="row">
@@ -41,8 +47,8 @@
                     </div>
 
                 </div>
-                <div>
-                    <pagination-controls (pageChange)="p = $event" [maxSize]="9" [autoHide]="true" [responsive]="true" previousLabel="Anterior" nextLabel="Siguiente">
+                <div class="col text-right paginator">
+                    <pagination-controls class="my-pagination" (pageChange)="p = $event" [maxSize]="9" [autoHide]="true" [responsive]="true" previousLabel="Anterior" nextLabel="Siguiente">
                     </pagination-controls>
                 </div>
             </div>
