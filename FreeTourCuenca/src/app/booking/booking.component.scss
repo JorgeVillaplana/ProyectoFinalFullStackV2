@@ -5,16 +5,23 @@
   }
   .card {
     padding: 25px;
+    border-radius: 8px;
   }
-  h2,
+  h2 {
+    text-align: center;
+    color: black;
+  }
   h3 {
     text-align: center;
+    color: yellow;
   }
-  p {
+  p, li {
     font-size: 18px;
+    color: white;
   }
   p.thick {
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 20px;
   }
   .gmap_canvas {
     padding: 10px;
@@ -51,4 +58,8 @@
     border-radius: 5px;
     width: 107%;
   }
+}
+
+.card {
+  background-color: rgb(26, 26, 26, 0.85);
 }
