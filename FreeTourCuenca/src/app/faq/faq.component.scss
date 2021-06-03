@@ -1,12 +1,19 @@
 @import "../../styles";
 
+.container-faq {
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
 #faq {
-  margin-bottom: -30vh;
+  margin-bottom: -15%;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 .h-100 {
   min-height: 80vh;
+
 }
 
 .faq {
@@ -49,11 +56,9 @@
 
 .accordion {
   width: 100%;
-  padding: 0px;
+  padding: 5px;
   border: none;
 }
-
-
 
 .accordion-button {
   padding: 3px;
@@ -62,9 +67,10 @@
 }
 
 .accordion-body {
-  padding: 3px;
+  padding: 12px;
   margin-bottom: 15px;
   color:yellow;
+  font-size: 17px;
 
 }
 
@@ -73,14 +79,13 @@
 }
 
 
-
 .footer-content {
   border-radius: 7px;
   background-color: rgb(131, 131, 131);
   width: 40%;
   text-align: center;
   padding: 1%;
-  margin: 10% auto;
+  margin: 5% auto;
   font-size: 1.2em;
 }
 
@@ -96,13 +101,12 @@ a:hover {
   }
 
   .jumbotron {
-    min-height: 150vh;
+    min-height: 105vh;
     min-width: 100%;
     background-color: rgb(68, 68, 68);
   .col-8 {
     width: 100%;
   }
   }
-
 
 }

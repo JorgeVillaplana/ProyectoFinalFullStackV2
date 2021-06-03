@@ -32,15 +32,23 @@ export class TourMakerComponent implements OnInit {
     private tourService: ToursService,
     private specialService: SpecialService) {
       this.mForm = this.fb.group({
-        tourname: ["", Validators.required],
+        tourname: ["", Validators.required, Validators.minLength(3)],
         language: [1, Validators.required],
-        title: ["", Validators.required],
+        title: ["", Validators.required, Validators.minLength(8)],
+        categories: ["", Validators.required],
+        text: ["", Validators.required],
         duration: ["", Validators.required, Validators.minLength(2), Validators.maxLength(3)],
+        route: ["", Validators.required],
+        detail: ["", Validators.required],
         seats: [9, Validators.required],
-        date: ["", Validators.required],
-        time: ["", Validators.required],
+        dates: ["", Validators.required],
+        hours: ["", Validators.required],
+        map: ["", Validators.required],
+        guides: ["", Validators.required],
+        guide: ["", Validators.required],
       })
     }
+
   languages: Array<Language> = []
   guides: Array<Guide> = []
   guideNames: string[] = []
