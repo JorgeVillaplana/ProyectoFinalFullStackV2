@@ -9,6 +9,7 @@ const specialController = require("../controllers/special")
 const userController = require("../controllers/user")
 const languageController = require("../controllers/language")
 const faqController = require("../controllers/faq")
+const emailController = require("../controllers/mailer");
 
 router.get("/images", imageController.getImages)
 router.post("/save-image", imageController.saveImage)
@@ -71,5 +72,8 @@ router.get("/special/:id", specialController.getSpecial)
 router.get("/special-by-lang/:lang", specialController.getSpecialsByLang)
 router.put("/special/:id", specialController.updateSpecial)
 router.delete("/special/:id", specialController.deleteSpecial)
+
+router.post("/send", emailController.send)
+router.post("/sendPug", emailController.sendPug)
 
 module.exports = router
