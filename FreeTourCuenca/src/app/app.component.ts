@@ -66,15 +66,17 @@ export class AppComponent {
     );
   }
 
-  selectLanguage(language: Language){
+  selectLanguage(language: Language | undefined){
     if(!language){
       this.languages.forEach( lang => {
-        if(lang.code === "es"){
+        if(lang.code == "es"){
+          console.log(lang)
           language = lang;
         }
       })
+    }else{
+      this.selectedLanguage = language;
     }
-    this.selectedLanguage = language;
     this.selLangService.language = this.selectedLanguage;
   }
 

@@ -1,16 +1,16 @@
-<!-- <div class="panel panel-primary" id="tours-panel">
-  <div class="panel-heading">
-      <h3 class="panel-title">Listado de tours</h3>
-      <ul class="list-group">
-          <div class="panel-body" *ngFor="let tour of tours; index as position">
-              <li class="list-group-item">{{position+1}}. {{tour.name}}
-                  <button type="button" class="btn btn-danger btn-sm float-end" (click)="deleteTour()">Eliminar</button>
-              </li>
-          </div>
-      </ul>
-  </div>
+<div class="panel panel-primary" id="tours-panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">Listado de tours</h3>
+        <ul class="list-group">
+            <div class="panel-body" *ngFor="let tour of tours; index as position">
+                <li class="list-group-item">{{position+1}}. {{tour.name}}
+                    <button type="button" class="btn btn-danger btn-sm float-end" (click)="deleteTour()">Eliminar</button>
+                </li>
+            </div>
+        </ul>
+    </div>
 </div>
- -->
+
 <div class="tour-maker col-8" *ngIf="showForm">
     <form [formGroup]="mForm" id="tourMakerForm">
         <div class="mb-3">
@@ -31,8 +31,9 @@
             <div class="category form-group ">
                 <label for="category" class="col-form-label">Categorías</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Añadir categoría" #newTag (keyup.enter)="addTag(newTag)">
-                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addTag(newTag)">Añadir</button>
+                    <input type="text" class="form-control" formControlName="categories" id="categories" readonly [value]="categories.join(', ')" placeholder="Lista de categorías">
+                    <input type="text" class="form-control" placeholder="Añadir categoría" #newCategory (keyup.enter)="addCategory(newCategory.value)">
+                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addCategory(newCategory.value)">Añadir</button>
                 </div>
             </div>
             <div class="description form-group">

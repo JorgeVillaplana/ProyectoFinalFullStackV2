@@ -34,7 +34,7 @@ export class FaqService {
 
   getFaqByLang(language: Language): Observable<any>{
     const lang = language._id
-    return this.httpClient.get(`${environment.apiUrl}/faq-lang/${lang}`)
+    return this.httpClient.get(`${environment.apiUrl}/faq-by-lang/${lang}`)
     .pipe(
       catchError(error=>{
         return error;

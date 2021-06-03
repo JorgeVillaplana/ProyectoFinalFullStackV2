@@ -24,16 +24,16 @@ export class FaqComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.selLangService.language)
     this.selectedLang = this.selLangService.language
     this.selectedText = this.selTextService.text
     this.loadFaq()
   }
 
   loadFaq() {
-    this.faqService.getFaqByLang(this.selectedLang).subscribe(
-      (data: Faq) => {
-        this.faq = data
-        console.log(data)
+    this.faqService.getFaqs().subscribe(
+      (data: Faq[]) => {
+        this.faq = data[0]
       },
       error => {
         console.log("Error: ", error)
