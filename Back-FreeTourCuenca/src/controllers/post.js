@@ -54,7 +54,9 @@ controller.getPost = async(req, res) => {
     const id = req.params.id
 
     try {
-        const post = await post.findById(id).populate({ path: 'postdetail', match: { language: req.body.language } })
+        const post = await post.findById(id)
+            .sort({ updatedAt: -1 })
+            .populate({ path: 'postdetail', match: { language: req.body.language } })
         res.json(post)
     } catch (err) {
         console.log(err)
@@ -64,7 +66,9 @@ controller.getPost = async(req, res) => {
 
 controller.getImportantPosts = async(req, res) => {
     try {
-        const posts = await Post.find({ important: true }).populate({ path: 'postdetail', match: { language: req.body.language } })
+        const posts = await Post.find({ important: true })
+            .sort({ updatedAt: -1 })
+            .populate({ path: 'postdetail', match: { language: req.body.language } })
         res.json(posts)
     } catch (err) {
         console.log(err)
@@ -74,7 +78,7 @@ controller.getImportantPosts = async(req, res) => {
 
 controller.getPostByLanguage = async(req, res) => {
     try {
-        const posts = await Post.find()
+        const posts = await Post.find().sort({ updatedAt: -1 })
             .populate({
                 path: 'details',
                 populate: {

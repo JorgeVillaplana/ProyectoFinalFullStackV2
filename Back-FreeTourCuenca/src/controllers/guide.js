@@ -30,7 +30,7 @@ controller.saveGuide = async(req, res) => {
 
 controller.getGuides = async(req, res) => {
     try {
-        const guides = await Guide.find()
+        const guides = await Guide.find().sort({ updatedAt: -1 })
         res.json(guides)
     } catch (err) {
         console.log(err)

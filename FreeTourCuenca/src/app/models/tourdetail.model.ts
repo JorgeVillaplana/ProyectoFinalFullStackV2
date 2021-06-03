@@ -7,12 +7,12 @@ export class TourDetail {
   categories?: Array<string>;
   description?: string;
   guides?: Array<Guide>;
-  tourdates?: [{
+  tourdates?: {
     day?: Date;
-    timePicker?: [{
+    timePicker?: {
       hour?: string;
       remainingSeats: number;
-    }];
-  }];
+    }[];
+  }[];
   _id?: string;
 }

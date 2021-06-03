@@ -11,7 +11,7 @@ const UserSchema = new Schema({
     updatedAt: { type: Date, default: Date.now }
 })
 
-UserSchema.pre(['save', 'updateOne', 'findOneAndUpdate'], async function(next) {
+UserSchema.pre('save', async function(next) {
     try {
         const user = this
         const hash = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10))

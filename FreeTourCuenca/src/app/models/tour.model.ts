@@ -8,9 +8,9 @@ export class Tour {
   tourDetails?: Array<TourDetail>;
   images?: Array<Image>;
   map?: string;
-  specialFeatures?: [{
+  specialFeatures?: {
     special?: Special;
     value?: boolean;
-  }];
+  }[];
   _id?: string;
 }

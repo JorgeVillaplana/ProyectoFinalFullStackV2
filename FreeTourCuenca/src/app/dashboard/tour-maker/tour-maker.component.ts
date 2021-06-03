@@ -28,7 +28,8 @@ export class TourMakerComponent implements OnInit {
     private router: Router,
     private langService: LanguageService,
     private guideService: GuideService,
-    private tourService: ToursService) {
+    private tourService: ToursService,
+    private specialService: SpecialService) {
       this.mForm = this.fb.group({
         tourname: ["", Validators.required],
         language: [{code: 'es'}, Validators.required],
@@ -44,6 +45,10 @@ export class TourMakerComponent implements OnInit {
   selGuides: Array<Guide> = []
   dates = []
   hours = []
+  images = []
+  specials: Array<Special> = []
+  specialFeatures = []
+  tourdates = [{}]
 
   get m(): any {
     return this.mForm.controls
@@ -62,6 +67,25 @@ export class TourMakerComponent implements OnInit {
 
   newGuide = ""
   addGuide() {}
+
+  addTourdate(){
+    const tourdate = this.dates.map(
+      d =>{
+        return {
+          day: Date = d,
+          timePicker: this.hours.map(
+            hour => {
+              return {
+                hour: String = hour,
+                remainingSeats: this.m.seats.value
+              }
+            }
+          )
+        }
+      }
+    )
+    return tourdate
+  }
 
   showForm = false
   showNewTour(){
@@ -82,31 +106,11 @@ export class TourMakerComponent implements OnInit {
       categories: this.tags,
       description: this.m.description.value,
       guides: this.selGuides,
-      tourdates: this.dates.map(
-        d =>{
-          return {
-            day: Date = d,
-            timePicker: this.hours.map(
-              hour => {
-                return {
-                  hour: String = hour,
-                  remainingSeats: this.m.seats.value
-                }
-              }
-            )
-          }
-        }
-      )
+      tourdates: this.tourdates,
     }]
-    tour.images = [{
-      detail,
-      route
-    }]
+    tour.images = this.images
     tour.map
-    tour.specialFeatures = [{
-      special,
-      value
-    }]
+    tour.specialFeatures = this.specialFeatures
 
     return tour
 
@@ -151,6 +155,17 @@ export class TourMakerComponent implements OnInit {
     this.guideService.getGuides().subscribe(
       (data: Guide[]) => {
         this.guides = data
+      },
+      error => {
+        console.log("Error: ", error)
+      }
+    )
+  }
+
+  loadSpecial() {
+    this.specialService.getSpecials().subscribe(
+      (data: Special[]) => {
+        this.specials = data
       },
       error => {
         console.log("Error: ", error)

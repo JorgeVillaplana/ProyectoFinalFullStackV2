@@ -34,7 +34,7 @@ controller.saveTour = async(req, res) => {
 
 controller.getTours = async(req, res) => {
     try {
-        const tours = await Tour.find()
+        const tours = await Tour.find().sort({ updatedAt: -1 })
             .populate({
                 path: "tourdetail",
                 match: { language: req.body.language._id },
@@ -73,7 +73,7 @@ controller.getTour = async(req, res) => {
 controller.getToursByName = async(req, res) => {
 
     try {
-        const tours = await Tour.find({ name: req.params.name })
+        const tours = await Tour.find({ name: req.params.name }).sort({ updatedAt: -1 })
             .populate({
                 path: "tourdetail",
                 populate: {
@@ -91,7 +91,7 @@ controller.getToursByName = async(req, res) => {
 controller.getToursByLang = async(req, res) => {
 
     try {
-        const tours = await Tour.find()
+        const tours = await Tour.find().sort({ updatedAt: -1 })
             .populate({
                 path: "tourdetail",
                 match: { language: req.params.language },

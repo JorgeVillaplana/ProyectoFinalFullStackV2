@@ -25,7 +25,7 @@
                         <img [src]="post.image? post.image.route : ''" [alt]="post.image? post.image.detail : ''" class="card-img-top" />
                         <div class="card-body">
                             <h3 class="card-title">{{post.details? post.details[0].title : ''}}</h3>
-                            <p class="card-text" [ngClass]="{'limitTextHeight': isReadMore}">{{post.details? post.details[0].text : ''}}</p>
+                            <div class="card-text" [ngClass]="{'limitTextHeight': isReadMore}" [innerHTML]="post.details? post.details[0].text : ''"></div>
                             <button type="button" class="btn btn-outline-dark" (click)="showText()">
                 {{ isReadMore ? 'Leer más': 'Leer menos' }}
               </button>
@@ -39,6 +39,9 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+                <div>
                     <pagination-controls (pageChange)="p = $event" [maxSize]="9" [autoHide]="true" [responsive]="true" previousLabel="Anterior" nextLabel="Siguiente">
                     </pagination-controls>
                 </div>

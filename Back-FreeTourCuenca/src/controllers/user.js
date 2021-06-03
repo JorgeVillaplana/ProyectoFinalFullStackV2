@@ -1,4 +1,5 @@
 const controller = {}
+const bcrypt = require("bcrypt");
 const User = require('../models/user')
 const validator = require('../validators/userSignup')
 const authJWT = require("../auth/jwt")
@@ -56,9 +57,11 @@ controller.updateUser = async(req, res) => {
     }
 
     try {
-        await User.findByIdAndUpdate(req.params.id, { email: req.body.email, name: req.body.name, password: req.body.password, role: req.body.role, updatedAt: Date.now() })
+        const hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+        await User.findByIdAndUpdate(req.params.id, { email: req.body.email, name: req.body.name, password: hash, role: req.body.role, updatedAt: Date.now() })
         res.status(204).send()
     } catch (err) {
+        console.log(err)
         res.status(500).send(err)
     }
 }
