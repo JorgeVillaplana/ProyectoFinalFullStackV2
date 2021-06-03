@@ -54,12 +54,12 @@ export class TourMakerComponent implements OnInit {
     return this.mForm.controls
   }
 
-  tags = [] as any
-  newTag = ""
+  categories: string[] = []
+  newCategory = ""
 
-  addTag(data: any) {
-    this.tags.push(data);
-    data.value = "";
+  addCategory(value: string) {
+    this.categories.push(value);
+    this.newCategory = "";
   }
 
   newTime = ""
@@ -87,13 +87,12 @@ export class TourMakerComponent implements OnInit {
     return tourdate
   }
 
-  showForm = false
+  showForm = true
   showNewTour(){
     this.showForm = !this.showForm
     // DESPLIEGA FORMULARIO VACÍO
   }
 
-/*
   readTour(): Tour {
     const tour: Tour = new Tour()
 
@@ -103,7 +102,7 @@ export class TourMakerComponent implements OnInit {
     tour.tourDetails = [{
       language: this.languages[this.m.language.value],
       title: this.m.title.value,
-      categories: this.tags,
+      categories: this.categories,
       description: this.m.description.value,
       guides: this.selGuides,
       tourdates: this.tourdates,
@@ -115,7 +114,6 @@ export class TourMakerComponent implements OnInit {
     return tour
 
   }
-*/
 
   alert: boolean = false
   saveTour(){
