@@ -37,7 +37,6 @@ controller.getTours = async(req, res) => {
         const tours = await Tour.find().sort({ updatedAt: -1 })
             .populate({
                 path: "tourdetail",
-                match: { language: req.body.language._id },
                 populate: {
                     path: 'guides'
                 }
