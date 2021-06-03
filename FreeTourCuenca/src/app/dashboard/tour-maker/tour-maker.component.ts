@@ -24,6 +24,18 @@ export class TourMakerComponent implements OnInit {
     placeholder: 'Escribe aquí'
   }
   tours: Array<Tour> = []
+  languages: Array<Language> = []
+  guides: Array<Guide> = []
+  guideNames: string[] = []
+  selGuides: Array<Guide> = []
+  dates: string[] = []
+  hours: string[] = []
+  images: Image[] = []
+  specials: Array<Special> = []
+  specialFeatures = []
+  tourdates = [{}]
+  categories: string[] = []
+  newCategory = ""
 
   constructor(private fb: FormBuilder,
     private router: Router,
@@ -65,8 +77,7 @@ export class TourMakerComponent implements OnInit {
     return this.mForm.controls
   }
 
-  categories: string[] = []
-  newCategory = ""
+
 
   addCategory(value: string) {
     this.categories.push(value);
