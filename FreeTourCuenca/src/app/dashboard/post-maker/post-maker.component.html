@@ -49,7 +49,7 @@
         <h3 class="panel-title">Listado de posts</h3>
         <ul class="list-group">
             <div class="panel-body" *ngFor="let post of posts; index as position">
-                <li class="list-group-item">{{position+1}}. {{post.details? post.details[0].title : ''}}
+                <li class="list-group-item">{{position+1}}. {{post.details? post.details[0]?.title : ''}}
                     <button type="button" class="btn btn-danger btn-sm float-end" (click)="deletePost(post._id )">Eliminar</button>
                 </li>
             </div>

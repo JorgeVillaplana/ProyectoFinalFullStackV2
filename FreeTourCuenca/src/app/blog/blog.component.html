@@ -22,8 +22,8 @@
                     <div class="card">
                         <img [src]="post.image? post.image.route : ''" [alt]="post.image? post.image.detail : ''" class="card-img-top" />
                         <div class="card-body">
-                            <h3 class="card-title">{{post.details != undefined? post.details[0].title : ''}}</h3>
-                            <div class="card-text" [ngClass]="{'limitTextHeight': isReadMore}" [innerHTML]="post.details? post.details[0].text : ''"></div>
+                            <h3 class="card-title">{{post.details != undefined? post.details[0]?.title : ''}}</h3>
+                            <div class="card-text" [ngClass]="{'limitTextHeight': isReadMore}" [innerHTML]="post.details? post.details[0]?.text : ''"></div>
                             <button type="button" class="btn btn-outline-dark" (click)="showText()">
                 {{ isReadMore ? 'Leer más': 'Leer menos' }}
               </button></div>
@@ -33,7 +33,7 @@
                                 Publicado en: {{post.updatedAt? moment(post.updatedAt.toString()).format("DD-MM-YYYY") : ''}}
                             </div>
                             <div class="col text-right">
-                                <p id="tags">{{post.details != undefined? (post.details[0].categories != undefined? post.details[0].categories.join(', ') : '') : ''}}</p>
+                                <p id="tags">{{post.details != undefined? (post.details[0]?.categories != undefined? post.details[0]?.categories?.join(', ') : '') : ''}}</p>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,8 @@
                             </h3>
                         </li>
                         <li class="list-group-item" *ngFor="let importantPost of importantPosts">
-                            <h3 [innerHTML]="importantPost">
+                            <h3>
+                                {{importantPost}}
                             </h3>
                         </li>
                     </ul>
