@@ -1,5 +1,3 @@
-
-
 <div class="main-blog">
     <div class="container">
         <div class="row">
@@ -9,9 +7,9 @@
                         <h2>Categorías</h2>
                     </div>
                     <div class="body widget">
-                        <ul class="list-unstyled categories-clouds m-b-0" >
+                        <ul class="list-unstyled categories-clouds m-b-0">
                             <li *ngFor="let category of categories">
-                              <a href="#">{{category}}</a>
+                                <a href="#">{{category}}</a>
                             </li>
                         </ul>
                     </div>
@@ -24,7 +22,7 @@
                     <div class="card">
                         <img [src]="post.image? post.image.route : ''" [alt]="post.image? post.image.detail : ''" class="card-img-top" />
                         <div class="card-body">
-                            <h3 class="card-title">{{post.details? post.details[0].title : ''}}</h3>
+                            <h3 class="card-title">{{post.details != undefined? post.details[0].title : ''}}</h3>
                             <div class="card-text" [ngClass]="{'limitTextHeight': isReadMore}" [innerHTML]="post.details? post.details[0].text : ''"></div>
                             <button type="button" class="btn btn-outline-dark" (click)="showText()">
                 {{ isReadMore ? 'Leer más': 'Leer menos' }}
@@ -32,10 +30,10 @@
 
                         <div class="card-footer row deg-color outstanding">
                             <div class="col">
-                                Publicado en: {{post.updatedAt? post.updatedAt.toString() : ''}}
+                                Publicado en: {{post.updatedAt? moment(post.updatedAt.toString()).format("DD-MM-YYYY") : ''}}
                             </div>
                             <div class="col text-right">
-                                <p id="tags">{{post.details? (post.details[0].categories ? post.details[0].categories.join(', ') : '') : ''}}</p>
+                                <p id="tags">{{post.details != undefined? (post.details[0].categories != undefined? post.details[0].categories.join(', ') : '') : ''}}</p>
                             </div>
                         </div>
                     </div>
@@ -50,8 +48,15 @@
             <div class="col-2 right-box">
                 <div class="card">
                     <h2>Entradas destacadas</h2>
-                    <ul class="list-group list-group-flush" *ngFor="let importantPost of importantPosts">
-                        <li class="list-group-item">{{importantPost.details? importantPost.details[0].title : ''}}</li>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <h3>Ejemplo de post destacado
+                            </h3>
+                        </li>
+                        <li class="list-group-item" *ngFor="let importantPost of importantPosts">
+                            <h3 [innerHTML]="importantPost">
+                            </h3>
+                        </li>
                     </ul>
                 </div>
             </div>

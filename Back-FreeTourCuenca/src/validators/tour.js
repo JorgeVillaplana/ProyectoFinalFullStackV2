@@ -6,8 +6,8 @@ const schema = joi.object({
     name: joi.string().required(),
     duration: joi.number().required(),
     seats: joi.number().required(),
-    tourDetails: joi.array().items(detailValidator.validate(item)),
-    images: joi.array().items(joi.string()),
+    tourDetails: joi.array(),
+    images: joi.array(),
     map: joi.string(),
     specialFeatures: joi.array().items(joi.object({
         special: joi.object(),
@@ -24,7 +24,7 @@ function validate(body) {
         image: body.image,
         map: body.map,
         specialFeatures: {
-            special: specialValidator.validate(body.specialFeatures.special),
+            special: body.specialFeatures.special,
             value: body.specialFeatures.value
         }
     }, { abortEarly: false });

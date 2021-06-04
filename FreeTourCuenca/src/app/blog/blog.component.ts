@@ -9,19 +9,20 @@ import { SelectedtextService } from '../services/selectedtext.service';
 import  { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import * as moment from 'moment';
 
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-
+  moment: any = moment;
 
   posts: Array<Post> = [];
   auxiliaryPosts: Array<Post> = [];
   selectedLang: Language = {}
   selectedText: Text = {}
-  importantPosts: Array<Post> = [];
+  importantPosts: string[] = [];
   p: number = 1;
 
 
@@ -42,6 +43,7 @@ export class BlogComponent implements OnInit {
     this.selectedLang = this.selLangService.language
     this.selectedText = this.selTextService.text
     this.loadPosts()
+    this.checkCategories()
   }
 
   loadPosts(){
@@ -72,16 +74,25 @@ export class BlogComponent implements OnInit {
 
   checkCategories(){
     let check = false
+    /*let i = 0
+    let j
 
-    check = this.posts.some((post) => {
-      if(post.details){
-        post.details.some((detail) => {
-          if(detail.categories){
-            detail.categories.length >= 1
+    while(i < this.posts.length && check){
+      if(this.posts[i]){
+        j = 0
+          while(j < this.posts[i].details.length && check){
+            if(this.posts[i].details[j]!){
+              if(this.posts[i].details[j]!.categories?.length > 0){
+                check = true
+                return check
+              }
+            }
+            j++
           }
-        })
+        }
       }
-    })
+      i++
+    }*/
 
     return check
   }
@@ -93,12 +104,19 @@ export class BlogComponent implements OnInit {
       while(this.importantPosts.length <= 4 && i < this.posts.length){
         if(this.posts[i]){
           if(this.posts[i].important == true){
-            this.importantPosts.push(this.posts[i])
+            const title = this.posts[i].details![0].title
+            this.importantPosts.push(title ? title : 'Error')
           }
         }
         i++
       }
     }
+    console.log("Important posts: ", this.importantPosts)
+    this.importantPosts.forEach(
+      derp => {
+        console.log(derp)
+      }
+    )
   }
 
   faArrowUp = faArrowUp

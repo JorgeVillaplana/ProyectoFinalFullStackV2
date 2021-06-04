@@ -7,7 +7,7 @@ const schema = joi.object({
     title: joi.string(),
     categories: joi.array().items(joi.string()),
     description: joi.string(),
-    guides: joi.array().items(guideValidator.validate(item)),
+    guides: joi.array(),
     tourdates: joi.array().items(joi.object({
         day: joi.date().min('now'),
         timePicker: joi.array().items(joi.object({

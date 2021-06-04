@@ -1,23 +1,23 @@
 const helper = {}
 const nodemailer = require('nodemailer')
-const user = "email-que-usemos@mail.com"
-const pass = "pass-que-usemos"
+const user = process.env.MAILER
+const pass = process.env.MAILPASS
 
 const transport = nodemailer.createTransport({
- service: "SendinBlue",
- auth: {
- user: user,
- pass: pass
- },
- tls: {
-    rejectUnauthorized: false
-}
+    service: "SendinBlue",
+    auth: {
+        user: user,
+        pass: pass
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
 })
 
 helper.send = (subject, to, html) => {
     return new Promise((resolve, reject) => {
         try {
-            const from = "email-que-usemos@mail.com"
+            const from = user
             transport.sendMail({ from, subject, to, html }, (error, info) => {
                 if (error) {
                     console.log('errorSendingEmail: ' + JSON.stringify(error))

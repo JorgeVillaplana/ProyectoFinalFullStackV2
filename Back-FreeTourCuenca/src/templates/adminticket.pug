@@ -1,7 +1,11 @@
 html(lang="es")
- head
- meta(charset="UTF-8")
- meta(name="viewport" content="width=device-width, initial-scale=1.0")
- title Confirmación de reserva
- body
- h2=`Hola, ${name}. Has recibido una reserva de X asistentes, para X día a X hora.`
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Confirmación de reserva
+    body
+        h2=`Nueva reserva registrada para ${tour}`
+        p=`Has recibido una reserva de ${quantity} asistentes.`
+        p=`Fecha: ${date}`
+        p=`Hora: ${hours}`
+        p=`A nombre de ${name}`

@@ -10,11 +10,17 @@ const emailObj = new Email({
 })
 
 
-controller.send = async (req, res) => { // FUNCIÓN DE MAIL DE CONFIRMACIÓN PARA LOS USUARIOS
+controller.sendConfirm = async(req, res) => { // FUNCIÓN DE MAIL DE CONFIRMACIÓN PARA LOS USUARIOS
     try {
-        const subject = "Confirmación de reserva"
-        const destination = "maildelusuario"
-        const data = await emailObj.render('userticket.pug')
+        const subject = "Confirmación de reserva con Explora Toledo"
+        const destination = req.body.email
+        const locals = {
+            name: req.body.name,
+            date: req.body.date,
+            hour: req.body.hour,
+            quantity: req.body.quantity,
+        }
+        const data = await emailObj.render('userticket.pug', locals)
 
         await mailer.send(subject, destination, data)
         res.status(204).send()
@@ -25,12 +31,17 @@ controller.send = async (req, res) => { // FUNCIÓN DE MAIL DE CONFIRMACIÓN PAR
 }
 
 
-controller.sendPug = async (req, res) => { // FUNCIÓN DE MAIL DE CONFIRMACIÓN PARA JESÚS
+controller.sendMe = async(req, res) => { // FUNCIÓN DE MAIL DE CONFIRMACIÓN PARA CLIENTE
     try {
-        const name = "Pepito"
-        const subject = `Nuevas reservas ${name}`
-        const destination = "mail-de-name"
-        const locals = { name: name }
+        const subject = `Nuevas reservas`
+        const destination = "jorge.villaplana.m@gmail.com"
+        const locals = {
+            name: req.body.name,
+            date: req.body.date,
+            hour: req.body.hour,
+            quantity: req.body.quantity,
+            tour: req.body.tour,
+        }
         const data = await emailObj.render('adminticket.pug', locals)
         console.log(data)
         await mailer.send(subject, destination, data)

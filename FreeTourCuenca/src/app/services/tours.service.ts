@@ -69,7 +69,8 @@ export class ToursService {
     ).pipe(
       catchError ( error => {
         return error;
-      })    )
+      })
+    )
   }
 
   updateTour( tour: Tour ): Observable<any> {

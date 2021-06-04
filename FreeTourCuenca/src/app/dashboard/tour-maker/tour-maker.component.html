@@ -76,8 +76,8 @@
             <div class="guides form-group">
                 <label for="guides" class="col-form-label">Guías del tour</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" formControlName="guides" id="guides" readonly [value]="guideNames">
-                    <select id="guide" #guide formControlName="guide">
+                    <input type="text" class="form-control" formControlName="guides" id="guides" readonly [value]="guideNames.join(', ')" />
+                    <select id="guide" #guide>
                     <option *ngFor="let guide of guides; index as i" [value]="i">{{guide.name}} {{guide.surname}}</option>
                   </select>
                     <button type="submit" class="btn btn-outline-info btn-sm" (click)="addGuide(guide.value)">Añadir</button>

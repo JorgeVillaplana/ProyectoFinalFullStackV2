@@ -11,6 +11,7 @@ import { LanguageService } from 'src/app/services/language.service';
 import { GuideService } from 'src/app/services/guide.service';
 import { ToursService } from 'src/app/services/tours.service';
 import { SpecialService } from 'src/app/services/special.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-tour-maker',
@@ -44,40 +45,25 @@ export class TourMakerComponent implements OnInit {
     private tourService: ToursService,
     private specialService: SpecialService) {
       this.mForm = this.fb.group({
-        tourname: ["", Validators.required, Validators.minLength(3)],
+        tourname: ["", Validators.required],
         language: [1, Validators.required],
-        title: ["", Validators.required, Validators.minLength(8)],
-        categories: ["", Validators.required],
+        title: ["", Validators.required],
+        categories: [""],
         text: ["", Validators.required],
-        duration: ["", Validators.required, Validators.minLength(2), Validators.maxLength(3)],
-        route: ["", Validators.required],
-        detail: ["", Validators.required],
+        duration: ["", Validators.required],
+        route: [""],
+        detail: [""],
         seats: [9, Validators.required],
         dates: ["", Validators.required],
         hours: ["", Validators.required],
         map: ["", Validators.required],
-        guides: ["", Validators.required],
-        guide: ["", Validators.required],
+        guides: [""]
       })
     }
-
-  languages: Array<Language> = []
-  guides: Array<Guide> = []
-  guideNames: string[] = []
-  selGuides: Array<Guide> = []
-  dates: string[] = []
-  hours: string[] = []
-  images: Image[] = []
-  specials: Array<Special> = []
-  specialFeatures = []
-  tourdates = [{}]
-
 
   get m(): any {
     return this.mForm.controls
   }
-
-
 
   addCategory(value: string) {
     this.categories.push(value);
@@ -85,7 +71,7 @@ export class TourMakerComponent implements OnInit {
   }
 
   addDate(date: string) {
-    this.dates.push(date)
+    this.dates.push(moment(date).format("DD-MM-YYYY"))
   }
 
   addTime(hour: string) {
@@ -103,7 +89,7 @@ export class TourMakerComponent implements OnInit {
     const tourdate = this.dates.map(
       d =>{
         return {
-          day: d,
+          day: moment(moment(d).toISOString()).toDate(),
           timePicker: this.hours.map(
             hour => {
               return {
@@ -125,32 +111,36 @@ export class TourMakerComponent implements OnInit {
   }
 
   readTour(): Tour {
+    this.tourdates.push(this.addTourdate())
     const tour: Tour = new Tour()
 
-    tour.name = this.m.name.value
+    tour.name = this.m.tourname.value
     tour.duration = this.m.duration.value
     tour.seats = this.m.seats.value
     tour.tourDetails = [{
       language: this.languages[this.m.language.value],
       title: this.m.title.value,
       categories: this.categories,
-      description: this.m.description.value,
+      description: this.m.text.value,
       guides: this.selGuides,
       tourdates: this.tourdates,
     }]
     tour.images = this.images
-    tour.map
-    tour.specialFeatures = this.specialFeatures
+    tour.map = this.m.map.value
+    tour.specialFeatures = [{
+      special: undefined,
+      value: false
+    }]
 
     return tour
   }
 
   alert: boolean = false
   saveTour(){
-      this.alert = true
       this.tourService.saveTour(this.readTour()).subscribe(
         data => {
           console.log(data)
+          this.alert = true
           this.loadTours()
         },
         error => {

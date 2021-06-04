@@ -73,7 +73,7 @@ router.get("/special-by-lang/:lang", specialController.getSpecialsByLang)
 router.put("/special/:id", specialController.updateSpecial)
 router.delete("/special/:id", specialController.deleteSpecial)
 
-router.post("/send", emailController.send)
-router.post("/sendPug", emailController.sendPug)
+router.post("/send-confirmation", emailController.sendConfirm)
+router.post("/send-me", emailController.sendMe)
 
 module.exports = router

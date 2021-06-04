@@ -1,7 +1,7 @@
 const controller = {}
 const Tour = require('../models/tour')
 const TourDetail = require('../models/tourdetail')
-const validator = ('../validators/tour.js')
+const validator = require('../validators/tour')
 const imageController = require('./image')
 
 controller.saveTour = async(req, res) => {
@@ -12,6 +12,8 @@ controller.saveTour = async(req, res) => {
     }
 
     try {
+        const tourdetails = new TourDetail(req.body.tourDetails)
+        tourdetails.save()
         const images = req.body.images.map(image => {
             return imageController.saveImage2(image)
         })
@@ -20,7 +22,7 @@ controller.saveTour = async(req, res) => {
             name: req.body.name,
             duration: req.body.duration,
             seats: req.body.seats,
-            tourDetails: req.body.tourDetails,
+            tourDetails: tourdetails,
             images: images,
             map: req.body.map,
             specialFeatures: req.body.specialFeatures
