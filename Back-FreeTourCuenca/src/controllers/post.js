@@ -122,7 +122,7 @@ controller.deletePost = async(req, res) => {
 
     try {
         const post = await Post.findById(id)
-        post.details.foreach(async(detail) => {
+        post.details.forEach(async(detail) => {
             await Postdetail.findByIdAndDelete(detail._id)
         })
         await Post.findByIdAndDelete(post._id)
