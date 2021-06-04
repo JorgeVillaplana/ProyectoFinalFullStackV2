@@ -95,6 +95,7 @@ export class BookingComponent implements OnInit {
  alert: boolean = false
 
   saveTickets() {
+    this.alert = true
     this.service.updateTour(this.tour).subscribe(
       data => {
         this.mailerService.sendConfirmation(this.toMailer).subscribe(
