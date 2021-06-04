@@ -63,3 +63,18 @@
 .card {
   background-color: rgb(26, 26, 26, 0.85);
 }
+
+@media (max-width: 535px) {
+
+  iframe {
+    width: 250px;
+  }
+  #carrusel {
+    width: 250px;
+  }
+
+  .col-4 {
+margin-top: 20px;
+width: 100%;
+  }
+}
