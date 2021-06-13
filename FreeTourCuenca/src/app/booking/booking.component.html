@@ -3,15 +3,15 @@
         <div class="col">
             <div class="tour-preview">
                 <div class="card">
-                    <h3>DETALLES DE "RUTA POR LA JUDERÍA TOLEDANA"</h3>
-                    <p class="thick">Descripción de la ruta:</p>
+                    <h3 i18n="tour description|Nombre tour">DETALLES DE "RUTA POR LA JUDERÍA TOLEDANA"</h3>
+                    <p class="thick" i18n="tour description|Descrip tour">Descripción de la ruta:</p>
                     <p>La Judería Aljama de Toledo, que durante la Edad Media fue la más grande de Castilla con más de diez sinagogas, conserva las dos sinagogas de estilo mudéjar más significativas de Europa. Además del mejor Museo de la cultura Sefardí.
                         En esta ruta recorreremos la Judería, sus lugares más emblemáticos y descubriremos su historia y curiosidades.</p>
-                    <p class="thick">Duración:</p>
+                    <p class="thick" i18n="tour description|Duracion tour">Duración:</p>
                     <p>90 minutos.</p>
-                    <p class="thick">Fecha y horarios:</p>
+                    <p class="thick" i18n="tour description|Fecha y horas">Fecha y horarios:</p>
                     <p>Lunes / Jueves / Viernes / Sábados</p>
-                    <p class="thick">Información de interés:</p>
+                    <p class="thick" i18n="tour description|Info tour">Información de interés:</p>
                     <ul>
                         <li>Accesible en silla de ruedas ♿</li>
                         <li>Recorrido suave.</li>
@@ -20,12 +20,12 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <p class="thick">Inicio de la ruta / Punto de encuentro:</p>
+                                <p class="thick" i18n="tour description|Inicio tour">Inicio de la ruta / Punto de encuentro:</p>
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3062.651956713242!2d-4.023734984783995!3d39.85963209725584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6a0ba59ba78303%3A0xdb91564bb7f94f6e!2sPlaza%20Zocodover%2C%2045001%20Toledo!5e0!3m2!1ses!2ses!4v1622016774474!5m2!1ses!2ses"
                                     width="315" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                             <div class="col">
-                                <p class="thick">Galería</p>
+                                <p class="thick" i18n="tour description|Photos">Galería</p>
                                 <img src="https://i1.wp.com/toledogratis.com/wp-content/uploads/2017/05/24-2.jpg" id="carrusel">
                             </div>
                         </div>
@@ -38,8 +38,8 @@
             <form [formGroup]="mForm">
                 <div class="mb-3">
                     <div class="form-group">
-                        <h2 class="thick">Reserva tu visita</h2>
-                        <label for="exampleFormControlInput1">Nombre y apellido</label>
+                        <h2 i18n="header booking|Reserva" class="thick">Reserva tu visita</h2>
+                        <label for="exampleFormControlInput1" i18n="form booking|Nombre">Nombre y apellido</label>
                         <input type="text" class="form-control" id="formControlInput1" formControlName="name" placeholder="Nombre y apellido">
                     </div>
                     <div class="form-group">
@@ -47,16 +47,16 @@
                         <input type="text" class="form-control" id="formControlInput2" formControlName="email" placeholder="Email para recibir la confirmación de la reserva">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Nº de asistentes</label>
+                        <label for="exampleFormControlInput1" i18n="form booking|Asistentes">Nº de asistentes</label>
                         <input type="number" class="form-control" id="formControlInput3" formControlName="seats" min="1" max="9" placeholder="¿Cuántas personas vendréis al tour? (máx. 9 personas)">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Fecha de la visita</label><br>
+                        <label for="exampleFormControlFile1" i18n="form booking|Fecha">Fecha de la visita</label><br>
                         <input type="date" class="form-control" id="formControlInput4" formControlName="date" name="StartDate" min="today" placeholder="Fecha de la visita">
                         <!--Ajustar fecha mínima a hoy-->
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Selecciona hora</label><br>
+                        <label for="exampleFormControlFile1" i18n="form booking|Hora">Selecciona hora</label><br>
                         <!--Mostrar horas x fecha-->
                         <select name="time">
               <option value="1">17:00</option>
@@ -65,8 +65,8 @@
             </select>
                     </div>
                     <div class="col text-center">
-                        <button type="submit" (click)="saveTickets()" class="btn btn-warning btn-lg mb-3">Reservar</button>
-                        <div *ngIf="alert" class="alert alert-primary alert-dismissible fade show" role="alert">
+                        <button type="submit" (click)="saveTickets()" class="btn btn-warning btn-lg mb-3" i18n="form booking|Reservar">Reservar</button>
+                        <div *ngIf="alert" i18n="form booking|Alerta" class="alert alert-primary alert-dismissible fade show" role="alert">
                             ¡Tu reserva ha sido guardada! Recibirás un email con la confirmación.
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>

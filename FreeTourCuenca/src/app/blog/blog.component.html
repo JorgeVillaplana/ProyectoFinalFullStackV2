@@ -4,7 +4,7 @@
             <div class="col-2 left-box" *ngIf="checkCategories()">
                 <div class="card">
                     <div class="header">
-                        <h2>Categorías</h2>
+                        <h2 i18n="header|Categorías">Categorías</h2>
                     </div>
                     <div class="body widget">
                         <ul class="list-unstyled categories-clouds m-b-0">
@@ -29,7 +29,7 @@
               </button></div>
 
                         <div class="card-footer row deg-color outstanding">
-                            <div class="col">
+                            <div i18n="Plain text|Publicado" class="col">
                                 Publicado en: {{post.updatedAt? moment(post.updatedAt.toString()).format("DD-MM-YYYY") : ''}}
                             </div>
                             <div class="col text-right">
@@ -47,7 +47,7 @@
 
             <div class="col-2 right-box">
                 <div class="card">
-                    <h2>Entradas destacadas</h2>
+                    <h2 i18n="h2 header|Posts destacados">Entradas destacadas</h2>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <h3>Ejemplo de post destacado
