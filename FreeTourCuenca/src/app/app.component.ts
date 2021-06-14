@@ -3,9 +3,6 @@ import { Component } from '@angular/core';
 import { Language } from './models/language.model';
 import { LanguageService } from './services/language.service';
 import { SelectedlangService } from './services/selectedlang.service';
-import { Text } from './models/text.model';
-import { TextsService } from './services/texts.service';
-import { SelectedtextService } from './services/selectedtext.service';
 
 @Component({
   selector: 'app-root',
@@ -17,13 +14,10 @@ export class AppComponent {
 
   languages: Array<Language> = [];
   selectedLanguage: Language = {};
-  text: Text = {};
 
   constructor(private router: Router,
     private languageService: LanguageService,
-    private textsService: TextsService,
-    private selLangService: SelectedlangService,
-    private selTextService: SelectedtextService) {
+    private selLangService: SelectedlangService) {
 
       if( !this.selectedLanguage ){
         this.languages.forEach( lang => {
@@ -46,19 +40,6 @@ export class AppComponent {
       (data: Language[]) =>{
       this.languages = data
       console.log(data)
-    },
-     error => {
-      console.log("Error: ", error);
-    }
-    );
-  }
-
-  loadTexts() {
-    this.textsService.getTextByLang(this.selectedLanguage).subscribe(
-      (data: Text) =>{
-      this.text = data
-      console.log(data)
-      this.selTextService.text = this.text
     },
      error => {
       console.log("Error: ", error);
