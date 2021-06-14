@@ -1,7 +1,7 @@
-<app-menu *ngIf="showMenuAndFooter()" [languages]="languages" [text]="text" (selectedLanguage)="selectLanguage($event)">
+<app-menu *ngIf="showMenuAndFooter()" [languages]="languages" (selectedLanguage)="selectLanguage($event)">
 </app-menu>
 <div id="main" class="container-fluid">
     <router-outlet></router-outlet>
 </div>
-<app-footer *ngIf="showMenuAndFooter()" [text]="text">
+<app-footer *ngIf="showMenuAndFooter()">
 </app-footer>
