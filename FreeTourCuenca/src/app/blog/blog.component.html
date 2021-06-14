@@ -49,13 +49,9 @@
                 <div class="card">
                     <h2>Entradas destacadas</h2>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h3>Ejemplo de post destacado
-                            </h3>
-                        </li>
                         <li class="list-group-item" *ngFor="let importantPost of importantPosts">
                             <h3>
-                                {{importantPost}}
+                                {{importantPost.details![0] ? importantPost.details![0].title : ''}}
                             </h3>
                         </li>
                     </ul>

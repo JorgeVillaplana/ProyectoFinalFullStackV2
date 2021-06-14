@@ -22,7 +22,7 @@ export class BlogComponent implements OnInit {
   auxiliaryPosts: Array<Post> = [];
   selectedLang: Language = {}
   selectedText: Text = {}
-  importantPosts: string[] = [];
+  importantPosts: Post[] = [];
   p: number = 1;
 
 
@@ -73,26 +73,21 @@ export class BlogComponent implements OnInit {
   }
 
   checkCategories(){
-    let check = false
-    /*let i = 0
-    let j
+    let check = true
 
-    while(i < this.posts.length && check){
-      if(this.posts[i]){
-        j = 0
-          while(j < this.posts[i].details.length && check){
-            if(this.posts[i].details[j]!){
-              if(this.posts[i].details[j]!.categories?.length > 0){
-                check = true
-                return check
-              }
+    this.posts.forEach(
+      post => {
+        if(
+          post.details?.some(
+            detail => {
+              detail.categories!.length >= 1
             }
-            j++
-          }
+          )
+        ){
+          check = true;
         }
       }
-      i++
-    }*/
+    )
 
     return check
   }
@@ -104,8 +99,8 @@ export class BlogComponent implements OnInit {
       while(this.importantPosts.length <= 4 && i < this.posts.length){
         if(this.posts[i]){
           if(this.posts[i].important == true){
-            const title = this.posts[i].details![0].title
-            this.importantPosts.push(title ? title : 'Error')
+
+            this.importantPosts.push(this.posts[i])
           }
         }
         i++
@@ -123,5 +118,6 @@ export class BlogComponent implements OnInit {
 
   toTop() {
     window.scrollTo(0,0);
+    this.loadPosts();
   }
 }

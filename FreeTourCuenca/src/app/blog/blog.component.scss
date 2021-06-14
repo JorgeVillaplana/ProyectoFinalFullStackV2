@@ -1,157 +1,153 @@
 @import "../../styles";
-
 .main-blog {
-  padding-top: 20px;
-  padding-bottom: 20%;
-  margin-bottom: -7%;
-  background-color: rgb(26, 26, 26, 0.85);
+    padding-top: 20px;
+    padding-bottom: 20%;
+    margin-bottom: -7%;
+    background-color: rgb(26, 26, 26, 0.85);
 }
 
 h2 {
-  text-align: center;
+    text-align: center;
 }
 
-
 .card {
-  text-align: center;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255);
-  border: solid rgb(26, 26, 26, 0.85);
-  overflow: hidden;
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255);
+    border: solid rgb(26, 26, 26, 0.85);
+    overflow: hidden;
 }
 
 .card-body {
-  width: 100%;
+    width: 100%;
 }
 
 .card-text,
 .header {
-  text-align: justify;
-  width: auto;
+    text-align: justify;
+    width: auto;
 }
 
 .card-text {
-  padding-left: 20px;
-  padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .card-img-top {
-  height: 45vh;
-  width: auto;
-  object-fit: cover;
+    height: 45vh;
+    width: auto;
+    object-fit: cover;
 }
+
 .card-footer {
-  width: inherit;
-  align-content: center;
+    width: inherit;
+    align-content: center;
 }
 
 .text-right {
-  text-align: center;
+    text-align: center;
 }
 
 #tags {
-  font-size: 13px;
-  font-weight: lighter;
+    font-size: 13px;
+    font-weight: lighter;
 }
 
 .left-box .categories-clouds li {
-  display: inline-block;
-  margin-bottom: 5px;
-  margin-right: 7px;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 7px;
 }
 
 .left-box {
-  .card {
-    padding: 8px;
-    margin-left: -60%;
-  }
+    .card {
+        padding: 8px;
+        margin-left: -60%;
+    }
 }
 
 .left-box .categories-clouds li a {
-  display: block;
-  border: 1px solid;
-  padding: 6px 10px;
-  border-radius: 3px;
-  background-color: rgba(221, 186, 122, 0.1);
+    display: block;
+    border: 1px solid;
+    padding: 6px 10px;
+    border-radius: 3px;
+    background-color: rgba(221, 186, 122, 0.1);
 }
+
 a {
-  font-size: 16px;
-  font-weight: 500;
+    font-size: 16px;
+    font-weight: 500;
 }
+
 a:hover {
-  color: rgb(7, 6, 5);
+    color: rgb(7, 6, 5);
 }
 
 .limitTextHeight {
-  height: 40px;
-  overflow: hidden;
+    height: 40px;
+    overflow: hidden;
 }
 
 .right-box {
-  .card {
-    padding: 8px;
-    margin-right: -60%;
-    min-width: auto;
-    .header {
-      white-space: nowrap;
+    .card {
+        padding: 8px;
+        margin-right: -60%;
+        min-width: auto;
+        .header {
+            white-space: nowrap;
+        }
     }
-  }
 }
-
 
 .paginator {
-  align-content: center;
+    align-content: center;
 }
 
-.my-pagination  {
-  padding: 35px;
-  color: rgb(241, 159, 7);
-  font-size: 20px;
-  ::ng-deep .ngx-pagination .current {
-    padding: 0.1875rem 0.625rem;
-    background: #666666;
-    color: #fefefe;
-    cursor: default;
-  }
+.my-pagination {
+    padding: 35px;
+    color: rgb(241, 159, 7);
+    font-size: 20px;
+     ::ng-deep .ngx-pagination .current {
+        padding: 0.1875rem 0.625rem;
+        background: #666666;
+        color: #fefefe;
+        cursor: default;
+    }
 }
-
-
 
 .wrapper {
-  float: right;
-  margin-right: 5%;
-  position: fixed;
-  bottom: 15vh;
-  right: 3vw;
-
-  fa-icon {
-    font-size: 40px;
-    color: $color-degradation;
-    cursor: pointer;
-  }
-  fa-icon:hover {
-    color: $color-corporative;
-  }
+    float: right;
+    margin-right: 5%;
+    position: fixed;
+    bottom: 5vh;
+    right: 0vw;
+    z-index: 9999;
+    fa-icon {
+        font-size: 40px;
+        color: $color-degradation;
+        cursor: pointer;
+    }
+    fa-icon:hover {
+        color: $color-corporative;
+    }
 }
 
 @media (max-width: 769px) {
-  .left-box,
-  .right-box {
-    display: none;
-  }
-
-  .center-box {
-    width: 100%;
-  }
-  .main-blog {
-    padding-bottom: 30%;
-  }
-
-  .wrapper {
-    float: right;
-    position: relative;
-    margin-top: 30%;
-    margin-right: 43%;
-    bottom: 10vh;
-  }
+    .left-box,
+    .right-box {
+        display: none;
+    }
+    .center-box {
+        width: 100%;
+    }
+    .main-blog {
+        padding-bottom: 30%;
+    }
+    .wrapper {
+        float: right;
+        position: relative;
+        margin-top: 30%;
+        margin-right: 43%;
+        bottom: 10vh;
+    }
 }

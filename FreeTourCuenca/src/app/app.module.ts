@@ -36,6 +36,8 @@ import { GuidesComponent } from './dashboard/guides/guides.component';
 import { UsersComponent } from './dashboard/users/users.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
+import { DatepickerComponent } from './dashboard/tour-maker/datepicker/datepicker.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -60,7 +62,8 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
       NotfoundComponent,
       FaqComponent,
       GuidesComponent,
-      UsersComponent
+      UsersComponent,
+      DatepickerComponent
    ],
   imports: [
     BrowserModule,
@@ -74,6 +77,7 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
     MatIconModule,
     FroalaEditorModule,
     FroalaViewModule,
+    NgbModule,
   ],
   providers: [
     {
