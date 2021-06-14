@@ -1,6 +1,6 @@
 @import "../../styles";
 .nav-bar {
-    height: 20vh;
+    height: 180px;
     max-width: 100%;
     position: fixed;
     top: 0;
@@ -27,7 +27,7 @@
         /*CSS para los iconos de las redes sociales */
         .navbar-social {
             white-space: nowrap;
-            margin-top: 13px;
+            margin-top: -21px;
             margin-right: 5em;
             float: right;
             a {
@@ -92,6 +92,24 @@
             opacity: 0.7;
         }
     }
+    .banderas:hover {
+      .dropLang {
+        background-color: $color-support-one;
+        margin-top: -80px;
+        .flagmenu {
+          display: inline;
+        }
+        #spa {
+          max-height: 26px;
+          max-width: 26px;
+          margin-top: 20px;
+        }
+        ul {
+          list-style: none;
+        }
+      }
+    }
+  }
     .dropLang {
         .flagmenu {
             display: none;
@@ -141,6 +159,7 @@
         transition: all 0.3s ease-in-out;
         background-color: yellow;
     }
+
     @media only screen and (max-width: 1060px) {
         #mainnav {
             position: fixed;
@@ -196,7 +215,7 @@
             max-width: 26px;
         }
     }
-}
+
 
 @media (max-width: 535px) {
     .nav-bar {
