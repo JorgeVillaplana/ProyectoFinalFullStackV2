@@ -16,6 +16,12 @@
             "root": "",
             "sourceRoot": "src",
             "prefix": "app",
+            "i18n": {
+              "sourceLocale": "es",
+              "locales": {
+                "en": "src/i18n/messages.en.xlf"
+            }
+          },
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
@@ -44,6 +50,9 @@
                         ]
                     },
                     "configurations": {
+                      "en": {
+                        "localize": ["en"]
+                      },
                         "production": {
                             "fileReplacements": [{
                                 "replace": "src/environments/environment.ts",
@@ -78,12 +87,16 @@
                     "configurations": {
                         "production": {
                             "browserTarget": "FreeTourCuenca:build:production"
+                        },
+                        "en": {
+                          "browserTarget": "FreeTourCuenca:build:en"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
+                        "outputPath": "src/i18n",
                         "browserTarget": "FreeTourCuenca:build"
                     }
                 },

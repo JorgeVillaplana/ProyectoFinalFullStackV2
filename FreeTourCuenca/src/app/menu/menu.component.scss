@@ -76,36 +76,20 @@
             }
         }
     }
-    .navbar {
-        float: right;
-        white-space: nowrap;
-        margin-top: 18px;
-        margin-right: 1.8em;
-        .banderas {
-            #engl {
-                max-height: 26px;
-                max-width: 26px;
-            }
-            #engl:hover {
-                opacity: 0.7;
-            }
+}
+
+.navbar {
+    float: right;
+    white-space: nowrap;
+    margin-top: 18px;
+    margin-right: 1.8em;
+    .banderas {
+        #engl {
+            max-height: 27px;
+            max-width: 27px;
         }
-        .banderas:hover {
-            .dropLang {
-                background-color: $color-support-one;
-                margin-top: -80px;
-                .flagmenu {
-                    display: inline;
-                }
-                #spa {
-                    max-height: 26px;
-                    max-width: 26px;
-                    margin-top: 20px;
-                }
-                ul {
-                    list-style: none;
-                }
-            }
+        #engl:hover {
+            opacity: 0.7;
         }
     }
     .dropLang {
