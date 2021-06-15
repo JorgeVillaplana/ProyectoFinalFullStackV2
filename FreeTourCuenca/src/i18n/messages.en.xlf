@@ -172,6 +172,56 @@
         <note priority="1" from="description">Alerta</note>
         <note priority="1" from="meaning">form booking</note>
       </trans-unit>
+       <trans-unit id="2157552898682521903" datatype="html">
+        <source>Descubre la ciudad de las tres culturas</source>
+         <target>Discover the city of the three cultures</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Entradilla</note>
+        <note priority="1" from="meaning">header landing</note>
+      </trans-unit>
+      <trans-unit id="2506525949896039342" datatype="html">
+        <source>RESERVA YA</source>
+         <target>BOOK NOW</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Boton</note>
+        <note priority="1" from="meaning">button landing</note>
+      </trans-unit>
+      <trans-unit id="4897171633931286270" datatype="html">
+        <source>¿Conoces nuestros <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>FREE TOURS?<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+         <target>Do you know our <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>FREE TOURS?<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Texto principal</note>
+        <note priority="1" from="meaning">header landing</note>
+      </trans-unit>
+      <trans-unit id="2311406166567398980" datatype="html">
+        <source>¿Te gustaría conocer los principales atractivos históricos y culturales con un paseo guiado por una de las Ciudades Patrimonio de la Humanidad?<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>Explora Toledo<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> es una empresa de visitas guiadas y rutas por la ciudad de Toledo. Pretendemos enseñarte la historia, el arte, la arquitectura, las leyendas y las curiosidades de Toledo de la forma más amena y divertida posible. </source>
+        <target>Would you like to know the main historical and cultural attractions with a guided walking tour around the Historic City of Toledo, declared World Heritage Site?<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>Explora Toledo<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> offers guided visits and walking tours in Toledo. We would love to show you the history, art, architecture, legends and curiosities of the city, in the most entertaining and enjoyable way. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">17,23</context>
+        </context-group>
+        <note priority="1" from="description">Texto principal 2</note>
+        <note priority="1" from="meaning">header landing</note>
+      </trans-unit>
+      <trans-unit id="8196580339655659450" datatype="html">
+        <source>Lo que opinan nuestros visitantes</source>
+        <target>Reviews by our visitors</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description">Opiniones</note>
+        <note priority="1" from="meaning">header landing</note>
+      </trans-unit>
       <trans-unit id="880843932119545843" datatype="html">
         <source>Inicio</source>
         <target>Home</target>
