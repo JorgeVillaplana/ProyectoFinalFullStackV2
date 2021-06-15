@@ -160,8 +160,18 @@ export class TourMakerComponent implements OnInit {
     )
   }
 
-  editTour(){
-    // + CARGA LOS DATOS DE API
+  updateTour(tour: Tour){
+      if(tour){
+        this.tourService.updateTour(tour).subscribe(
+          data => {
+            console.log(data)
+            this.loadTours()
+          },
+          error => {
+            console.log(error)
+          }
+        )
+      }
   }
 
   deleteTour(id: string | undefined){
