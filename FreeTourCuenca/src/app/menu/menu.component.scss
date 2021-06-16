@@ -1,6 +1,6 @@
 @import "../../styles";
 .nav-bar {
-    height: 180px;
+    height: 20vh;
     max-width: 100%;
     position: fixed;
     top: 0;
@@ -27,7 +27,7 @@
         /*CSS para los iconos de las redes sociales */
         .navbar-social {
             white-space: nowrap;
-            margin-top: -21px;
+            margin-top: 13px;
             margin-right: 5em;
             float: right;
             a {
