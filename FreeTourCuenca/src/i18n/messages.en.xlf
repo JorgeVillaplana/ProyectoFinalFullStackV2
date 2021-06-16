@@ -172,6 +172,76 @@
         <note priority="1" from="description">Alerta</note>
         <note priority="1" from="meaning">form booking</note>
       </trans-unit>
+     <trans-unit id="6492234761765933296" datatype="html">
+        <source>CONTACTO</source>
+        <target>CONTACT US</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Contacto</note>
+        <note priority="1" from="meaning">contact header</note>
+      </trans-unit>
+      <trans-unit id="4895559937145041953" datatype="html">
+        <source>Para peticiones especiales, reservar tours privados o cualquier otra duda sobre nuestros tours, puedes ponerte en contacto con nosotros a través de este formulario. También puedes consultar nuestras <x id="START_LINK" ctype="x-a" equiv-text="&lt;a
+            [routerLink]=&quot;[&apos;/faq&apos;]&quot;&gt;"/>Preguntas Frecuentes<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Te responderemos lo antes posible. </source>
+            <target>For special requests, private tours or any other doubt regarding our tours, you can use this form to get in touch with us. You can also read our <x id="START_LINK" ctype="x-a" equiv-text="&lt;a
+            [routerLink]=&quot;[&apos;/faq&apos;]&quot;&gt;"/>FAQ<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>We will get back to you as soon as possible.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">6,10</context>
+        </context-group>
+        <note priority="1" from="description">Parrafo</note>
+        <note priority="1" from="meaning">contact text</note>
+      </trans-unit>
+      <trans-unit id="5297996963787962662" datatype="html">
+        <source>Nombre</source>
+         <target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Nombre</note>
+        <note priority="1" from="meaning">contact</note>
+      </trans-unit>
+      <trans-unit id="2393792505268338253" datatype="html">
+        <source>Teléfono (opcional)</source>
+        <target>Phone (optional)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">Tlf</note>
+        <note priority="1" from="meaning">contact</note>
+      </trans-unit>
+      <trans-unit id="6945460082897117712" datatype="html">
+        <source>Mensaje</source>
+        <target>Your message</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Mensaje</note>
+        <note priority="1" from="meaning">contact</note>
+      </trans-unit>
+      <trans-unit id="1896093879997026163" datatype="html">
+        <source>Enviar</source>
+        <target>Send</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4858176986071028588" datatype="html">
+        <source> ¡Tu mensaje ha sido enviado! <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></source>
+        <target> Your message has been sent! <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;"/><x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
+        <note priority="1" from="description">Alerta</note>
+        <note priority="1" from="meaning">contact alert</note>
+      </trans-unit>
        <trans-unit id="2157552898682521903" datatype="html">
         <source>Descubre la ciudad de las tres culturas</source>
          <target>Discover the city of the three cultures</target>

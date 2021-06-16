@@ -2,8 +2,8 @@
   <div class="container" id="main-contact-form">
     <div class="row">
       <div class="col-md-12 mr-auto">
-        <h1 class="text-center">CONTACTO</h1>
-        <p class="mb-4">Para peticiones especiales, reservar tours privados o cualquier otra duda sobre nuestros tours,
+        <h1 class="text-center" i18n="contact header|Contacto">CONTACTO</h1>
+        <p class="mb-4" i18n="contact text|Parrafo">Para peticiones especiales, reservar tours privados o cualquier otra duda sobre nuestros tours,
           puedes ponerte en contacto con nosotros a través de este formulario. También puedes consultar nuestras <a
             [routerLink]="['/faq']">Preguntas Frecuentes</a>.<br> <br>Te responderemos lo antes
           posible.
@@ -13,7 +13,7 @@
         <form [formGroup]="cForm" class="mb-5" method="post" id="contactForm" name="contactForm">
           <div class="row">
             <div class="col-md-12 form-group">
-              <label for="name" class="col-form-label">Nombre</label>
+              <label for="name" class="col-form-label" i18n="contact|Nombre">Nombre</label>
               <input type="text" class="form-control" name="name" id="name">
             </div>
           </div>
@@ -25,23 +25,23 @@
           </div>
           <div class="row">
             <div class="col-md-12 form-group">
-              <label for="name" class="col-form-label">Teléfono (opcional)</label>
+              <label for="name" class="col-form-label" i18n="contact|Tlf">Teléfono (opcional)</label>
               <input type="text" class="form-control" name="phone" id="phone">
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 form-group">
-              <label for="message" class="col-form-label">Mensaje</label>
+              <label for="message" class="col-form-label" i18n="contact|Mensaje">Mensaje</label>
               <textarea class="form-control" name="message" id="message" cols="30" rows="7"></textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
-              <br><input type="submit" value="Enviar" class="btn btn-warning btn-lg"  (click)="sendMsg()">
+              <br><input type="submit" value="Enviar" i18n-value class="btn btn-warning btn-lg"  (click)="sendMsg()">
             </div>
           </div>
         </form>
-            <div *ngIf="alert" class="alert alert-primary alert-dismissible fade show" role="alert">
+            <div *ngIf="alert" class="alert alert-primary alert-dismissible fade show" role="alert" i18n="contact alert|Alerta">
               ¡Tu mensaje ha sido enviado!
                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
              </div>
