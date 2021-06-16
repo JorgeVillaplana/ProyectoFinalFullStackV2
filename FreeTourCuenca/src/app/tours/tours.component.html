@@ -1,6 +1,6 @@
 <div class="container">
     <div class="d-flex row row-cols-2">
-        <div class="col-2" id="tags">
+        <div class="col-2" id="tags" *ngIf="checkCategories()">
             <aside>
                 <h4 class="outstanding text-center">Categorías</h4>
                 <ul class="nav flex-column">

@@ -34,6 +34,7 @@ export class ToursComponent implements OnInit {
     this.selectedLang = this.selLangService.language
     this.selectedText = this.selTextService.text
     this.loadTours();
+    this.checkCategories()
     window.scrollTo(0,0);
 
   }
@@ -71,6 +72,26 @@ export class ToursComponent implements OnInit {
     }else{
       check = false
     }
+
+    return check
+  }
+
+  checkCategories(){
+    let check = true
+
+    this.tours.forEach(
+      tour => {
+        if(
+          tour.tourDetails?.some(
+            detail => {
+              detail.categories!.length >= 1
+            }
+          )
+        ){
+          check = true;
+        }
+      }
+    )
 
     return check
   }
