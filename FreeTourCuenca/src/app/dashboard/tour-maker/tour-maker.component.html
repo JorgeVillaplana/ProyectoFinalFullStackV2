@@ -4,7 +4,7 @@
         <ul class="list-group">
             <div class="panel-body" *ngFor="let tour of tours; index as position">
                 <li class="list-group-item">{{position+1}}. {{tour.name}}
-                  <button type="button" class="btn btn-success btn-sm float-end" (click)="updateTour(tour)">Editar</button>
+                    <button type="button" class="btn btn-success btn-sm float-end" (click)="updateTour(tour)">Editar</button>
                     <button type="button" class="btn btn-danger btn-sm float-end" (click)="deleteTour(tour._id)">Eliminar</button>
                 </li>
             </div>
@@ -57,7 +57,6 @@
                 <input type="number" class="form-control" formControlName="seats" id="seats">
             </div>
             <div class="dates form-group">
-                <app-datepicker></app-datepicker>
                 <label for="dates" class="col-form-label">Fechas</label>
                 <input type="text" class="form-control" formControlName="dates" id="dates" readonly [value]="dates.join(', ')">
                 <input type="date" class="form-control" #date id="dates">
