@@ -64,7 +64,7 @@
       </trans-unit>
       <trans-unit id="5790582308511737880" datatype="html">
         <source>Fecha y horarios:</source>
-        <target>Schedules:</target>
+        <target>Schedule:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/booking/booking.component.html</context>
           <context context-type="linenumber">12</context>
@@ -122,6 +122,22 @@
         <note priority="1" from="description">Nombre</note>
         <note priority="1" from="meaning">form booking</note>
       </trans-unit>
+       <trans-unit id="3032579310826707103" datatype="html">
+        <source>Nombre y apellido</source>
+        <target>Name and surname</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/booking/booking.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3477240122504890079" datatype="html">
+        <source>Email para recibir la confirmación de la reserva</source>
+        <target>Email, to receive the booking confirmation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/booking/booking.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1590016079769096908" datatype="html">
         <source>Nº de asistentes</source>
         <target>Number of participants</target>
@@ -131,6 +147,14 @@
         </context-group>
         <note priority="1" from="description">Asistentes</note>
         <note priority="1" from="meaning">form booking</note>
+      </trans-unit>
+      <trans-unit id="1052044070955760102" datatype="html">
+        <source>¿Cuántas personas vendréis al tour? (máx. 9 personas)</source>
+        <target>How many are you? (max. 9 people)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/booking/booking.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="8125334253576816364" datatype="html">
         <source>Fecha de la visita</source>
@@ -347,6 +371,59 @@
         </context-group>
         <note priority="1" from="description">faq</note>
         <note priority="1" from="meaning">menu links</note>
+      </trans-unit>
+      <trans-unit id="1040360019564829145" datatype="html">
+        <source>Categorías</source>
+        <target>Categories</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Categorias</note>
+        <note priority="1" from="meaning">Header tour</note>
+      </trans-unit>
+      <trans-unit id="6233141623804264452" datatype="html">
+        <source>Duración: <x id="INTERPOLATION" equiv-text="{{tour.duration}}"/></source>
+        <target>Duration: <x id="INTERPOLATION" equiv-text="{{tour.duration}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Duracion</note>
+        <note priority="1" from="meaning">Info tour</note>
+      </trans-unit>
+      <trans-unit id="7197435027189747712" datatype="html">
+        <source>Personas por ruta: <x id="INTERPOLATION" equiv-text="{{tour.seats}}"/></source>
+        <target>Maximum people: <x id="INTERPOLATION" equiv-text="{{tour.seats}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Capacidad</note>
+        <note priority="1" from="meaning">Info tour</note>
+      </trans-unit>
+      <trans-unit id="7983656369554633740" datatype="html">
+        <source>Ruta apta para: <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div *ngFor=&quot;let feature of tour.specialFeatures&quot;&gt;"/><x id="TAG_IMG" ctype="image" equiv-text="&lt;img [src]=&quot;feature.special?  feature.special.icon : &apos;&apos; &quot; [alt]=&quot;feature.special?  (feature.special.namesByLang ? feature.special.namesByLang[0].name : &apos;&apos;) : &apos;&apos; &quot; [title]=&quot;feature.special?  (feature.special.namesByLang ? feature.special.namesByLang[0].name : &apos;&apos;) : &apos;&apos; &quot;
+                                        /&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+     <target>Suitable for: <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div *ngFor=&quot;let feature of tour.specialFeatures&quot;&gt;"/><x id="TAG_IMG" ctype="image" equiv-text="&lt;img [src]=&quot;feature.special?  feature.special.icon : &apos;&apos; &quot; [alt]=&quot;feature.special?  (feature.special.namesByLang ? feature.special.namesByLang[0].name : &apos;&apos;) : &apos;&apos; &quot; [title]=&quot;feature.special?  (feature.special.namesByLang ? feature.special.namesByLang[0].name : &apos;&apos;) : &apos;&apos; &quot;
+                                        /&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></target>
+
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
+          <context context-type="linenumber">39,43</context>
+        </context-group>
+        <note priority="1" from="description">Especial</note>
+        <note priority="1" from="meaning">Info tour</note>
+      </trans-unit>
+      <trans-unit id="3124696608479492957" datatype="html">
+        <source>Reserva</source>
+        <target>Book now</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <note priority="1" from="description">Reserva</note>
+        <note priority="1" from="meaning">Info tour</note>
       </trans-unit>
     </body>
   </file>
