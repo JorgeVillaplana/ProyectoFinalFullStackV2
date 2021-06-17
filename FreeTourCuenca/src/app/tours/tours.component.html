@@ -1,25 +1,7 @@
 <div class="container">
     <div class="d-flex row row-cols-2">
-        <div class="col-2" id="tags" *ngIf="checkCategories()">
-            <aside>
-                <h4 class="outstanding text-center" i18n="Header tour|Categorias">Categorías</h4>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link deg-color" href="#">Museos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link deg-color" href="#">Casco histórico</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link deg-color" href="#">Gastronomía</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link deg-color" href="#">Lugares pintorescos</a>
-                    </li>
-                </ul>
-            </aside>
-        </div>
-        <div class="main-tours col-8">
+
+        <div class="main-tours col-10">
             <div class="tour" *ngFor="let tour of tours">
                 <div class="card" *ngIf="checkTour(tour)">
                     <div class="row">
