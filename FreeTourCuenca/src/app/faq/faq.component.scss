@@ -1,5 +1,9 @@
 @import "../../styles";
 
+
+h1 {
+  text-align: center;
+}
 .container-faq {
   overflow-y: scroll;
   max-height: 300px;
@@ -18,7 +22,7 @@
 
 .faq {
   background-color: rgb(26, 26, 26, 0.85);
-  padding: 30px;
+  padding: 20px;
   color: white;
   .question {
     p {
@@ -56,35 +60,36 @@
 
 .accordion {
   width: 100%;
+  height: 75%;
   padding: 5px;
   border: none;
 }
 
 .accordion-button {
-  padding: 3px;
-  color:white;
+  padding: 8px;
+  color: #ffa556;
   background: black;
+
 }
 
-.accordion-body {
-  padding: 12px;
-  margin-bottom: 15px;
-  color:yellow;
-  font-size: 18px;
 
+.accordion-body {
+  margin-bottom: 15px;
+  color:white;
+  font-size: 18px;
 }
 
 .accordion-item {
-  background: rgb(83, 83, 83);
+  background: rgb(44, 44, 44);
 }
 
 
 .footer-content {
   border-radius: 7px;
   background-color: rgb(131, 131, 131);
-  width: 40%;
+  width: 35%;
   text-align: center;
-  padding: 1%;
+  padding: 0.5%;
   margin: 5% auto;
   font-size: 1.2em;
 }
