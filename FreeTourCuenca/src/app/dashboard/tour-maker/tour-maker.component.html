@@ -58,7 +58,7 @@
             </div>
             <div class="dates form-group">
                 <label for="dates" class="col-form-label">Fechas</label>
-                <input type="text" class="form-control" formControlName="dates" id="dates" readonly [value]="dates.join(', ')">
+                <input type="text" class="form-control" formControlName="dates" id="dates" [value]="dates.join(', ')">
                 <input type="date" class="form-control" #date id="dates">
                 <button type="submit" class="btn btn-outline-info btn-sm" (click)="addDate(date.value)">Añadir</button>
             </div>

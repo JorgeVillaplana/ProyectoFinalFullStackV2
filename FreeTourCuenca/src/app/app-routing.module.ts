@@ -19,10 +19,12 @@ import { CookiesComponent } from './cookies/cookies.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { LegalComponent } from './legal/legal.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "tours", component: ToursComponent },
+  { path: "about-us", component: AboutUsComponent },
   { path: "blog", component: BlogComponent },
   { path: "contact", component: ContactComponent },
   { path: "aviso-legal", component: LegalComponent },

@@ -36,6 +36,7 @@ import { GuidesComponent } from './dashboard/guides/guides.component';
 import { UsersComponent } from './dashboard/users/users.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
     FaqComponent,
     GuidesComponent,
     UsersComponent,
+    AboutUsComponent,
    ],
   imports: [
     BrowserModule,

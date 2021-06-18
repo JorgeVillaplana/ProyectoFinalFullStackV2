@@ -1,106 +1,107 @@
 <div class="container nav-bar">
-  <div class="row social-media-bar">
-    <div class="col-6 media-bar-left justify-content-center align-middle">
-      <a [routerLink]="['/contact']" id="correo">✉️ info@exploratoledo.es</a>
-    </div>
-    <div class="col-6 media-bar-right">
-      <div class="navbar-social d-none d-md-block">
-
-        <a href="https://www.facebook.com/exploratoledo/" class="facebook" target="_blank" matTooltip="Facebook">
-          <fa-icon [icon]="faFacebookSquare" alt="Facebook"></fa-icon>
-        </a>
-
-        <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
-          <fa-icon [icon]="faTwitterSquare" alt="Twitter"></fa-icon>
-        </a>
-
-        <a href="https://www.instagram.com/exploratoledo/" class="instagram" target="_blank" matTooltip="Instagram">
-          <fa-icon [icon]="faInstagram" alt="Instagram"></fa-icon>
-        </a>
-
-
-        <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
-          <fa-icon [icon]="faYoutube" alt="YouTube"></fa-icon>
-        </a>
-
-        <a href="https://www.tripadvisor.es/Attraction_Review-g187489-d23371505-Reviews-Explora_Toledo-Toledo_Province_of_Toledo_Castile_La_Mancha.html"
-          class="tripadvisor" target="_blank" matTooltip="TripAdvisor">
-          <fa-icon [icon]="faTripadvisor" alt="TripAdvisor"></fa-icon>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="logo">
-    <a [routerLink]="['/']">
-      <img src="../../assets/images/logo03.svg" alt="Logo freetour">
-    </a>
-  </div>
-
-
-  <nav class="navbar">
-    <ul class="nav justify-content-end" id="mainnav">
-      <li class="nav-item">
-        <a i18n="menu links|Inicio" class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-          aria-current="page">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a i18n="menu links|Tours" class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a i18n="menu links|Contacto" class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
-      </li>
-      <li class="nav-item">
-        <a i18n="menu links|faq" class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq"
-          title="Preguntas frecuentes">Ayuda</a>
-      </li>
-      <li class="nav-item banderas">
-        <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active">
-          <img src="../../assets/images/english.svg" id="engl" title="Cambiar idioma">
-        </a>
-        <div class="dropLang">
-          <ul class="flagmenu">
-            <li class="nav-item changeLang">
-              <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">
-                <img src="../../assets/images/Spain.svg" id="spa"></a>
-            </li>
-          </ul>
+    <div class="row social-media-bar">
+        <div class="col-6 media-bar-left justify-content-center align-middle">
+            <a [routerLink]="['/contact']" id="correo">✉️ info@exploratoledo.es</a>
         </div>
-      </li>
-    </ul>
+        <div class="col-6 media-bar-right">
+            <div class="navbar-social d-none d-md-block">
+
+                <a href="https://www.facebook.com/exploratoledo/" class="facebook" target="_blank" matTooltip="Facebook">
+                    <fa-icon [icon]="faFacebookSquare" alt="Facebook"></fa-icon>
+                </a>
+
+                <a href="#" class="twitter" target="_blank" matTooltip="Twitter">
+                    <fa-icon [icon]="faTwitterSquare" alt="Twitter"></fa-icon>
+                </a>
+
+                <a href="https://www.instagram.com/exploratoledo/" class="instagram" target="_blank" matTooltip="Instagram">
+                    <fa-icon [icon]="faInstagram" alt="Instagram"></fa-icon>
+                </a>
 
 
-    <div class="hamburger">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <ul class="h-menu">
-        <li class="nav-item">
-          <a i18n="menu links|Inicio" class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            aria-current="page">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a i18n="menu links|Tours" class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a i18n="menu links|Contacto" class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a i18n="menu links|faq" class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq"
-            title="Preguntas frecuentes">Ayuda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active">
-            <img src="../../assets/images/english.svg" id="engl" title="Cambiar idioma">
-          </a>
-        </li>
-      </ul>
+                <a href="#" class="youtube" target="_blank" matTooltip="Youtube">
+                    <fa-icon [icon]="faYoutube" alt="YouTube"></fa-icon>
+                </a>
+
+                <a href="https://www.tripadvisor.es/Attraction_Review-g187489-d23371505-Reviews-Explora_Toledo-Toledo_Province_of_Toledo_Castile_La_Mancha.html" class="tripadvisor" target="_blank" matTooltip="TripAdvisor">
+                    <fa-icon [icon]="faTripadvisor" alt="TripAdvisor"></fa-icon>
+                </a>
+            </div>
+        </div>
     </div>
-  </nav>
+
+    <div class="logo">
+        <a [routerLink]="['/']">
+            <img src="../../assets/images/logo03.svg" alt="Logo freetour">
+        </a>
+    </div>
+
+
+    <nav class="navbar">
+        <ul class="nav justify-content-end" id="mainnav">
+            <li class="nav-item">
+                <a i18n="menu links|Inicio" class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-current="page">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a i18n="menu links|Tours" class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="active">Conócenos</a>
+            </li>
+            <li class="nav-item">
+                <a i18n="menu links|Contacto" class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a i18n="menu links|faq" class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq" title="Preguntas frecuentes">Ayuda</a>
+            </li>
+            <li class="nav-item banderas">
+                <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active">
+                    <img src="../../assets/images/english.svg" id="engl" title="Cambiar idioma">
+                </a>
+                <div class="dropLang">
+                    <ul class="flagmenu">
+                        <li class="nav-item changeLang">
+                            <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">
+                                <img src="../../assets/images/Spain.svg" id="spa"></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <ul class="h-menu">
+                <li class="nav-item">
+                    <a i18n="menu links|Inicio" class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-current="page">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a i18n="menu links|Tours" class="nav-link" [routerLink]="['/tours']" routerLinkActive="active">Rutas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="active">Conócenos</a>
+                </li>
+                <li class="nav-item">
+                    <a i18n="menu links|Contacto" class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a i18n="menu links|faq" class="nav-link" [routerLink]="['/faq']" routerLinkActive="active" id="faq" title="Preguntas frecuentes">Ayuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/en']" routerLinkActive="active">
+                        <img src="../../assets/images/english.svg" id="engl" title="Cambiar idioma">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </div>
