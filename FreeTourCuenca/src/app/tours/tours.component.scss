@@ -1,4 +1,6 @@
 @import "../../styles";
+
+
 .card {
   border-radius: 15px;
   border-style: double;
@@ -13,13 +15,15 @@
     border-radius: 5px;
   }
   p {
-    font-size: 16px;
+    font-size: 18px;
   }
   #btn2 {
     font-weight: 700;
+    font-size: 19px;
   }
   .btn-warning:hover {
     box-shadow: 1px 1px grey;
+    background-color:#ffd65b;
   }
 }
 
@@ -43,8 +47,11 @@ aside {
 .alert {
   width: 60%;
   margin-left: 70%;
-  margin-bottom: 15%;
-
+  margin-bottom: 10%;
+  font-size: 18px;
+  a:hover {
+    color: black;
+  }
 }
 
 @media (max-width: 992px) {
@@ -53,7 +60,8 @@ aside {
     margin-left: -10%;
   }
 
-  #tags {
-    display: none;
-  }
+  .alert {
+    width: 100%;
+    margin-bottom: 35%;
+}
 }

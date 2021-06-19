@@ -34,6 +34,10 @@
             <input type="checkbox" id="important" formControlName="important">
             <label for="important">Post destacado</label><br>
         </div>
+        <div class="facebook form-group">
+          <input type="checkbox" id="facebook" formControlName="facebook">
+          <label for="facebook">Publicar en Facebook</label><br>
+      </div>
         <div class="d-flex justify-content-center">
             <button type="submit" (click)="savePost()" class="btn btn-outline-dark mt-3">Guardar publicación</button>
         </div>
@@ -50,7 +54,8 @@
         <ul class="list-group">
             <div class="panel-body" *ngFor="let post of posts; index as position">
                 <li class="list-group-item">{{position+1}}. {{post.details? post.details[0]?.title : ''}}
-                    <button type="button" class="btn btn-danger btn-sm float-end" (click)="deletePost(post._id )">Eliminar</button>
+                  <button type="button" class="btn btn-danger btn-sm float-end" (click)="deletePost(post._id )">Eliminar</button>
+                  <button type="button" class="btn btn-success btn-sm float-end" (click)="editPost()">Editar</button>
                 </li>
             </div>
         </ul>

@@ -36,6 +36,7 @@ export class PostMakerComponent implements OnInit {
         route: ["", Validators.required],
         detail: [""],
         important: [false, Validators.required]
+        // facebook: [false, Validators.required]
       })
 
      }
@@ -105,6 +106,10 @@ export class PostMakerComponent implements OnInit {
         console.log("Error: ", error)
       }
     )
+  }
+
+  editPost () {
+
   }
 
   deletePost(id: string | undefined) {
