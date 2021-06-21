@@ -245,6 +245,51 @@
         <note priority="1" from="description">Alerta</note>
         <note priority="1" from="meaning">contact alert</note>
       </trans-unit>
+      <trans-unit id="7640507428589424136" datatype="html">
+        <source>Preguntas Frecuentes / FAQ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/faq/faq.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">faq</note>
+        <note priority="1" from="meaning">main header</note>
+      </trans-unit>
+      <trans-unit id="3077530956015522222" datatype="html">
+        <source>¿No hemos solucionado tu duda?<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Contacta con nosotros <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/contact&apos;]&quot;&gt;"/>aquí<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/faq/faq.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <note priority="1" from="description">faq</note>
+        <note priority="1" from="meaning">bottom text</note>
+      </trans-unit>
+      <trans-unit id="3400733155790549790" datatype="html">
+        <source>Aviso legal </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Legal</note>
+        <note priority="1" from="meaning">footer</note>
+      </trans-unit>
+      <trans-unit id="8010143814144232390" datatype="html">
+        <source> Política de privacidad </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Privacy</note>
+        <note priority="1" from="meaning">footer</note>
+      </trans-unit>
+      <trans-unit id="8747425565291170807" datatype="html">
+        <source> Política de cookies </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Cookies</note>
+        <note priority="1" from="meaning">footer</note>
+      </trans-unit>
       <trans-unit id="2157552898682521903" datatype="html">
         <source>Descubre la ciudad de las tres culturas</source>
         <context-group purpose="location">
@@ -267,7 +312,7 @@
         <source>¿Conoces nuestros <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>FREE TOURS?<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">Texto principal</note>
         <note priority="1" from="meaning">header landing</note>
@@ -276,7 +321,7 @@
         <source>¿Te gustaría conocer los principales atractivos históricos y culturales con un paseo guiado por una de las Ciudades Patrimonio de la Humanidad?<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;bold&quot;&gt;"/>Explora Toledo<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> es una empresa de visitas guiadas y rutas por la ciudad de Toledo. Pretendemos enseñarte la historia, el arte, la arquitectura, las leyendas y las curiosidades de Toledo de la forma más amena y divertida posible. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">17,23</context>
+          <context context-type="linenumber">15,18</context>
         </context-group>
         <note priority="1" from="description">Texto principal 2</note>
         <note priority="1" from="meaning">header landing</note>
@@ -285,7 +330,7 @@
         <source>Lo que opinan nuestros visitantes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">44</context>
         </context-group>
         <note priority="1" from="description">Opiniones</note>
         <note priority="1" from="meaning">header landing</note>
@@ -294,11 +339,11 @@
         <source>Inicio</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">43</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">82</context>
         </context-group>
         <note priority="1" from="description">Inicio</note>
         <note priority="1" from="meaning">menu links</note>
@@ -307,55 +352,46 @@
         <source>Rutas</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">46</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <note priority="1" from="description">Tours</note>
+        <note priority="1" from="meaning">menu links</note>
+      </trans-unit>
+      <trans-unit id="4414713550629449494" datatype="html">
+        <source>Conócenos</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <note priority="1" from="description">Conocenos</note>
         <note priority="1" from="meaning">menu links</note>
       </trans-unit>
       <trans-unit id="4672693938887883784" datatype="html">
         <source>Contacto</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">55</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <note priority="1" from="description">Contacto</note>
         <note priority="1" from="meaning">menu links</note>
-      </trans-unit>
-      <trans-unit id="6387681200683863192" datatype="html">
-        <source>Ayuda</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">96</context>
-        </context-group>
-        <note priority="1" from="description">faq</note>
-        <note priority="1" from="meaning">menu links</note>
-      </trans-unit>
-      <trans-unit id="1040360019564829145" datatype="html">
-        <source>Categorías</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <note priority="1" from="description">Categorias</note>
-        <note priority="1" from="meaning">Header tour</note>
       </trans-unit>
       <trans-unit id="6233141623804264452" datatype="html">
         <source>Duración: <x id="INTERPOLATION" equiv-text="{{tour.duration}}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/tours/tours.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <note priority="1" from="description">Duracion</note>
         <note priority="1" from="meaning">Info tour</note>
@@ -364,7 +400,7 @@
         <source>Personas por ruta: <x id="INTERPOLATION" equiv-text="{{tour.seats}}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/tours/tours.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <note priority="1" from="description">Capacidad</note>
         <note priority="1" from="meaning">Info tour</note>
@@ -374,7 +410,7 @@
                                         /&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/tours/tours.component.html</context>
-          <context context-type="linenumber">39,43</context>
+          <context context-type="linenumber">21,25</context>
         </context-group>
         <note priority="1" from="description">Especial</note>
         <note priority="1" from="meaning">Info tour</note>
@@ -383,10 +419,19 @@
         <source>Reserva</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/tours/tours.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">Reserva</note>
         <note priority="1" from="meaning">Info tour</note>
+      </trans-unit>
+      <trans-unit id="5758713075699876821" datatype="html">
+        <source>Solicita un <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/contact&apos;]&quot; class=&quot;alert-link&quot;&gt;"/>tour privado<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <note priority="1" from="description">Privado</note>
+        <note priority="1" from="meaning">tours</note>
       </trans-unit>
     </body>
   </file>

@@ -69,6 +69,7 @@
 }
 
 .review-container {
+
   margin-top: 4%;
   margin-bottom: 5%;
 
@@ -115,11 +116,14 @@
     h2 {
       text-align: center;
     }
+    .card {
+      margin-left: 15%;
+      margin-bottom: 10px;
+    }
   }
 
   #fbreview {
     width: 300px;
-    height: auto;
   }
   #fbplugin {
     width: 300px;
@@ -127,4 +131,5 @@
   iframe {
     margin-bottom: 10%;
   }
+
 }

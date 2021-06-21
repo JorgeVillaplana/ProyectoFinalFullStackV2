@@ -266,6 +266,56 @@
         <note priority="1" from="description">Alerta</note>
         <note priority="1" from="meaning">contact alert</note>
       </trans-unit>
+<trans-unit id="7640507428589424136" datatype="html">
+        <source>Preguntas Frecuentes / FAQ</source>
+        <target>FAQ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/faq/faq.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">faq</note>
+        <note priority="1" from="meaning">main header</note>
+      </trans-unit>
+      <trans-unit id="3077530956015522222" datatype="html">
+        <source>¿No hemos solucionado tu duda?<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Contacta con nosotros <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/contact&apos;]&quot;&gt;"/>aquí<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <target>This did not help solving your doubts?<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Get in touch with us <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/contact&apos;]&quot;&gt;"/>here<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/faq/faq.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+        <note priority="1" from="description">faq</note>
+        <note priority="1" from="meaning">bottom text</note>
+      </trans-unit>
+      <trans-unit id="3400733155790549790" datatype="html">
+        <source>Aviso legal </source>
+          <target>Legal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Legal</note>
+        <note priority="1" from="meaning">footer</note>
+      </trans-unit>
+      <trans-unit id="8010143814144232390" datatype="html">
+        <source> Política de privacidad </source>
+          <target>Privacy policy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Privacy</note>
+        <note priority="1" from="meaning">footer</note>
+      </trans-unit>
+      <trans-unit id="8747425565291170807" datatype="html">
+        <source> Política de cookies </source>
+         <target>Cookies policy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Cookies</note>
+        <note priority="1" from="meaning">footer</note>
+      </trans-unit>
        <trans-unit id="2157552898682521903" datatype="html">
         <source>Descubre la ciudad de las tres culturas</source>
          <target>Discover the city of the three cultures</target>
@@ -344,9 +394,23 @@
         <note priority="1" from="description">Tours</note>
         <note priority="1" from="meaning">menu links</note>
       </trans-unit>
+      <trans-unit id="4414713550629449494" datatype="html">
+        <source>Conócenos</source>
+        <target>About us</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+        <note priority="1" from="description">Conocenos</note>
+        <note priority="1" from="meaning">menu links</note>
+      </trans-unit>
       <trans-unit id="4672693938887883784" datatype="html">
         <source>Contacto</source>
-        <target>Contact us</target>
+        <target>Contact</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">54</context>
@@ -356,20 +420,6 @@
           <context context-type="linenumber">92</context>
         </context-group>
         <note priority="1" from="description">Contacto</note>
-        <note priority="1" from="meaning">menu links</note>
-      </trans-unit>
-      <trans-unit id="6387681200683863192" datatype="html">
-        <source>Ayuda</source>
-        <target>FAQ</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">96</context>
-        </context-group>
-        <note priority="1" from="description">faq</note>
         <note priority="1" from="meaning">menu links</note>
       </trans-unit>
       <trans-unit id="1040360019564829145" datatype="html">
@@ -424,6 +474,16 @@
         </context-group>
         <note priority="1" from="description">Reserva</note>
         <note priority="1" from="meaning">Info tour</note>
+      </trans-unit>
+      <trans-unit id="5758713075699876821" datatype="html">
+        <source>Solicita un <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/contact&apos;]&quot; class=&quot;alert-link&quot;&gt;"/>tour privado<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+         <target>Request a <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/contact&apos;]&quot; class=&quot;alert-link&quot;&gt;"/>private tour<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/tours/tours.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <note priority="1" from="description">Privado</note>
+        <note priority="1" from="meaning">tours</note>
       </trans-unit>
     </body>
   </file>
