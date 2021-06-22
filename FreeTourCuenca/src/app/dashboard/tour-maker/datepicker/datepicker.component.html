@@ -1,6 +1,9 @@
-<div>
+<div class="datepicker">
+  <label for="dates" class="col-form-label" id="dates">Selector de fechas</label>
     <div id="date-range-inputs">
-        <input type="date" [(ngModel)]="startDate">
+      <label for="start">Fecha inicio:</label>
+        <input type="date" [(ngModel)]="startDate"><br>
+        <label for="start">Fecha fin:</label>
         <input type="date" [(ngModel)]="endDate">
     </div>
     <div id="error-message">
@@ -12,7 +15,7 @@
         </div>
     </div>
     <div id="Frecuency">
-        <label>Frecuency:</label>
+        <label>Frecuencia:</label>
         <select #frecuency (change)="changeFrecuency(frecuency.value)">
       <option value="Daily">
         Daily
@@ -40,9 +43,9 @@
         </div>
         <div *ngSwitchDefault></div>
     </div>
-    <div>
-        <button (click)="setDates()">
-      Set dates
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-info btn-sm" (click)="setDates()">
+      Añadir fecha
     </button>
     </div>
 </div>
