@@ -56,12 +56,13 @@
                 <label for="seats" class="col-form-label">Nº de reservas posibles</label>
                 <input type="number" class="form-control" formControlName="seats" id="seats">
             </div>
-            <div class="dates form-group">
+            <!-- <div class="dates form-group">
                 <label for="dates" class="col-form-label">Fechas</label>
                 <input type="text" class="form-control" formControlName="dates" id="dates" [value]="dates.join(', ')">
                 <input type="date" class="form-control" #date id="dates">
                 <button type="submit" class="btn btn-outline-info btn-sm" (click)="addDate(date.value)">Añadir</button>
-            </div>
+            </div> -->
+            <app-datepicker></app-datepicker>
             <div class="time form-group">
                 <label for="time" class="col-form-label">Horas</label>
                 <div class="input-group mb-3">
