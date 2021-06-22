@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +23,7 @@ import { MenuAsideComponent } from './dashboard/menu-aside/menu-aside.component'
 import { PostMakerComponent } from './dashboard/post-maker/post-maker.component';
 import { TourMakerComponent } from './dashboard/tour-maker/tour-maker.component';
 import { TranslateComponent } from './dashboard/translate/translate.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { NotfoundComponent } from './notfound/notfound.component';
 import 'froala-editor/js/plugins/align.min.js';
 import 'froala-editor/js/plugins/char_counter.min.js';
@@ -37,6 +37,7 @@ import { UsersComponent } from './dashboard/users/users.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { DatepickerComponent } from './dashboard/tour-maker/datepicker/datepicker.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     GuidesComponent,
     UsersComponent,
     AboutUsComponent,
+    DatepickerComponent
    ],
   imports: [
     BrowserModule,
