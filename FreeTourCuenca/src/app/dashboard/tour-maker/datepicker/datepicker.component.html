@@ -1,7 +1,7 @@
 <div class="datepicker">
-  <label for="dates" class="col-form-label" id="dates">Selector de fechas</label>
+    <label for="dates" class="col-form-label" id="dates">Selector de fechas</label>
     <div id="date-range-inputs">
-      <label for="start">Fecha inicio:</label>
+        <label for="start">Fecha inicio:</label>
         <input type="date" [(ngModel)]="startDate"><br>
         <label for="start">Fecha fin:</label>
         <input type="date" [(ngModel)]="endDate">
@@ -35,9 +35,9 @@
                 <label>{{weekDay.day}}</label>
             </div>
         </div>
-        <div *ngSwitchCase="'Monthly'">
-            <div *ngFor="let day of daysOnAMonth">
-                <input type="checkbox" #day value="day.checked" [checked]="day.checked" (change)="day.checked = !day.checked">
+        <div *ngSwitchCase="'Monthly'" class="row">
+            <div class="col-2" *ngFor="let day of daysOnAMonth">
+                <input type="checkbox" value="day.checked" [checked]="day.checked" (change)="day.checked = !day.checked">
                 <label>{{day.day}}</label>
             </div>
         </div>
