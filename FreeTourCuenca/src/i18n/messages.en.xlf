@@ -432,6 +432,22 @@
         <note priority="1" from="description">Categorias</note>
         <note priority="1" from="meaning">Header tour</note>
       </trans-unit>
+      <trans-unit id="7726332746228557007" datatype="html">
+        <source>Preguntas frecuentes</source>
+        <target>Frequent questions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1147850309248962084" datatype="html">
+        <source>Cambiar idioma</source>
+        <target>Change language</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6233141623804264452" datatype="html">
         <source>Duración: <x id="INTERPOLATION" equiv-text="{{tour.duration}}"/></source>
         <target>Duration: <x id="INTERPOLATION" equiv-text="{{tour.duration}}"/></target>
