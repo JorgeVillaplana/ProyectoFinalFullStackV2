@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-datepicker',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datepicker.component.scss']
 })
 export class DatepickerComponent implements OnInit {
+  @Input() oldDates: Array<Date> = [];
+  @Output() newItemEvent = new EventEmitter<Date[]>();
+
+  dates: Array<Date> = []
 
   startDate: string = "";
   endDate: string = "";
@@ -52,6 +56,7 @@ export class DatepickerComponent implements OnInit {
 
   ngOnInit() {
     this.makeDaysOnAMonth();
+    this.dates = this.oldDates
   }
 
   makeDaysOnAMonth() {
@@ -114,10 +119,7 @@ export class DatepickerComponent implements OnInit {
   }
 
   setDates() {
-    const dates: Array<Date> = this.getDatesBetweenRange()
-
-    console.log(dates)
-    dates.forEach(date=>{console.log(date)})
-
+    this.dates = this.getDatesBetweenRange()
+    this.newItemEvent.emit(this.dates)
   }
 }

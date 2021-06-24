@@ -30,7 +30,7 @@
                 <input type="text" class="form-control" formControlName="title" id="title">
             </div>
             <div class="category form-group ">
-                <label for="category" class="col-form-label">Categorías</label>
+                <label for="category" class="col-form-label">Categoría</label>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" formControlName="categories" id="ca-tegories" readonly [value]="categories.join(', ')" placeholder="Lista de categorías">
                     <input type="text" class="form-control" placeholder="Añadir categoría" #newCategory (keyup.enter)="addCategory(newCategory.value)">
@@ -56,19 +56,19 @@
                 <label for="seats" class="col-form-label">Nº de reservas posibles</label>
                 <input type="number" class="form-control" formControlName="seats" id="seats">
             </div>
-            <!-- <div class="dates form-group">
-                <label for="dates" class="col-form-label">Fechas</label>
-                <input type="text" class="form-control" formControlName="dates" id="dates" [value]="dates.join(', ')">
-                <input type="date" class="form-control" #date id="dates">
-                <button type="submit" class="btn btn-outline-info btn-sm" (click)="addDate(date.value)">Añadir</button>
-            </div> -->
-            <app-datepicker></app-datepicker>
+            <app-datepicker [oldDates]="dates" (newItemEvent)="getDates($event)"></app-datepicker>
             <div class="time form-group">
-                <label for="time" class="col-form-label">Horas</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" formControlName="hours" id="hours" readonly [value]="hours.join(', ')">
-                    <input type="time" class="form-control" id="time" #newTime (keyup.enter)="addTime(newTime.value)">
-                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addTime(newTime.value)">Añadir</button>
+                <label for="middleweek" class="col-form-label">Horas Entre Semana</label>
+                <div id="middleweek" class="input-group mb-3">
+                    <input type="text" class="form-control" formControlName="mhours" id="mhours" readonly [value]="mhours.join(', ')">
+                    <input type="time" class="form-control" id="time" #newMTime (keyup.enter)="addMTime(newMTime.value)">
+                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addMTime(newMTime.value)">Añadir</button>
+                </div>
+                <label for="endweek" class="col-form-label">Horas Fin de Semana</label>
+                <div id="endweek" class="input-group mb-3">
+                    <input type="text" class="form-control" formControlName="ehours" id="ehours" readonly [value]="ehours.join(', ')">
+                    <input type="time" class="form-control" id="time" #newETime (keyup.enter)="addETime(newETime.value)">
+                    <button type="submit" class="btn btn-outline-info btn-sm" (click)="addETime(newETime.value)">Añadir</button>
                 </div>
             </div>
             <div class="map form-group">

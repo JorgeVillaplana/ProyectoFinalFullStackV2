@@ -29,8 +29,9 @@ export class TourMakerComponent implements OnInit {
   guides: Array<Guide> = []
   guideNames: string[] = []
   selGuides: Array<Guide> = []
-  dates: string[] = []
-  hours: string[] = []
+  dates: Array<Date> = []
+  mhours: string[] = []
+  ehours: string[] = []
   images: Image[] = []
   specials: Array<Special> = []
   specialFeatures = []
@@ -48,14 +49,15 @@ export class TourMakerComponent implements OnInit {
         tourname: ["", Validators.required],
         language: [1, Validators.required],
         title: ["", Validators.required],
-        categories: [""],
+        categories: ['FreeTour'],
         text: ["", Validators.required],
         duration: ["", Validators.required],
         route: [""],
         detail: [""],
-        seats: [9, Validators.required],
+        seats: [25, Validators.required],
         dates: ["", Validators.required],
-        hours: ["", Validators.required],
+        mhours: ["", Validators.required],
+        ehours: ["", Validators.required],
         map: ["", Validators.required],
         guides: [""]
       })
@@ -70,12 +72,12 @@ export class TourMakerComponent implements OnInit {
     this.newCategory = "";
   }
 
-  addDate(date: string) {
-    this.dates.push(moment(date).format("DD-MM-YYYY"))
+  addMTime(mhour: string) {
+    this.mhours.push(mhour)
   }
 
-  addTime(hour: string) {
-    this.hours.push(hour)
+  addETime(ehour: string) {
+    this.ehours.push(ehour)
   }
 
   addGuide(guidePos: string) {
@@ -88,16 +90,30 @@ export class TourMakerComponent implements OnInit {
   addTourdate(){
     const tourdate = this.dates.map(
       d =>{
-        return {
-          day: moment(moment(d).toISOString()).toDate(),
-          timePicker: this.hours.map(
-            hour => {
-              return {
-                hour: hour,
-                remainingSeats: this.m.seats.value
+        if(d.getDay() == 0 || d.getDay() == 6){
+          return {
+            day: moment(moment(d).toISOString()).toDate(),
+            timePicker: this.ehours.map(
+              hour => {
+                return {
+                  hour: hour,
+                  remainingSeats: this.m.seats.value
+                }
               }
-            }
-          )
+            )
+          }
+        }else{
+          return {
+            day: moment(moment(d).toISOString()).toDate(),
+            timePicker: this.mhours.map(
+              hour => {
+                return {
+                  hour: hour,
+                  remainingSeats: this.m.seats.value
+                }
+              }
+            )
+          }
         }
       }
     )
@@ -220,6 +236,10 @@ export class TourMakerComponent implements OnInit {
         console.log("Error: ", error)
       }
     )
+  }
+
+  getDates(dateArray: Array<Date> | undefined){
+    this.dates = dateArray!.map( date => { return date } )
   }
 
   ngOnInit() {
