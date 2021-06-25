@@ -73,6 +73,7 @@ export class TourMakerComponent implements OnInit {
   }
 
   addMTime(mhour: string) {
+
     this.mhours.push(mhour)
   }
 
