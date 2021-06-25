@@ -38,6 +38,7 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { DatepickerComponent } from './dashboard/tour-maker/datepicker/datepicker.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { DatepickerComponent } from './dashboard/tour-maker/datepicker/datepicke
     GuidesComponent,
     UsersComponent,
     AboutUsComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    ComingSoonComponent
    ],
   imports: [
     BrowserModule,
