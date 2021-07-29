@@ -194,8 +194,10 @@
             }
         }
     }
-    .hamburger:hover {
+    .hamburger:hover, .hamburger:active  {
         margin-right: 0px;
+        margin-top: -115px;
+        margin-left: 44px;
         .h-menu {
             display: block;
             background-color: $color-support-one;
